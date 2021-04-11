@@ -1,0 +1,8 @@
+app_identifier("org.kenzan8000.san-francisco") # The bundle identifier of your app
+apple_id("me@kenzan8000.org") # Your Apple email address
+
+itc_team_id("629898") # App Store Connect Team ID
+team_id("6RYZ4RB738") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VGMapZoomButton" customModule="voice_guidance" customModuleProvider="target">
+            <connections>
+                <outlet property="button" destination="6Bj-y0-rLc" id="fYS-f3-bFw"/>
+                <outlet property="buttonBackgroundView" destination="FNY-mQ-2H0" id="611-ky-xdT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bl4-ai-eKI">
+            <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNY-mQ-2H0">
+                    <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Bj-y0-rLc">
+                    <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="6Bj-y0-rLc" firstAttribute="leading" secondItem="Bl4-ai-eKI" secondAttribute="leading" id="7Lp-H1-7sU"/>
+                <constraint firstItem="FNY-mQ-2H0" firstAttribute="leading" secondItem="Bl4-ai-eKI" secondAttribute="leading" id="A7S-Nd-8RN"/>
+                <constraint firstAttribute="trailing" secondItem="FNY-mQ-2H0" secondAttribute="trailing" id="MGG-NP-wcJ"/>
+                <constraint firstAttribute="trailing" secondItem="6Bj-y0-rLc" secondAttribute="trailing" id="Mrw-EQ-7jL"/>
+                <constraint firstItem="6Bj-y0-rLc" firstAttribute="top" secondItem="Bl4-ai-eKI" secondAttribute="top" id="PvZ-l5-rtJ"/>
+                <constraint firstAttribute="bottom" secondItem="FNY-mQ-2H0" secondAttribute="bottom" id="UFA-ow-duj"/>
+                <constraint firstAttribute="bottom" secondItem="6Bj-y0-rLc" secondAttribute="bottom" id="teJ-E2-Yt2"/>
+                <constraint firstItem="FNY-mQ-2H0" firstAttribute="top" secondItem="Bl4-ai-eKI" secondAttribute="top" id="zSX-ly-OCM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="460.86956521739131" y="229.01785714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

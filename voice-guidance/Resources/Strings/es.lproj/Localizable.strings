@@ -1,0 +1,67 @@
+/* **************************************************
+    common
+************************************************** */
+
+"locale" =                                  "es";
+"language_code" =                           "es-ES";
+
+/* **************************************************
+    map
+************************************************** */
+
+"map" =                                     "Mapa";
+"map_sidemenu_0" =                          "Tutorial";
+
+/* **************************************************
+    ar
+************************************************** */
+
+"ar" =                                      "RA";
+"ar_sidemenu_0" =                           "Tutorial";
+"ar_sidemenu_1" =                           "Cómo usar la realidad aumentada";
+"ar_tutorial_0" =                           "Rote su teléfono.";
+"ar_tutorial_1" =                           "El mapa muestra la dirección hacia la\nque está orientada su cámara.";
+"ar_tutorial_2" =                           "Toque un lugar\nde interés en el mapa o en la imagen vista\ndesde la cámara y la audioguía comenzará.";
+
+/* **************************************************
+    search
+************************************************** */
+
+"search_placeholder" =                      "Buscar...";
+
+/* **************************************************
+    guide
+************************************************** */
+
+"guide_speech_rate_05x" =                   "½x";
+"guide_speech_rate_10x" =                   "1x";
+"guide_speech_rate_20x" =                   "2x";
+"guide_actionsheet_1" =                     "Abrir en Mapas";
+"guide_actionsheet_2" =                     "Abrir en Google Maps";
+"guide_actionsheet_3" =                     "Cancelar";
+
+/* **************************************************
+    tutorial
+************************************************** */
+
+"tutorial_title_01" =                       "Bienvenido a Audio Tour";
+"tutorial_body_01" =                        "Audio Tour ofrece una guía en audio instantánea de los puntos de referencia de la ciudad, similar a cómo una guía de audio del museo le ayuda a entender las obras de arte a un nivel más profundo.\n\nHay dos modos para ayudarle con sus visitas.";
+"tutorial_title_02" =                       "1. GuÌa del mapa";
+"tutorial_body_02" =                        "La vista del mapa le da una vista de pájaro de la ciudad. Puede planificar lugares para visitar antes de salir o echar un vistazo durante su viaje.";
+"tutorial_title_03" =                       "2. GuÌa de realidad aumentada";
+"tutorial_body_03" =                        "La vista de cámara en vivo muestra los nombres de los puntos de referencia en la parte superior de la imagen desde la cámara en su ubicación. Inicie esta función en la ciudad y sitúe su cámara en los puntos de referencia.";
+"tutorial_title_04" =                       "¡Dele una oportunidad!";
+"tutorial_body_04" =                        "¡Disfrute!";
+"tutorial_button_next"  =                   "Siguiente";
+"tutorial_button_end" =                     "Completar";
+
+/* **************************************************
+    permission
+************************************************** */
+
+"permission_title" =                        "Permite el acceso";
+"permission_subtitle" =                     "para poder tener la experiencia de la cámara en su ubicación.";
+"permission_camera_enabled" =               "Acceso a la cámara activada";
+"permission_camera_not_enabled" =           "Permitir el acceso de la cámara";
+"permission_location_enabled" =             "Acceso a la ubicación activada";
+"permission_location_not_enabled" =         "Permitir el acceso de la ubicación";

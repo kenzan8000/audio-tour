@@ -1,0 +1,2 @@
+NSCameraUsageDescription = "使用相机享受身临其境的AR体验。";
+NSLocationWhenInUseUsageDescription = "位置信息用于提供 AR 体验，该体验链接到地图上的当前位置显示和位置信息。";

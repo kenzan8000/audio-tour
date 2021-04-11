@@ -1,0 +1,2 @@
+NSCameraUsageDescription = "カメラを臨場感のあるAR体験のために使用します。";
+NSLocationWhenInUseUsageDescription = "位置情報はマップ上での現在位置表示と位置情報と連動したAR体験を提供するために使用します。";

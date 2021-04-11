@@ -1,0 +1,68 @@
+/* **************************************************
+    common
+************************************************** */
+
+"locale" =                                  "en";
+"language_code" =                           "en-US";
+"google_url" =                              "https://www.google.com/search";
+
+/* **************************************************
+    map
+************************************************** */
+
+"map" =                                     "Map";
+"map_sidemenu_0" =                          "Tutorial";
+
+/* **************************************************
+    ar
+************************************************** */
+
+"ar" =                                      "AR";
+"ar_sidemenu_0" =                           "Tutorial";
+"ar_sidemenu_1" =                           "How to Use AR";
+"ar_tutorial_0" =                           "Rotate your phone.";
+"ar_tutorial_1" =                           "The map faces the direction\nthat you point the camera at.";
+"ar_tutorial_2" =                           "Tap a spot on the map or AR\nto start the audio guide.";
+
+/* **************************************************
+    search
+************************************************** */
+
+"search_placeholder" =                      "Search...";
+
+/* **************************************************
+    guide
+************************************************** */
+
+"guide_speech_rate_05x" =                   "½x";
+"guide_speech_rate_10x" =                   "1x";
+"guide_speech_rate_20x" =                   "2x";
+"guide_actionsheet_1" =                     "Open in Maps";
+"guide_actionsheet_2" =                     "Open in Google Maps";
+"guide_actionsheet_3" =                     "Cancel";
+
+/* **************************************************
+    tutorial
+************************************************** */
+
+"tutorial_title_01" =                       "Welcome to Audio Tour";
+"tutorial_body_01" =                        "Audio Tour offers an instant audio guide of the city's spots, similar to how a museum audio guide helps you understand the works of art at a deeper level.\n\nThere are two modes to assist with your sight-seeing.";
+"tutorial_title_02" =                       "1. Map Guide";
+"tutorial_body_02" =                        "The map view gives you a birds-eye view of the city. You can plan places to visit before going out or check them out during your trip.";
+"tutorial_title_03" =                       "2. AR Guide";
+"tutorial_body_03" =                        "The live camera view displays the names of spots on top of the image from the camera at your location. Launch this function in the city, and face your camera to the spots.";
+"tutorial_title_04" =                       "Give it a try!";
+"tutorial_body_04" =                        "Enjoy!";
+"tutorial_button_next"  =                   "Next";
+"tutorial_button_end" =                     "Done";
+
+/* **************************************************
+    permission
+************************************************** */
+
+"permission_title" =                        "Enable Access";
+"permission_subtitle" =                     "so you can have geo-location based AR experience.";
+"permission_camera_enabled" =               "Camera Access Enabled";
+"permission_camera_not_enabled" =           "Enable Camera Access";
+"permission_location_enabled" =             "Location Access Enabled";
+"permission_location_not_enabled" =         "Enable Location Access";

@@ -1,0 +1,2 @@
+NSCameraUsageDescription = "El acceso a la cámara te permite tener una experiencia realidad aumentada inmersiva.";
+NSLocationWhenInUseUsageDescription = "La ubicación esta usado para presentarla en el mapa y ofrecer la experiencia de realidad aumentada.";

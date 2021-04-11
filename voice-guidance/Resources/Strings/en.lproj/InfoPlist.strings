@@ -1,0 +1,2 @@
+NSCameraUsageDescription = "Camera access lets you have an immersive AR experience.";
+NSLocationWhenInUseUsageDescription = "Your location is used to show on the map and provide the location based AR experience.";
