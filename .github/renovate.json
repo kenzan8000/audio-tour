@@ -1,0 +1,76 @@
+{
+  "packageRules": [
+    {
+      "groupName": "ARCL",
+      "managers": [
+        "swift"
+      ],
+      "packageNames": [
+        "ARCL"
+      ]
+    },
+    {
+      "groupName": "Instructions",
+      "managers": [
+        "swift"
+      ],
+      "packageNames": [
+        "Instructions"
+      ]
+    },
+    {
+      "groupName": "KeychainAccess",
+      "managers": [
+        "swift"
+      ],
+      "packageNames": [
+        "KeychainAccess"
+      ]
+    },
+    {
+      "groupName": "MarkDownView",
+      "managers": [
+        "swift"
+      ],
+      "packageNames": [
+        "MarkDownView"
+      ]
+    },
+    {
+      "groupName": "PullUpController",
+      "managers": [
+        "swift"
+      ],
+      "packageNames": [
+        "PullUpController"
+      ]
+    },
+    {
+      "groupName": "RxSwift",
+      "managers": [
+        "swift"
+      ],
+      "packageNames": [
+        "RxSwift"
+      ]
+    },
+    {
+      "groupName": "SideMenu",
+      "managers": [
+        "swift"
+      ],
+      "packageNames": [
+        "SideMenu"
+      ]
+    },
+    {
+      "groupName": "VYPlayIndicator",
+      "managers": [
+        "swift"
+      ],
+      "packageNames": [
+        "VYPlayIndicator"
+      ]
+    }
+  ]
+}
