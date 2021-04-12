@@ -3,9 +3,11 @@ import UIKit
 // MARK: - VGGuideProgressSlider
 class VGGuideProgressSlider: UISlider {
   // MARK: property
+  
   var progress = Float(0.0)
 
   // MARK: initializer
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     self.isContinuous = true
@@ -16,6 +18,7 @@ class VGGuideProgressSlider: UISlider {
   }
 
   // MARK: public api
+  
   /// set progress
   ///
   /// - Parameters:
