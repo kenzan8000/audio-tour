@@ -33,6 +33,7 @@
 		E636228E2090768800A7C089 /* VGARLocationAnnotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E636228D2090768800A7C089 /* VGARLocationAnnotationNode.swift */; };
 		E63CC59A1DAB5F7A00492356 /* VGGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63CC5991DAB5F7A00492356 /* VGGuideViewController.swift */; };
 		E641CFEF26246B1C0051B07A /* VGGuideRateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641CFEE26246B1C0051B07A /* VGGuideRateTests.swift */; };
+		E641CFF226246E9F0051B07A /* VGGuideViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641CFF126246E9F0051B07A /* VGGuideViewModelTests.swift */; };
 		E64558E7261C976600584C64 /* VGPermissionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558E6261C976600584C64 /* VGPermissionViewTests.swift */; };
 		E64558EA261C9E3B00584C64 /* VGPermissionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558E9261C9E3B00584C64 /* VGPermissionViewModelTests.swift */; };
 		E64558ED261CA13E00584C64 /* VGCaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558EC261CA13E00584C64 /* VGCaptureDevice.swift */; };
@@ -174,6 +175,7 @@
 		E63DA16B1DEAEC5C00DE1536 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E63DA16C1DEAECA300DE1536 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		E641CFEE26246B1C0051B07A /* VGGuideRateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGGuideRateTests.swift; sourceTree = "<group>"; };
+		E641CFF126246E9F0051B07A /* VGGuideViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGGuideViewModelTests.swift; sourceTree = "<group>"; };
 		E64558E6261C976600584C64 /* VGPermissionViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGPermissionViewTests.swift; sourceTree = "<group>"; };
 		E64558E9261C9E3B00584C64 /* VGPermissionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGPermissionViewModelTests.swift; sourceTree = "<group>"; };
 		E64558EC261CA13E00584C64 /* VGCaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGCaptureDevice.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 		E64558DC261C963F00584C64 /* Guide */ = {
 			isa = PBXGroup;
 			children = (
+				E641CFF126246E9F0051B07A /* VGGuideViewModelTests.swift */,
 				E641CFEE26246B1C0051B07A /* VGGuideRateTests.swift */,
 			);
 			path = Guide;
@@ -1004,6 +1007,7 @@
 				E60132472620A1BC00C4E3E4 /* VGSearchTableViewTests.swift in Sources */,
 				E61C5317261F2B4800BBCA33 /* VGCircleButtonTests.swift in Sources */,
 				E64558F2261CA5F100584C64 /* VGMockCaptureDevice.swift in Sources */,
+				E641CFF226246E9F0051B07A /* VGGuideViewModelTests.swift in Sources */,
 				E63369B5261E00D80048FD82 /* VGMockUserDefaults.swift in Sources */,
 				E60132442620A10700C4E3E4 /* VGSearchTableViewCellTests.swift in Sources */,
 				E61C531C261F2D5600BBCA33 /* VGTutorialViewModelTests.swift in Sources */,

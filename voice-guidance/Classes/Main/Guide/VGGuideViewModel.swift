@@ -30,7 +30,7 @@ class VGGuideViewModel: NSObject {
   }
   private var ttsRateSubject: BehaviorSubject<VGGuideRate>
   var ttsRateEvent: Observable<VGGuideRate> { ttsRateSubject }
-  var ttsRateTile: String { ttsRate.title }
+  var ttsRateTitle: String { ttsRate.title }
   
   var ttsProgress = Float(0) {
     didSet {
@@ -89,15 +89,11 @@ class VGGuideViewModel: NSObject {
   func initNotification() {
     NotificationCenter.default.publisher(for: AVAudioSession.interruptionNotification)
       .receive(on: DispatchQueue.main)
-      .sink { [weak self] _ in
-        self?.pauseTts()
-      }
+      .sink { [weak self] _ in self?.pauseTts() }
       .store(in: &cancellable)
     NotificationCenter.default.publisher(for: AVAudioSession.routeChangeNotification)
       .receive(on: DispatchQueue.main)
-      .sink { [weak self] _ in
-        self?.pauseTts()
-      }
+      .sink { [weak self] _ in self?.pauseTts() }
       .store(in: &cancellable)
   }
   
@@ -111,6 +107,8 @@ class VGGuideViewModel: NSObject {
     ttsRate.toggle()
   }
   
+  /// Update tts progress
+  /// - Parameter progress: 0 - 1 Float value
   func updateTtsProgress(_ progress: Float) {
     ttsProgress = Float(progress)
     if speechSynthesizer.isSpeaking {

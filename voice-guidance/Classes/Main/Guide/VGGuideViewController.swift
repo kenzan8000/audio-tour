@@ -102,11 +102,6 @@ class VGGuideViewController: PullUpController {
     guideViewModel.pauseTts()
   }
   
-  override func viewDidDisappear(_ animated: Bool) {
-    super.viewDidDisappear(animated)
-    guideViewModel.deinitNotification()
-  }
-  
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     let parentWidth = (parent?.view.frame.width ?? view.frame.width)
@@ -216,7 +211,7 @@ class VGGuideViewController: PullUpController {
     guideViewModel.ttsRateEvent
       .subscribe { [weak self] _ in
         self?.rateButton.setTitle(
-          self?.guideViewModel.ttsRateTile,
+          self?.guideViewModel.ttsRateTitle,
           for: .normal
         )
       }
