@@ -120,8 +120,8 @@ class VGGuideViewController: PullUpController {
       height: guideControlView.frame.origin.y - guideBodyViewY
     )
   }
-  
-  // MARK: Open methods
+
+  // MARK: VGGuideViewController + PullUpController
   
   /// called before the pull up controller's view move to a point.
   /// - Parameter point: The target point, expressed in the pull up controller coordinate system
@@ -130,15 +130,15 @@ class VGGuideViewController: PullUpController {
       parentView.bringSubviewToFront(view)
     }
   }
-  
+
   /// called after the pull up controller's view move to a point.
   /// - Parameter point: The target point, expressed in the pull up controller coordinate system
   override func pullUpControllerDidMove(to point: CGFloat) {
-    if point <= pullUpModel.bottomY {
-      dismissGuideViewController()
+    if point <= pullUpModel.bottomY && guideViewModel.ttsIsSpeaking {
+      guideViewModel.stopTts()
     }
   }
-
+  
   // MARK: public api
   
   /// present guide view controller
@@ -152,20 +152,6 @@ class VGGuideViewController: PullUpController {
       initialStickyPointOffset: pullUpModel.peekY,
       animated: animated
     )
-  }
-  
-  /// dismiss guide view controller
-  func dismissGuideViewController() {
-    if guideViewModel.ttsIsSpeaking {
-      guideViewModel.stopTts()
-    }
-  }
-  
-  /// Returns if the point is in view
-  /// - Parameter point: CGPoint
-  /// - Returns: Bool
-  func isOnView(point: CGPoint) -> Bool {
-    view.frame.contains(point)
   }
   
   // MARK: private api

@@ -159,7 +159,7 @@ class VGARViewController: VGTabViewController {
     guard let touch = touches.first else {
       return
     }
-    if guideViewController?.isOnView(point: touch.location(in: view)) ?? false {
+    if guideViewController?.view.frame.contains(touch.location(in: view)) ?? false {
       return
     }
     if let index = sceneLocationView.getTouchedLocationNodeIndex(touch: touch) ?? nil {
