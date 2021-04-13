@@ -9,5 +9,4 @@ enum VGMap {
   static let defaultZoomLevel = 12.9
   // static let minimumZoomLevel = 10.0
   static let maximumZoomLevel = 15.0
-  static let currentLocationZoomLevel = 15.0
 }

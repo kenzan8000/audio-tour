@@ -15,10 +15,10 @@ class VGMapZoom {
   
   var level: Double {
     didSet {
-      if level > maxLevel {
+      if level >= maxLevel {
         level = maxLevel
         state = .max
-      } else if level < minLevel {
+      } else if level <= minLevel {
         level = minLevel
         state = .min
       } else {
@@ -39,5 +39,15 @@ class VGMapZoom {
     self.level = level
     self.maxLevel = maxLevel
     self.minLevel = minLevel
+    
+    if level >= maxLevel {
+      self.level = maxLevel
+      state = .max
+    } else if level <= minLevel {
+      self.level = minLevel
+      state = .min
+    } else {
+      state = .none
+    }
   }
 }
