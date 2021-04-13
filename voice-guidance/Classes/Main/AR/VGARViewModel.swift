@@ -10,9 +10,7 @@ class VGARViewModel: NSObject, CLLocationManagerDelegate {
   
   private let disposeBag = DisposeBag()
   private let storageProvider: VGStorageProvider
-  
   private var locationManager: VGLocationManager
-  private let spotDistance = VGARMap.spotDistance
   
   private var latestLocation: CLLocation? {
     didSet {
@@ -176,8 +174,8 @@ class VGARViewModel: NSObject, CLLocationManagerDelegate {
     guard let location = latestLocation else {
       return
     }
-    let sw = location.coordinate.coordinateWithBearing(bearing: 225.0, distanceMeters: spotDistance)
-    let ne = location.coordinate.coordinateWithBearing(bearing: 45.0, distanceMeters: spotDistance)
+    let sw = location.coordinate.coordinateWithBearing(bearing: 225.0, distanceMeters: VGARMap.spotDistance)
+    let ne = location.coordinate.coordinateWithBearing(bearing: 45.0, distanceMeters: VGARMap.spotDistance)
     var spots = storageProvider.fetch(language: .current, sw: sw, ne: ne)
     if let latestLocation = latestLocation {
       spots.sort { a, b in
