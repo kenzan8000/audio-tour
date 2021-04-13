@@ -4,15 +4,14 @@ import RxSwift
 import SideMenu
 import UIKit
 
+// MARK: - VGARViewControllerLeftMenu
+enum VGARViewControllerLeftMenu: Int {
+  case tutorial = 0
+  case arTutorial = 1
+}
+
 // MARK: - VGARViewController
 class VGARViewController: VGTabViewController {
-  
-  // MARK: enum
-  
-  enum LeftMenu: Int {
-    case tutorial = 0
-    case arTutorial = 1
-  }
 
   // MARK: VGTabViewControllerProtocol
   
@@ -82,11 +81,11 @@ class VGARViewController: VGTabViewController {
     super.init(nibName: nil, bundle: nil)
   }
   
-   // MARK: destruction
+  // MARK: destruction
   
   deinit {
     cleanUpPermissionView()
-    cleanUpTutorialView()
+    cleanUpTutorialView(userDefaults: userDefaults)
   }
 
   // MARK: life cycle
@@ -124,22 +123,15 @@ class VGARViewController: VGTabViewController {
     sceneLocationView.run()
     
     cleanUpPermissionView()
-    if !VGPermissionViewModel.authorized(permissionType: .locationAndVideo, locationManager: locationManagerFactory(), captureDevice: VGAVCaptureDevice()) {
-      permissionView = VGPermissionView(
-        viewModel: VGPermissionViewModel(permissionType: .locationAndVideo, locationManager: locationManagerFactory(), captureDevice: VGAVCaptureDevice())
-      )
-      if let permissionView = permissionView {
-        permissionView.frame = view.frame
-        view.addSubview(permissionView)
-        permissionViewWillDisappearDisposable = permissionView.rx.willDisappear
-          .subscribe { [weak self] _ in self?.cleanUpPermissionView() }
-      }
+    if !VGPermissionViewModel.authorized(
+      permissionType: .locationAndVideo,
+      locationManager: locationManagerFactory(),
+      captureDevice: VGAVCaptureDevice()
+    ) {
+      presentPermissionView(locationManagerFactory: locationManagerFactory)
       return
     }
-    
-    if !userDefaults.bool(forKey: VGUserDefaultsKey.doneARTutorial) {
-      showTutorialView()
-    }
+    presentTutorialView(forced: false, userDefaults: userDefaults)
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -267,14 +259,14 @@ class VGARViewController: VGTabViewController {
             menu.dismiss(animated: true, completion: nil)
             guard let self = self,
                   let index = event.element?.row,
-                  let tap = LeftMenu(rawValue: index) else {
+                  let tap = VGARViewControllerLeftMenu(rawValue: index) else {
               return
             }
             switch tap {
             case .tutorial:
               NotificationCenter.default.post(Notification(name: .startTutorial))
             case .arTutorial:
-              self.showTutorialView()
+              self.presentTutorialView(forced: true, userDefaults: self.userDefaults)
             }
           }
           .disposed(by: vc.disposeBag)
@@ -327,43 +319,6 @@ class VGARViewController: VGTabViewController {
     view.addSubview(zoomInButton)
     view.bringSubviewToFront(zoomInButton)
     view.addSubview(searchView)
-  }
-  
-  /// Calls when deiniting permission view
-  private func cleanUpPermissionView() {
-    permissionView?.removeFromSuperview()
-    permissionViewWillDisappearDisposable?.dispose()
-    permissionView = nil
-    permissionViewWillDisappearDisposable = nil
-  }
-  
-  /// Calls when deiniting tutorial view
-  private func cleanUpTutorialView() {
-    tutorialView?.removeFromSuperview()
-    tutorialViewWillDisappearDisposable?.dispose()
-    tutorialView = nil
-    tutorialViewWillDisappearDisposable = nil
-    userDefaults.set(true, forKey: VGUserDefaultsKey.doneARTutorial)
-    _ = userDefaults.synchronize()
-  }
-  
-  /// Shows tutorial view
-  private func showTutorialView() {
-    cleanUpTutorialView()
-    tutorialView = VGARTutorialView(
-      parentViewController: self,
-      mapView: mapBackgroundView
-    )
-    if let tutorialView = tutorialView {
-      view.addSubview(tutorialView)
-      tutorialViewWillDisappearDisposable = tutorialView.rx.active
-        .subscribe { [weak self] event in
-          let active = event.element ?? true
-          if !active {
-            self?.cleanUpTutorialView()
-          }
-        }
-    }
   }
   
   /// Presents guide view controller
