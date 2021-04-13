@@ -33,6 +33,7 @@
 		E635540924B31311004E30B9 /* VGGuidePullUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E635540824B31311004E30B9 /* VGGuidePullUpModel.swift */; };
 		E636228E2090768800A7C089 /* VGARLocationAnnotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E636228D2090768800A7C089 /* VGARLocationAnnotationNode.swift */; };
 		E63CC59A1DAB5F7A00492356 /* VGGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63CC5991DAB5F7A00492356 /* VGGuideViewController.swift */; };
+		E63FA09D2625AB91001FB5F5 /* VGMapHeadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FA09C2625AB91001FB5F5 /* VGMapHeadingTests.swift */; };
 		E641CFEF26246B1C0051B07A /* VGGuideRateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641CFEE26246B1C0051B07A /* VGGuideRateTests.swift */; };
 		E641CFF226246E9F0051B07A /* VGGuideViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641CFF126246E9F0051B07A /* VGGuideViewModelTests.swift */; };
 		E64558E7261C976600584C64 /* VGPermissionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558E6261C976600584C64 /* VGPermissionViewTests.swift */; };
@@ -176,6 +177,7 @@
 		E63CC5991DAB5F7A00492356 /* VGGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGGuideViewController.swift; sourceTree = "<group>"; };
 		E63DA16B1DEAEC5C00DE1536 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E63DA16C1DEAECA300DE1536 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E63FA09C2625AB91001FB5F5 /* VGMapHeadingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapHeadingTests.swift; sourceTree = "<group>"; };
 		E641CFEE26246B1C0051B07A /* VGGuideRateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGGuideRateTests.swift; sourceTree = "<group>"; };
 		E641CFF126246E9F0051B07A /* VGGuideViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGGuideViewModelTests.swift; sourceTree = "<group>"; };
 		E64558E6261C976600584C64 /* VGPermissionViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGPermissionViewTests.swift; sourceTree = "<group>"; };
@@ -410,6 +412,7 @@
 		E64558DA261C962B00584C64 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				E63FA09C2625AB91001FB5F5 /* VGMapHeadingTests.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -998,6 +1001,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E63FA09D2625AB91001FB5F5 /* VGMapHeadingTests.swift in Sources */,
 				E64558E7261C976600584C64 /* VGPermissionViewTests.swift in Sources */,
 				E601324026209F9F00C4E3E4 /* VGSideMenuViewControllerTests.swift in Sources */,
 				E601320A261F2808002FCD64 /* VGTutorialSlideViewTests.swift in Sources */,
