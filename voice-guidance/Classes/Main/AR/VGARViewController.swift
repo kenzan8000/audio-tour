@@ -44,7 +44,7 @@ class VGARViewController: VGTabViewController {
         .subscribe { [weak self] alert in self?.present(alert, animated: true, completion: nil) }
         .disposed(by: disposeBag)
       guideViewController?.presentGuideViewController(on: self, animated: true)
-      mapView.delesectSelectedAnnotations()
+      mapView.selectedAnnotations.forEach { [weak self] in self?.mapView.deselectAnnotation($0, animated: false) }
       searchView.endSearch()
     }
   }
@@ -229,7 +229,10 @@ class VGARViewController: VGTabViewController {
         guard let self = self, let spots = event.element else {
           return
         }
-        self.mapView.resetSpots(spots)
+        self.mapView.removeAnnotations(self.mapView.annotations ?? [])
+        self.mapView.addAnnotations(
+          spots.map { VGMapAnnotation(id: $0.id, coordinate: $0.coordinate) }
+        )
         self.sceneLocationView.resetLocationNodes(self.viewModel.spotNodes)
       }
       .disposed(by: disposeBag)

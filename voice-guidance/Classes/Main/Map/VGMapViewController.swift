@@ -32,7 +32,7 @@ class VGMapViewController: VGTabViewController {
         .subscribe { [weak self] alert in self?.present(alert, animated: true, completion: nil) }
         .disposed(by: disposeBag)
       guideViewController?.presentGuideViewController(on: self, animated: true)
-      mapView.delesectSelectedAnnotations()
+      mapView.selectedAnnotations.forEach { [weak self] in self?.mapView.deselectAnnotation($0, animated: false) }
       searchView.endSearch()
     }
   }
@@ -174,9 +174,13 @@ class VGMapViewController: VGTabViewController {
   private func bindViewModel() {
     viewModel.spotsWereUpdatedEvent
       .subscribe { [weak self] event in
-        if let self = self, let spots = event.element {
-          self.mapView.resetSpots(spots)
+        guard let self = self, let spots = event.element else {
+          return
         }
+        self.mapView.removeAnnotations(self.mapView.annotations ?? [])
+        self.mapView.addAnnotations(
+          spots.map { VGMapAnnotation(id: $0.id, coordinate: $0.coordinate) }
+        )
       }
       .disposed(by: disposeBag)
     viewModel.searchResultWasUpdatedEvent

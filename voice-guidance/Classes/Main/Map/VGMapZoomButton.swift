@@ -18,8 +18,7 @@ class VGMapZoomButton: VGCircleButton {
   // MARK: initializer
   
   /// Inits
-  /// - Parameters:
-  ///   - zoomType: zoomIn or zoomOut
+  /// - Parameter zoomType:  zoomIn or zoomOut
   init(zoomType: ZoomType) {
     var image: UIImage?
     switch zoomType {

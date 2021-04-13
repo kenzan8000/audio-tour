@@ -25,38 +25,11 @@ class VGMapView: MGLMapView {
     super.init(frame: frame, styleURL: styleURL)
   }
   
-  // MARK: destruction
-  
-  deinit {
-  }
-  
   // MARK: life cycle
   
   override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
     super.traitCollectionDidChange(previousTraitCollection)
     styleURL = traitCollection.userInterfaceStyle == .dark ? MGLStyle.darkStyleURL(withVersion: 9) : MGLStyle.lightStyleURL(withVersion: 9)
-  }
-  
-  // MARK: public api
-  
-  /// Updates spots on map
-  /// - Parameter spots: array of VGSpot
-  func resetSpots(_ spots: [VGSpot]) {
-    if let annotations = annotations {
-      removeAnnotations(annotations)
-    }
-    var newAnnotations: [VGMapAnnotation] = []
-    for spot in spots {
-      newAnnotations.append(VGMapAnnotation(id: spot.id, coordinate: spot.coordinate))
-    }
-    addAnnotations(newAnnotations)
-  }
-  
-  /// Deselects selected annotations
-  func delesectSelectedAnnotations() {
-    for annotation in selectedAnnotations {
-      deselectAnnotation(annotation, animated: false)
-    }
   }
 }
 
