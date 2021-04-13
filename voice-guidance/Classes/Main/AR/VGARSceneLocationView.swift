@@ -9,12 +9,8 @@ class VGARSceneLocationView: SceneLocationView {
   /// Resets location nodes
   /// - Parameter nodes: nodes to display
   func resetLocationNodes(_ nodes: [LocationNode]) {
-    for node in locationNodes {
-      removeLocationNode(locationNode: node)
-    }
-    for node in nodes {
-      addLocationNodeWithConfirmedLocation(locationNode: node)
-    }
+    locationNodes.forEach { [weak self] in self?.removeLocationNode(locationNode: $0) }
+    nodes.forEach { [weak self] in self?.addLocationNodeWithConfirmedLocation(locationNode: $0) }
   }
   
   /// Returns index of touched locationNode
