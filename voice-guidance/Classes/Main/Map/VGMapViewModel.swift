@@ -36,11 +36,6 @@ class VGMapViewModel {
     resetSpots()
   }
   
-  // MARK: destruction
-  
-  deinit {
-  }
-  
   // MARK: public api
   
   /// Searches spots by text
@@ -57,6 +52,6 @@ class VGMapViewModel {
   
   /// Resets spots on the map
   private func resetSpots() {
-      spots = storageProvider.fetch(language: .current)
+    spots = storageProvider.fetch(language: .current)
   }
 }
