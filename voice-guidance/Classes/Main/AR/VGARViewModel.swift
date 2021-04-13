@@ -24,11 +24,7 @@ class VGARViewModel: NSObject, CLLocationManagerDelegate {
   private var latestLocationSubject: BehaviorSubject<CLLocation>
   var latestLocationEvent: Observable<CLLocation> { latestLocationSubject }
   
-  private var heading = VGMapHeading() {
-    didSet {
-      latestHeadingSubject.onNext(heading.calculatedHeading)
-    }
-  }
+  private var heading = VGMapHeading()
   private var latestHeadingSubject: BehaviorSubject<CLLocationDirection>
   var latestHeadingEvent: Observable<CLLocationDirection> { latestHeadingSubject }
   
@@ -36,12 +32,7 @@ class VGARViewModel: NSObject, CLLocationManagerDelegate {
     level: VGARMap.minimumZoomLevel,
     maxLevel: VGARMap.maximumZoomLevel,
     minLevel: VGARMap.minimumZoomLevel
-  ) {
-    didSet {
-      zoomLevelSubject.onNext(zoom.level)
-      zoomStateSubject.onNext(zoom.state)
-    }
-  }
+  )
   private var zoomLevelSubject: BehaviorSubject<Double>
   var zoomLevelEvent: Observable<Double> { zoomLevelSubject }
   private var zoomStateSubject: BehaviorSubject<VGMapZoom.State>
@@ -102,6 +93,7 @@ class VGARViewModel: NSObject, CLLocationManagerDelegate {
     for spotNode in spotNodes {
       spotNode.rotation = SCNVector4(x: 0.0, y: 1.0, z: 0.0, w: -headingInRadian)
     }
+    latestHeadingSubject.onNext(heading.calculatedHeading)
   }
   
   func locationManager(
@@ -139,12 +131,16 @@ class VGARViewModel: NSObject, CLLocationManagerDelegate {
   /// - Parameter value: zoom in valuel
   func zoomIn(value: Double) {
     zoom.level += value
+    zoomLevelSubject.onNext(zoom.level)
+    zoomStateSubject.onNext(zoom.state)
   }
   
   /// Zooms out
   /// - Parameter value: zoom out value
   func zoomOut(value: Double) {
     zoom.level -= value
+    zoomLevelSubject.onNext(zoom.level)
+    zoomStateSubject.onNext(zoom.state)
   }
   
   /// Searches spots by text
