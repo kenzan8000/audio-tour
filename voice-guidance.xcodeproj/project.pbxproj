@@ -36,6 +36,7 @@
 		E63FA09D2625AB91001FB5F5 /* VGMapHeadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FA09C2625AB91001FB5F5 /* VGMapHeadingTests.swift */; };
 		E63FA0A02625ADD1001FB5F5 /* VGMapZoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FA09F2625ADD1001FB5F5 /* VGMapZoomTests.swift */; };
 		E63FA0A42625B917001FB5F5 /* VGMapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FA0A32625B917001FB5F5 /* VGMapViewModelTests.swift */; };
+		E63FA0A82625BC12001FB5F5 /* VGARTutorialViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FA0A72625BC12001FB5F5 /* VGARTutorialViewTests.swift */; };
 		E641CFEF26246B1C0051B07A /* VGGuideRateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641CFEE26246B1C0051B07A /* VGGuideRateTests.swift */; };
 		E641CFF226246E9F0051B07A /* VGGuideViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E641CFF126246E9F0051B07A /* VGGuideViewModelTests.swift */; };
 		E64558E7261C976600584C64 /* VGPermissionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558E6261C976600584C64 /* VGPermissionViewTests.swift */; };
@@ -182,6 +183,7 @@
 		E63FA09C2625AB91001FB5F5 /* VGMapHeadingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapHeadingTests.swift; sourceTree = "<group>"; };
 		E63FA09F2625ADD1001FB5F5 /* VGMapZoomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapZoomTests.swift; sourceTree = "<group>"; };
 		E63FA0A32625B917001FB5F5 /* VGMapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapViewModelTests.swift; sourceTree = "<group>"; };
+		E63FA0A72625BC12001FB5F5 /* VGARTutorialViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGARTutorialViewTests.swift; sourceTree = "<group>"; };
 		E641CFEE26246B1C0051B07A /* VGGuideRateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGGuideRateTests.swift; sourceTree = "<group>"; };
 		E641CFF126246E9F0051B07A /* VGGuideViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGGuideViewModelTests.swift; sourceTree = "<group>"; };
 		E64558E6261C976600584C64 /* VGPermissionViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGPermissionViewTests.swift; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 		E64558DB261C963100584C64 /* AR */ = {
 			isa = PBXGroup;
 			children = (
+				E63FA0A72625BC12001FB5F5 /* VGARTutorialViewTests.swift */,
 			);
 			path = AR;
 			sourceTree = "<group>";
@@ -1025,6 +1028,7 @@
 				E64558F2261CA5F100584C64 /* VGMockCaptureDevice.swift in Sources */,
 				E641CFF226246E9F0051B07A /* VGGuideViewModelTests.swift in Sources */,
 				E63369B5261E00D80048FD82 /* VGMockUserDefaults.swift in Sources */,
+				E63FA0A82625BC12001FB5F5 /* VGARTutorialViewTests.swift in Sources */,
 				E60132442620A10700C4E3E4 /* VGSearchTableViewCellTests.swift in Sources */,
 				E61C531C261F2D5600BBCA33 /* VGTutorialViewModelTests.swift in Sources */,
 				E601323D26209E8F00C4E3E4 /* VGSideMenuTableViewCellTests.swift in Sources */,
