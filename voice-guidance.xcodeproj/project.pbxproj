@@ -25,6 +25,7 @@
 		E61AE64C262722E30071D327 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E61AE64B262722E30071D327 /* SnapshotTesting */; };
 		E61AE654262724B50071D327 /* VGCircleButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61AE653262724B50071D327 /* VGCircleButtonTests.swift */; };
 		E61AE66026272A1C0071D327 /* UIImage+TintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61AE65F26272A1C0071D327 /* UIImage+TintTests.swift */; };
+		E61AE66726272DA40071D327 /* VGPermissionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61AE66626272DA40071D327 /* VGPermissionViewTests.swift */; };
 		E61C5317261F2B4800BBCA33 /* VGCircleButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61C5316261F2B4800BBCA33 /* VGCircleButtonTests.swift */; };
 		E61C531C261F2D5600BBCA33 /* VGTutorialViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61C531B261F2D5600BBCA33 /* VGTutorialViewModelTests.swift */; };
 		E61C5321261F35E800BBCA33 /* VGTutorialViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61C5320261F35E800BBCA33 /* VGTutorialViewControllerTests.swift */; };
@@ -184,6 +185,7 @@
 		E61AE6322627229B0071D327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E61AE653262724B50071D327 /* VGCircleButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGCircleButtonTests.swift; sourceTree = "<group>"; };
 		E61AE65F26272A1C0071D327 /* UIImage+TintTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TintTests.swift"; sourceTree = "<group>"; };
+		E61AE66626272DA40071D327 /* VGPermissionViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGPermissionViewTests.swift; sourceTree = "<group>"; };
 		E61C5316261F2B4800BBCA33 /* VGCircleButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGCircleButtonTests.swift; sourceTree = "<group>"; };
 		E61C531B261F2D5600BBCA33 /* VGTutorialViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialViewModelTests.swift; sourceTree = "<group>"; };
 		E61C5320261F35E800BBCA33 /* VGTutorialViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialViewControllerTests.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				E61AE6322627229B0071D327 /* Info.plist */,
+				E61AE66526272D940071D327 /* Permission */,
 				E61AE64F262724630071D327 /* Extension */,
 			);
 			path = "voice-guidanceSnapshotTests";
@@ -356,6 +359,14 @@
 				E61AE653262724B50071D327 /* VGCircleButtonTests.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		E61AE66526272D940071D327 /* Permission */ = {
+			isa = PBXGroup;
+			children = (
+				E61AE66626272DA40071D327 /* VGPermissionViewTests.swift */,
+			);
+			path = Permission;
 			sourceTree = "<group>";
 		};
 		E61C5319261F2D1400BBCA33 /* AVFoundation */ = {
@@ -1046,6 +1057,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E61AE66726272DA40071D327 /* VGPermissionViewTests.swift in Sources */,
 				E61AE654262724B50071D327 /* VGCircleButtonTests.swift in Sources */,
 				E61AE63F262722B40071D327 /* VGMockCaptureDevice.swift in Sources */,
 				E61AE66026272A1C0071D327 /* UIImage+TintTests.swift in Sources */,
