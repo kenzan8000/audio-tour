@@ -79,7 +79,6 @@ disabled_rules:
   #- weak_delegate
   #- xctfail_message
 
-# デフォルト無効で有効にするルール
 opt_in_rules:
   - anyobject_protocol
   - array_init
@@ -170,7 +169,6 @@ opt_in_rules:
   #- vertical_whitespace_opening_braces
   - xct_specific_matcher
   - yoda_condition
-
 
 included:
   - voice-guidance
