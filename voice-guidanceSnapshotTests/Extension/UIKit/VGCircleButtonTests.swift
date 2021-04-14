@@ -24,7 +24,7 @@ class VGCircleButtonTests: XCTestCase {
       sut.overrideUserInterfaceStyle = style
       assertSnapshot(
         matching: sut,
-        as: .image(precision: 0.98),
+        as: .image(precision: 0.98, traits: .iPhoneX(.portrait)),
         named: named
       )
     }

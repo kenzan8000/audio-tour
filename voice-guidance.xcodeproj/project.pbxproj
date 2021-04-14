@@ -24,6 +24,7 @@
 		E61AE645262722BC0071D327 /* VGMockUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63369B4261E00D80048FD82 /* VGMockUserDefaults.swift */; };
 		E61AE64C262722E30071D327 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E61AE64B262722E30071D327 /* SnapshotTesting */; };
 		E61AE654262724B50071D327 /* VGCircleButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61AE653262724B50071D327 /* VGCircleButtonTests.swift */; };
+		E61AE66026272A1C0071D327 /* UIImage+TintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61AE65F26272A1C0071D327 /* UIImage+TintTests.swift */; };
 		E61C5317261F2B4800BBCA33 /* VGCircleButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61C5316261F2B4800BBCA33 /* VGCircleButtonTests.swift */; };
 		E61C531C261F2D5600BBCA33 /* VGTutorialViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61C531B261F2D5600BBCA33 /* VGTutorialViewModelTests.swift */; };
 		E61C5321261F35E800BBCA33 /* VGTutorialViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61C5320261F35E800BBCA33 /* VGTutorialViewControllerTests.swift */; };
@@ -182,6 +183,7 @@
 		E61AE62E2627229B0071D327 /* voice-guidanceSnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "voice-guidanceSnapshotTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E61AE6322627229B0071D327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E61AE653262724B50071D327 /* VGCircleButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGCircleButtonTests.swift; sourceTree = "<group>"; };
+		E61AE65F26272A1C0071D327 /* UIImage+TintTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TintTests.swift"; sourceTree = "<group>"; };
 		E61C5316261F2B4800BBCA33 /* VGCircleButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGCircleButtonTests.swift; sourceTree = "<group>"; };
 		E61C531B261F2D5600BBCA33 /* VGTutorialViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialViewModelTests.swift; sourceTree = "<group>"; };
 		E61C5320261F35E800BBCA33 /* VGTutorialViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialViewControllerTests.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 		E61AE650262724740071D327 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				E61AE65F26272A1C0071D327 /* UIImage+TintTests.swift */,
 				E61AE653262724B50071D327 /* VGCircleButtonTests.swift */,
 			);
 			path = UIKit;
@@ -1045,6 +1048,7 @@
 			files = (
 				E61AE654262724B50071D327 /* VGCircleButtonTests.swift in Sources */,
 				E61AE63F262722B40071D327 /* VGMockCaptureDevice.swift in Sources */,
+				E61AE66026272A1C0071D327 /* UIImage+TintTests.swift in Sources */,
 				E61AE642262722B80071D327 /* VGMockLocationManager.swift in Sources */,
 				E61AE63A262722AF0071D327 /* VGTestingAppDelegate.swift in Sources */,
 				E61AE645262722BC0071D327 /* VGMockUserDefaults.swift in Sources */,
