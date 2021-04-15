@@ -46,11 +46,11 @@ class VGTutorialViewController: UIViewController {
     super.viewDidLayoutSubviews()
   }
   
-  // MARK: private api
+  // MARK: public api
   
   /// Presents view
   /// - Parameter view: Updates the tutorial scene by the view value (VGTutorialView)
-  private func present(_ tutorial: VGTutorial) {
+  func present(_ tutorial: VGTutorial) {
     slideView?.removeFromSuperview()
     pageControl.currentPage = tutorial.currentPage
     doneButton.setTitle(NSLocalizedString("tutorial_button_next", comment: ""), for: .normal)
@@ -73,6 +73,8 @@ class VGTutorialViewController: UIViewController {
       slideView.frame = slideBackgroundView.bounds
     }
   }
+  
+  // MARK: private api
   
   /// Init view model settings
   private func observeViewModel() {

@@ -32,6 +32,7 @@
 		E61CAAEA24DEC4B000913E7F /* VGGuideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E61CAAE924DEC4B000913E7F /* VGGuideViewController.xib */; };
 		E620F6641E6FFD41008F0C70 /* VGTutorialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E620F6631E6FFD41008F0C70 /* VGTutorialViewModel.swift */; };
 		E6256F782628709400904104 /* VGTutorialSlideViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6256F772628709400904104 /* VGTutorialSlideViewTests.swift */; };
+		E6256F7E2628727C00904104 /* VGTutorialViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6256F7D2628727C00904104 /* VGTutorialViewControllerTests.swift */; };
 		E62C5C0C24FE79F300C2C6CC /* VGMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C5C0B24FE79F300C2C6CC /* VGMapViewModel.swift */; };
 		E63369A1261DF7D70048FD82 /* VGSpotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63369A0261DF7D70048FD82 /* VGSpotTests.swift */; };
 		E63369A7261DF84C0048FD82 /* VGCoreData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E63369A4261DF84C0048FD82 /* VGCoreData.sqlite */; };
@@ -193,6 +194,7 @@
 		E61CAAE924DEC4B000913E7F /* VGGuideViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VGGuideViewController.xib; sourceTree = "<group>"; };
 		E620F6631E6FFD41008F0C70 /* VGTutorialViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGTutorialViewModel.swift; sourceTree = "<group>"; };
 		E6256F772628709400904104 /* VGTutorialSlideViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialSlideViewTests.swift; sourceTree = "<group>"; };
+		E6256F7D2628727C00904104 /* VGTutorialViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialViewControllerTests.swift; sourceTree = "<group>"; };
 		E62852B31D7D1FC30071957E /* voice-guidance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "voice-guidance.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E62C5C0B24FE79F300C2C6CC /* VGMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapViewModel.swift; sourceTree = "<group>"; };
 		E63369A0261DF7D70048FD82 /* VGSpotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSpotTests.swift; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 		E6256F752628707000904104 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				E6256F7D2628727C00904104 /* VGTutorialViewControllerTests.swift */,
 				E6256F762628708200904104 /* Slide */,
 			);
 			path = Tutorial;
@@ -1077,6 +1080,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E61AE66726272DA40071D327 /* VGPermissionViewTests.swift in Sources */,
+				E6256F7E2628727C00904104 /* VGTutorialViewControllerTests.swift in Sources */,
 				E6256F782628709400904104 /* VGTutorialSlideViewTests.swift in Sources */,
 				E61AE654262724B50071D327 /* VGCircleButtonTests.swift in Sources */,
 				E61AE63F262722B40071D327 /* VGMockCaptureDevice.swift in Sources */,
