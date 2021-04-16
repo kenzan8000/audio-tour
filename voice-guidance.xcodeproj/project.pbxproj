@@ -95,6 +95,7 @@
 		E6A670D926082EDB00DF17C9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A670D826082EDB00DF17C9 /* main.swift */; };
 		E6A671042608320500DF17C9 /* VGTestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A671032608320500DF17C9 /* VGTestingAppDelegate.swift */; };
 		E6A67D0F2565514B008ED273 /* VGCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6A67D0D2565514B008ED273 /* VGCoreData.xcdatamodeld */; };
+		E6A71AC62629C285005A6F36 /* VGSideMenuTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A71AC52629C285005A6F36 /* VGSideMenuTableViewCellTests.swift */; };
 		E6AE2A9B2620AAAA00FEB1D2 /* VGSearchViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AE2A9A2620AAAA00FEB1D2 /* VGSearchViewTests.swift */; };
 		E6AF01D1250F92AD00F9F40D /* VGTutorialSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF01D0250F92AD00F9F40D /* VGTutorialSlideView.swift */; };
 		E6AF01D3250F973A00F9F40D /* VGTutorialSlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AF01D2250F973A00F9F40D /* VGTutorialSlideView.xib */; };
@@ -261,6 +262,7 @@
 		E6A670FF260831C500DF17C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6A671032608320500DF17C9 /* VGTestingAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGTestingAppDelegate.swift; sourceTree = "<group>"; };
 		E6A67D0E2565514B008ED273 /* VGModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VGModel.xcdatamodel; sourceTree = "<group>"; };
+		E6A71AC52629C285005A6F36 /* VGSideMenuTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSideMenuTableViewCellTests.swift; sourceTree = "<group>"; };
 		E6AE2A9A2620AAAA00FEB1D2 /* VGSearchViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSearchViewTests.swift; sourceTree = "<group>"; };
 		E6AF01D0250F92AD00F9F40D /* VGTutorialSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialSlideView.swift; sourceTree = "<group>"; };
 		E6AF01D2250F973A00F9F40D /* VGTutorialSlideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VGTutorialSlideView.xib; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				E6256F752628707000904104 /* Tutorial */,
+				E6A71AC32629C23C005A6F36 /* Main */,
 				E61AE66526272D940071D327 /* Permission */,
 				E61AE64F262724630071D327 /* Extension */,
 				E61AE6322627229B0071D327 /* Info.plist */,
@@ -754,6 +757,22 @@
 			path = "voice-guidanceTests";
 			sourceTree = "<group>";
 		};
+		E6A71AC32629C23C005A6F36 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E6A71AC42629C270005A6F36 /* SideMenu */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E6A71AC42629C270005A6F36 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				E6A71AC52629C285005A6F36 /* VGSideMenuTableViewCellTests.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		E6AF01CF250F926000F9F40D /* Slide */ = {
 			isa = PBXGroup;
 			children = (
@@ -1081,6 +1100,7 @@
 			files = (
 				E61AE66726272DA40071D327 /* VGPermissionViewTests.swift in Sources */,
 				E6256F7E2628727C00904104 /* VGTutorialViewControllerTests.swift in Sources */,
+				E6A71AC62629C285005A6F36 /* VGSideMenuTableViewCellTests.swift in Sources */,
 				E6256F782628709400904104 /* VGTutorialSlideViewTests.swift in Sources */,
 				E61AE654262724B50071D327 /* VGCircleButtonTests.swift in Sources */,
 				E61AE63F262722B40071D327 /* VGMockCaptureDevice.swift in Sources */,
