@@ -20,6 +20,7 @@ class VGMapViewControllerTests: XCTestCase {
       mapViewFactory: { view in mapDependencyContainer.makeMapView(on: view) },
       searchViewFactory: { view in mapDependencyContainer.makeSearchView(on: view) }
     )
+    sut.loadViewIfNeeded()
     super.setUp()
   }
 

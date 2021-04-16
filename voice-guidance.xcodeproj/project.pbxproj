@@ -105,6 +105,7 @@
 		E6A71AF52629CF3A005A6F36 /* VGARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A71AF42629CF3A005A6F36 /* VGARViewController.swift */; };
 		E6A71AFE2629D08D005A6F36 /* VGMapZoomButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A71AFD2629D08D005A6F36 /* VGMapZoomButtonTests.swift */; };
 		E6A71B042629D24A005A6F36 /* VGMapViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A71B032629D24A005A6F36 /* VGMapViewControllerTests.swift */; };
+		E6A71B122629D37C005A6F36 /* VGMainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A71B112629D37C005A6F36 /* VGMainViewControllerTests.swift */; };
 		E6AE2A9B2620AAAA00FEB1D2 /* VGSearchViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AE2A9A2620AAAA00FEB1D2 /* VGSearchViewTests.swift */; };
 		E6AF01D1250F92AD00F9F40D /* VGTutorialSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF01D0250F92AD00F9F40D /* VGTutorialSlideView.swift */; };
 		E6AF01D3250F973A00F9F40D /* VGTutorialSlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AF01D2250F973A00F9F40D /* VGTutorialSlideView.xib */; };
@@ -281,6 +282,7 @@
 		E6A71AF42629CF3A005A6F36 /* VGARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGARViewController.swift; sourceTree = "<group>"; };
 		E6A71AFD2629D08D005A6F36 /* VGMapZoomButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapZoomButtonTests.swift; sourceTree = "<group>"; };
 		E6A71B032629D24A005A6F36 /* VGMapViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapViewControllerTests.swift; sourceTree = "<group>"; };
+		E6A71B112629D37C005A6F36 /* VGMainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMainViewControllerTests.swift; sourceTree = "<group>"; };
 		E6AE2A9A2620AAAA00FEB1D2 /* VGSearchViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSearchViewTests.swift; sourceTree = "<group>"; };
 		E6AF01D0250F92AD00F9F40D /* VGTutorialSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialSlideView.swift; sourceTree = "<group>"; };
 		E6AF01D2250F973A00F9F40D /* VGTutorialSlideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VGTutorialSlideView.xib; sourceTree = "<group>"; };
@@ -778,6 +780,7 @@
 		E6A71AC32629C23C005A6F36 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E6A71B112629D37C005A6F36 /* VGMainViewControllerTests.swift */,
 				E6A71AFC2629D082005A6F36 /* Map */,
 				E6A71AF32629CF0C005A6F36 /* AR */,
 				E6A71AE42629C8D1005A6F36 /* Guide */,
@@ -1167,6 +1170,7 @@
 				E6A71AD32629C40C005A6F36 /* VGSearchTableViewCellTests.swift in Sources */,
 				E61AE654262724B50071D327 /* VGCircleButtonTests.swift in Sources */,
 				E61AE63F262722B40071D327 /* VGMockCaptureDevice.swift in Sources */,
+				E6A71B122629D37C005A6F36 /* VGMainViewControllerTests.swift in Sources */,
 				E6A71B042629D24A005A6F36 /* VGMapViewControllerTests.swift in Sources */,
 				E61AE66026272A1C0071D327 /* UIImage+TintTests.swift in Sources */,
 				E61AE642262722B80071D327 /* VGMockLocationManager.swift in Sources */,
