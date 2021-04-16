@@ -103,6 +103,7 @@
 		E6A71AE62629C928005A6F36 /* VGGuideProgressSliderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A71AE52629C928005A6F36 /* VGGuideProgressSliderTests.swift */; };
 		E6A71AEE2629CDDE005A6F36 /* VGGuideViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A71AED2629CDDE005A6F36 /* VGGuideViewControllerTests.swift */; };
 		E6A71AF52629CF3A005A6F36 /* VGARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A71AF42629CF3A005A6F36 /* VGARViewController.swift */; };
+		E6A71AFE2629D08D005A6F36 /* VGMapZoomButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A71AFD2629D08D005A6F36 /* VGMapZoomButtonTests.swift */; };
 		E6AE2A9B2620AAAA00FEB1D2 /* VGSearchViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AE2A9A2620AAAA00FEB1D2 /* VGSearchViewTests.swift */; };
 		E6AF01D1250F92AD00F9F40D /* VGTutorialSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF01D0250F92AD00F9F40D /* VGTutorialSlideView.swift */; };
 		E6AF01D3250F973A00F9F40D /* VGTutorialSlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AF01D2250F973A00F9F40D /* VGTutorialSlideView.xib */; };
@@ -277,6 +278,7 @@
 		E6A71AE52629C928005A6F36 /* VGGuideProgressSliderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGGuideProgressSliderTests.swift; sourceTree = "<group>"; };
 		E6A71AED2629CDDE005A6F36 /* VGGuideViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGGuideViewControllerTests.swift; sourceTree = "<group>"; };
 		E6A71AF42629CF3A005A6F36 /* VGARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGARViewController.swift; sourceTree = "<group>"; };
+		E6A71AFD2629D08D005A6F36 /* VGMapZoomButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapZoomButtonTests.swift; sourceTree = "<group>"; };
 		E6AE2A9A2620AAAA00FEB1D2 /* VGSearchViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSearchViewTests.swift; sourceTree = "<group>"; };
 		E6AF01D0250F92AD00F9F40D /* VGTutorialSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialSlideView.swift; sourceTree = "<group>"; };
 		E6AF01D2250F973A00F9F40D /* VGTutorialSlideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VGTutorialSlideView.xib; sourceTree = "<group>"; };
@@ -774,6 +776,7 @@
 		E6A71AC32629C23C005A6F36 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E6A71AFC2629D082005A6F36 /* Map */,
 				E6A71AF32629CF0C005A6F36 /* AR */,
 				E6A71AE42629C8D1005A6F36 /* Guide */,
 				E6A71AD12629C3E7005A6F36 /* Search */,
@@ -816,6 +819,14 @@
 				E6A71AF42629CF3A005A6F36 /* VGARViewController.swift */,
 			);
 			path = AR;
+			sourceTree = "<group>";
+		};
+		E6A71AFC2629D082005A6F36 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				E6A71AFD2629D08D005A6F36 /* VGMapZoomButtonTests.swift */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		E6AF01CF250F926000F9F40D /* Slide */ = {
@@ -1145,6 +1156,7 @@
 			files = (
 				E6A71AEE2629CDDE005A6F36 /* VGGuideViewControllerTests.swift in Sources */,
 				E61AE66726272DA40071D327 /* VGPermissionViewTests.swift in Sources */,
+				E6A71AFE2629D08D005A6F36 /* VGMapZoomButtonTests.swift in Sources */,
 				E6256F7E2628727C00904104 /* VGTutorialViewControllerTests.swift in Sources */,
 				E6A71AC62629C285005A6F36 /* VGSideMenuTableViewCellTests.swift in Sources */,
 				E6256F782628709400904104 /* VGTutorialSlideViewTests.swift in Sources */,

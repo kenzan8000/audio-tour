@@ -41,6 +41,15 @@ class VGMapZoomButton: VGCircleButton {
     super.init(image: image)
   }
   
+  // MARK: life cycle
+  
+  override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    super.traitCollectionDidChange(previousTraitCollection)
+    changeTraitCollection()
+  }
+  
+  // MARK: public api
+  
   /// Calls when changing UITraitCollection
   func changeTraitCollection() {
     var image: UIImage?
