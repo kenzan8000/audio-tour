@@ -16,7 +16,20 @@ class VGGuideProgressSlider: UISlider {
       for: .normal
     )
   }
-
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    self.isContinuous = true
+    self.setThumbImage(
+      UIImage(named: "guide_sliderthumb.png")?.tint(color: .systemBlue),
+      for: .normal
+    )
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
   // MARK: public api
   
   /// set progress
