@@ -1,3 +1,4 @@
+import SnapshotTesting
 import XCTest
 @testable import voice_guidance
 
@@ -28,17 +29,14 @@ class VGGuideViewControllerTests: XCTestCase {
   
   // MARK: test
   
-  func testVGGuideViewController_whenInitialState_outletsShouldBeConnected() throws {
-    XCTAssertNotNil(sut.guideView)
-    XCTAssertNotNil(sut.visualEffectView)
-    XCTAssertNotNil(sut.titleLabel)
-    XCTAssertNotNil(sut.playIndicatorView)
-    XCTAssertNotNil(sut.guideControlView)
-    XCTAssertNotNil(sut.progressSlider)
-    XCTAssertNotNil(sut.rateButton)
-    XCTAssertNotNil(sut.playButton)
-    XCTAssertNotNil(sut.openButton)
-    XCTAssertNotNil(sut.volumeImageView)
-    XCTAssertNotNil(sut.volumeBackgroundView)
+  func testVGGuideViewController_whenInitialState_snapshotTest() throws {
+    [(UIUserInterfaceStyle.dark, "dark"), (UIUserInterfaceStyle.light, "light")].forEach { style, named in
+      sut.overrideUserInterfaceStyle = style
+      assertSnapshot(
+        matching: sut,
+        as: .image(on: .iPhoneX, precision: 0.98, traits: .iPhoneX(.portrait)),
+        named: named
+      )
+    }
   }
 }
