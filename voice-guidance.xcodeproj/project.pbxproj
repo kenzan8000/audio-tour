@@ -96,6 +96,7 @@
 		E6A671042608320500DF17C9 /* VGTestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A671032608320500DF17C9 /* VGTestingAppDelegate.swift */; };
 		E6A67D0F2565514B008ED273 /* VGCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6A67D0D2565514B008ED273 /* VGCoreData.xcdatamodeld */; };
 		E6A71AC62629C285005A6F36 /* VGSideMenuTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A71AC52629C285005A6F36 /* VGSideMenuTableViewCellTests.swift */; };
+		E6A71ACC2629C34E005A6F36 /* VGSideMenuViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A71ACB2629C34E005A6F36 /* VGSideMenuViewControllerTests.swift */; };
 		E6AE2A9B2620AAAA00FEB1D2 /* VGSearchViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AE2A9A2620AAAA00FEB1D2 /* VGSearchViewTests.swift */; };
 		E6AF01D1250F92AD00F9F40D /* VGTutorialSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF01D0250F92AD00F9F40D /* VGTutorialSlideView.swift */; };
 		E6AF01D3250F973A00F9F40D /* VGTutorialSlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AF01D2250F973A00F9F40D /* VGTutorialSlideView.xib */; };
@@ -263,6 +264,7 @@
 		E6A671032608320500DF17C9 /* VGTestingAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGTestingAppDelegate.swift; sourceTree = "<group>"; };
 		E6A67D0E2565514B008ED273 /* VGModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VGModel.xcdatamodel; sourceTree = "<group>"; };
 		E6A71AC52629C285005A6F36 /* VGSideMenuTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSideMenuTableViewCellTests.swift; sourceTree = "<group>"; };
+		E6A71ACB2629C34E005A6F36 /* VGSideMenuViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSideMenuViewControllerTests.swift; sourceTree = "<group>"; };
 		E6AE2A9A2620AAAA00FEB1D2 /* VGSearchViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSearchViewTests.swift; sourceTree = "<group>"; };
 		E6AF01D0250F92AD00F9F40D /* VGTutorialSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialSlideView.swift; sourceTree = "<group>"; };
 		E6AF01D2250F973A00F9F40D /* VGTutorialSlideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VGTutorialSlideView.xib; sourceTree = "<group>"; };
@@ -768,6 +770,7 @@
 		E6A71AC42629C270005A6F36 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				E6A71ACB2629C34E005A6F36 /* VGSideMenuViewControllerTests.swift */,
 				E6A71AC52629C285005A6F36 /* VGSideMenuTableViewCellTests.swift */,
 			);
 			path = SideMenu;
@@ -1107,6 +1110,7 @@
 				E61AE66026272A1C0071D327 /* UIImage+TintTests.swift in Sources */,
 				E61AE642262722B80071D327 /* VGMockLocationManager.swift in Sources */,
 				E61AE63A262722AF0071D327 /* VGTestingAppDelegate.swift in Sources */,
+				E6A71ACC2629C34E005A6F36 /* VGSideMenuViewControllerTests.swift in Sources */,
 				E61AE645262722BC0071D327 /* VGMockUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
