@@ -142,8 +142,8 @@ class VGARViewController: VGTabViewController {
   
   override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
     super.traitCollectionDidChange(previousTraitCollection)
-    zoomInButton.changeTraitCollection()
-    zoomOutButton.changeTraitCollection()
+    // zoomInButton.changeTraitCollection()
+    // zoomOutButton.changeTraitCollection()
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

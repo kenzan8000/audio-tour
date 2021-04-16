@@ -48,10 +48,10 @@ class VGMapZoomButton: VGCircleButton {
     changeTraitCollection()
   }
   
-  // MARK: public api
+  // MARK: private api
   
   /// Calls when changing UITraitCollection
-  func changeTraitCollection() {
+  private func changeTraitCollection() {
     var image: UIImage?
     switch zoomType {
     case .zoomIn:
