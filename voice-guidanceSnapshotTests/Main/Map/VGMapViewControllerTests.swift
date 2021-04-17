@@ -13,7 +13,7 @@ class VGMapViewControllerTests: XCTestCase {
 
   override func setUpWithError() throws {
     let mapDependencyContainer = VGMapDependencyContainer()
-    let storageProvider = VGStorageProvider(source: Bundle(for: type(of: VGMapViewControllerTests())), name: "VGCoreData", group: "org.kenzan8000.voice-guidanceTests")
+    let storageProvider = VGStorageProvider(source: Bundle(for: type(of: VGMapViewControllerTests())), name: "VGCoreData", group: "org.kenzan8000.voice-guidanceVGStorageProviderTests")
     sut = VGMapViewController(
       viewModel: VGMapViewModel(storageProvider: storageProvider),
       userDefaults: VGMockUserDefaults(),
