@@ -1,0 +1,91 @@
+version: 2.1
+
+orbs:
+  slack: circleci/slack@4.3.0
+
+executors:
+  macos-executor:
+    macos:
+      xcode: 12.4.0
+
+commands:
+  setup:
+    steps:
+      - checkout
+      - restore_cache:
+          key: gems-v1-{{ checksum "Gemfile.lock" }}
+      - run: bundle install --path vendor/bundle --clean
+      - save_cache:
+          key: gems-v1-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - run: for ip in $(dig @8.8.8.8 github.com +short); do ssh-keyscan github.com,$ip; ssh-keyscan $ip; done 2>/dev/null >> ~/.ssh/known_hosts
+  slack_notify_fail:
+    steps:
+      - slack/notify:
+          event: fail
+          template: basic_fail_1
+  slack_notify_success:
+    steps:
+      - slack/notify:
+          event: pass
+          template: basic_success_1
+
+jobs:
+  unit-tests:
+    executor:
+      name: macos-executor
+    steps:
+      - setup
+      - run: bundle exec fastlane unit_tests
+      - store_test_results:
+          path: unit_test_output
+      - store_artifacts:
+          path: unit_test_output
+          destination: scan-output
+      - slack_notify_fail
+  snapshot-tests:
+    executor:
+      name: macos-executor
+    steps:
+      - setup
+      - run: bundle exec fastlane snapshot_tests
+      - store_test_results:
+          path: snapshot_test_output
+      - store_artifacts:
+          path: snapshot_test_output
+          destination: scan-output
+      - slack_notify_fail
+  beta:
+    executor:
+      name: macos-executor
+    environment:
+      FL_OUTPUT_DIR: output
+    steps:
+      - setup
+      - run: bundle exec fastlane beta_upload
+      - slack_notify_fail
+      - slack_notify_success
+
+workflows:
+  version: 2.1
+  test-and-upload:
+    jobs:
+      - unit-tests:
+          context: voice-guidance
+          filters:
+            branches:
+              only: main
+      - snapshot-tests:
+          context: voice-guidance
+          filters:
+            branches:
+              only: main
+      - beta:
+          requires:
+            - unit-tests
+            - snapshot-tests
+          context: voice-guidance
+          filters:
+            branches:
+              only: main
