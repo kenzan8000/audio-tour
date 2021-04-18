@@ -62,6 +62,9 @@ jobs:
     environment:
       FL_OUTPUT_DIR: output
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "5a:f3:28:71:8a:cf:89:7a:e8:f5:01:4a:8e:f2:a8:dc"
       - setup
       - run: bundle exec fastlane beta_upload
       - slack_notify_fail
