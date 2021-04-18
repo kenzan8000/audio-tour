@@ -65,6 +65,7 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "5a:f3:28:71:8a:cf:89:7a:e8:f5:01:4a:8e:f2:a8:dc"
+            - "8f:8e:c0:8b:65:0f:89:e3:be:73:33:f7:c6:86:af:e4"
       - setup
       - run: bundle exec fastlane beta_upload
       - slack_notify_fail
