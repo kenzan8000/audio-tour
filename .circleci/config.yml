@@ -29,7 +29,8 @@ commands:
             [ ! -d "mapbox" ] && unzip mapbox.zip -d mapbox
             [ ! -d "Frameworks/Mapbox.framework" ] && cp -r mapbox/dynamic/Mapbox.framework Frameworks/Mapbox.framework
             [ ! -d "Frameworks/MapboxMobileEvents.framework" ] && cp -r mapbox/dynamic/MapboxMobileEvents.framework Frameworks/MapboxMobileEvents.framework
-            [ ! -f "voice-guidance/Resources/Plists/Mapbox-Info.plist" ] && echo $IOS_MAPBOX_PLIST >> voice-guidance/Resources/Plists/Mapbox-Info.plist
+            [ ! -f "voice-guidance/Resources/Plists/Mapbox-Info.plist" ] && plutil -replace MGLMapboxAccessToken -string $IOS_MAPBOX_ACCESS_TOKEN voice-guidance/Resources/Plists/Mapbox-Example-Info.plist
+            [ ! -f "voice-guidance/Resources/Plists/Mapbox-Info.plist" ] && cp voice-guidance/Resources/Plists/Mapbox-Example-Info.plist voice-guidance/Resources/Plists/Mapbox-Info.plist
   slack_notify_fail:
     steps:
       - slack/notify:
