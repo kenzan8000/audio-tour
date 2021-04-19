@@ -20,6 +20,14 @@ commands:
           paths:
             - vendor/bundle
       - run: for ip in $(dig @8.8.8.8 github.com +short); do ssh-keyscan github.com,$ip; ssh-keyscan $ip; done 2>/dev/null >> ~/.ssh/known_hosts
+    download_mapbox:
+      - run:
+          command: |
+            [ ! -d "Frameworks" ] && mkdir Frameworks
+            [ ! -f "mapbox.zip" ] && curl -o mapbox.zip $IOS_MAPBOX_DOWNLOAD_URL
+            [ ! -d "mapbox" ] && unzip mapbox.zip -d mapbox
+            [ ! -d "Frameworks/Mapbox.framework" ] && cp -r mapbox/dynamic/Mapbox.framework Frameworks/Mapbox.framework
+            [ ! -d "Frameworks/MapboxMobileEvents.framework" ] && cp -r mapbox/dynamic/MapboxMobileEvents.framework Frameworks/MapboxMobileEvents.framework
   slack_notify_fail:
     steps:
       - slack/notify:
@@ -37,6 +45,7 @@ jobs:
       name: macos-executor
     steps:
       - setup
+      - download_mapbox
       - run: bundle exec fastlane unit_tests
       - store_test_results:
           path: unit_test_output
@@ -49,6 +58,7 @@ jobs:
       name: macos-executor
     steps:
       - setup
+      - download_mapbox
       - run: bundle exec fastlane snapshot_tests
       - store_test_results:
           path: snapshot_test_output
@@ -67,6 +77,7 @@ jobs:
             - "5a:f3:28:71:8a:cf:89:7a:e8:f5:01:4a:8e:f2:a8:dc"
             - "8f:8e:c0:8b:65:0f:89:e3:be:73:33:f7:c6:86:af:e4"
       - setup
+      - download_mapbox
       - run: bundle exec fastlane beta_upload
       - slack_notify_fail
       - slack_notify_success
