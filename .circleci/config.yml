@@ -76,12 +76,12 @@ workflows:
   test-and-upload:
     jobs:
       - unit-tests:
-          context: voice-guidance
+          context: audio-tour
           filters:
             branches:
               only: main
       - snapshot-tests:
-          context: voice-guidance
+          context: audio-tour
           filters:
             branches:
               only: main
@@ -89,7 +89,7 @@ workflows:
           requires:
             - unit-tests
             - snapshot-tests
-          context: voice-guidance
+          context: audio-tour
           filters:
             branches:
               only: main
