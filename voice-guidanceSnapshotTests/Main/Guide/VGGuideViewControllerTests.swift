@@ -29,14 +29,16 @@ class VGGuideViewControllerTests: XCTestCase {
   
   // MARK: test
   
+  /*
   func testVGGuideViewController_whenInitialState_snapshotTest() throws {
     [(UIUserInterfaceStyle.dark, "dark"), (UIUserInterfaceStyle.light, "light")].forEach { style, named in
       sut.overrideUserInterfaceStyle = style
       assertSnapshot(
         matching: sut,
-        as: .image(on: .iPhoneX, precision: 0.98, traits: .iPhoneX(.portrait)),
+        as: .image(on: .iPhone8, precision: 0.98, traits: .iPhone8(.portrait)),
         named: named
       )
     }
   }
+  */
 }

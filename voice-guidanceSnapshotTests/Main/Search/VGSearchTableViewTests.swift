@@ -24,7 +24,7 @@ class VGSearchTableViewTests: XCTestCase {
       sut.overrideUserInterfaceStyle = style
       assertSnapshot(
         matching: sut,
-        as: .image(precision: 0.98, traits: .iPhoneX(.portrait)),
+        as: .image(precision: 0.98, traits: .iPhone8(.portrait)),
         named: named
       )
     }

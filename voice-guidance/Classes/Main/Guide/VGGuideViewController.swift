@@ -120,7 +120,11 @@ class VGGuideViewController: PullUpController {
       height: guideControlView.frame.origin.y - guideBodyViewY
     )
   }
-
+  
+  override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    super.traitCollectionDidChange(previousTraitCollection)
+  }
+  
   // MARK: VGGuideViewController + PullUpController
   
   /// called before the pull up controller's view move to a point.

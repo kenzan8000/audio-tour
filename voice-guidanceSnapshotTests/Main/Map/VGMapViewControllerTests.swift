@@ -36,7 +36,7 @@ class VGMapViewControllerTests: XCTestCase {
       sut.overrideUserInterfaceStyle = style
       assertSnapshot(
         matching: sut,
-        as: .image(on: .iPhoneX, precision: 0.98, traits: .iPhoneX(.portrait)),
+        as: .image(on: .iPhone8, precision: 0.98, traits: .iPhone8(.portrait)),
         named: named
       )
     }

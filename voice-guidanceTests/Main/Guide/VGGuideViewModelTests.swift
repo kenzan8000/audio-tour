@@ -43,8 +43,8 @@ class VGGuideViewModelTests: XCTestCase {
   func testVGGuideViewModel_whenTtsStartedSpeaking_ttsShouldBeSpeaking() throws {
     let exp = expectation(description: #function)
     sut.playTts()
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { exp.fulfill() }
-    wait(for: [exp], timeout: 1.0)
+    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) { exp.fulfill() }
+    wait(for: [exp], timeout: 5.0)
     XCTAssertTrue(sut.ttsIsSpeaking)
   }
   
@@ -52,11 +52,11 @@ class VGGuideViewModelTests: XCTestCase {
     let exp1 = expectation(description: #function)
     sut.playTts()
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { exp1.fulfill() }
-    wait(for: [exp1], timeout: 0.6)
+    wait(for: [exp1], timeout: 1.0)
     let exp2 = expectation(description: #function)
     sut.pauseTts()
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { exp2.fulfill() }
-    wait(for: [exp2], timeout: 0.6)
+    wait(for: [exp2], timeout: 1.0)
     XCTAssertFalse(sut.ttsIsSpeaking)
   }
   
@@ -64,11 +64,11 @@ class VGGuideViewModelTests: XCTestCase {
     let exp1 = expectation(description: #function)
     sut.playTts()
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { exp1.fulfill() }
-    wait(for: [exp1], timeout: 0.6)
+    wait(for: [exp1], timeout: 1.0)
     let exp2 = expectation(description: #function)
     sut.stopTts()
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { exp2.fulfill() }
-    wait(for: [exp2], timeout: 0.6)
+    wait(for: [exp2], timeout: 1.0)
     XCTAssertFalse(sut.ttsIsSpeaking)
   }
 }
