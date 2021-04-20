@@ -1,5 +1,5 @@
 git_url "git@github.com:kenzan8000/certificates.git"
 storage_mode "git"
 type "appstore"
-app_identifier "org.kenzan8000.ladder-client"
+app_identifier "org.kenzan8000.san-francisco"
 username "me@kenzan8000.org"
