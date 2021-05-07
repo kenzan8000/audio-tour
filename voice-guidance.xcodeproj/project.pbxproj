@@ -1903,7 +1903,7 @@
 			repositoryURL = "git@github.com:pointfreeco/swift-snapshot-testing.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.8.2;
+				minimumVersion = 1.9.0;
 			};
 		};
 		E6E90F9426089259009AFC97 /* XCRemoteSwiftPackageReference "ARKit-CoreLocation" */ = {

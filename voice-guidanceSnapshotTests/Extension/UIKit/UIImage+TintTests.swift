@@ -19,9 +19,11 @@ class UIImageTintTests: XCTestCase {
   
   func testVGImageTint_whenInitialState_snapshotTest() throws {
     let sut = UIImage(named: "annotation_1")!.tint(color: UIColor(red: 231.0 / 255.0, green: 76.0 / 255.0, blue: 60.0 / 255.0, alpha: 1.0))!
+    let imageView = UIImageView(image: sut)
+    imageView.frame = CGRect(x: 0, y: 0, width: sut.size.width * sut.scale, height:  sut.size.height * sut.scale)
     assertSnapshot(
-      matching: sut,
-      as: .image(precision: 0.98)
+      matching: imageView,
+      as: .image(precision: 0.98, traits: .iPhone8(.portrait))
     )
   }
 }
