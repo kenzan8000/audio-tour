@@ -124,6 +124,7 @@ extension VGStorageProvider {
       json = try decoder.decode(VGSpotJSON.self, from: asset.data)
       try save(by: json)
     } catch {
+      logger.error("\(logger.prefix(), privacy: .private)\("Failed decoder.decode(VGSpotJSON.self, from: asset.data)", privacy: .private)")
       return
     }
     userDefaults.set(true, forKey: VGUserDefaultsKey.doneLoadingInitialCoreData)
@@ -143,6 +144,7 @@ extension VGStorageProvider {
     do {
       return try viewContext.fetch(fetchRequest)
     } catch {
+      logger.error("\(logger.prefix(), privacy: .private)\("Failed viewContext.fetch(fetchRequest)", privacy: .private)")
       return []
     }
   }

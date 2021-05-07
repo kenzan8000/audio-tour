@@ -120,7 +120,9 @@ class VGGuideViewModel: NSObject {
   func playTts() {
     do {
       try AVAudioSession.sharedInstance().setCategory(.playback)
-    } catch { }
+    } catch {
+      logger.error("\(logger.prefix(), privacy: .private)\("Failed AVAudioSession.sharedInstance().setCategory(.playback)", privacy: .private)")
+    }
     let utterance = AVSpeechUtterance(string: ttsSpeechText)
     ttsPausedText = ttsSpeechText
     utterance.voice = AVSpeechSynthesisVoice(language: NSLocalizedString("language_code", comment: ""))
@@ -182,16 +184,28 @@ extension VGGuideViewModel: AVSpeechSynthesizerDelegate {
   func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
     do {
       try AVAudioSession.sharedInstance().setCategory(.playback)
+    } catch {
+      logger.error("\(logger.prefix(), privacy: .private)\("Failed AVAudioSession.sharedInstance().setCategory(.playback)", privacy: .private)")
+    }
+    do {
       try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-    } catch { }
+    } catch {
+      logger.error("\(logger.prefix(), privacy: .private)\("Failed AVAudioSession.sharedInstance().setCategory(.playback)", privacy: .private)")
+    }
     ttsIsSpeaking = true
   }
   
   func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
     do {
       try AVAudioSession.sharedInstance().setCategory(.ambient)
+    } catch {
+      logger.error("\(logger.prefix(), privacy: .private)\("Failed AVAudioSession.sharedInstance().setCategory(.ambient)", privacy: .private)")
+    }
+    do {
       try AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
-    } catch { }
+    } catch {
+      logger.error("\(logger.prefix(), privacy: .private)\("Failed AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)", privacy: .private)")
+    }
     ttsProgress = 0
     ttsIsSpeaking = false
   }
@@ -199,8 +213,14 @@ extension VGGuideViewModel: AVSpeechSynthesizerDelegate {
   func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
     do {
       try AVAudioSession.sharedInstance().setCategory(.ambient)
+    } catch {
+      logger.error("\(logger.prefix(), privacy: .private)\("Failed AVAudioSession.sharedInstance().setCategory(.ambient)", privacy: .private)")
+    }
+    do {
       try AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
-    } catch { }
+    } catch {
+      logger.error("\(logger.prefix(), privacy: .private)\("Failed AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)", privacy: .private)")
+    }
     if !ttsWillBePaused {
       ttsProgress = 0
     }

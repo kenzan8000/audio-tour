@@ -63,7 +63,6 @@
 		E65503B4255D55F400543F9B /* VGTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65503B3255D55F400543F9B /* VGTutorial.swift */; };
 		E65503BE255D5FF300543F9B /* VGUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65503BD255D5FF300543F9B /* VGUserDefaults.swift */; };
 		E65503C2255D604600543F9B /* Notification.Name+VG.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65503C1255D604600543F9B /* Notification.Name+VG.swift */; };
-		E65503CC255D60D600543F9B /* VGError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65503CB255D60D600543F9B /* VGError.swift */; };
 		E6576C3F2148D29500CD31F3 /* UIImage+Tint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6576C3E2148D29500CD31F3 /* UIImage+Tint.swift */; };
 		E6576C412148D84A00CD31F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6576C402148D84A00CD31F3 /* Assets.xcassets */; };
 		E6579ABE2614B36D009889ED /* VGMainDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6579ABD2614B36D009889ED /* VGMainDependencyContainer.swift */; };
@@ -77,6 +76,7 @@
 		E66018A8261B3C9F0029524B /* Mapbox-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E66018A7261B3C9F0029524B /* Mapbox-Info.plist */; };
 		E66BB9EA1D7D202C00B8E996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66BB9E31D7D202C00B8E996 /* AppDelegate.swift */; };
 		E66EDCBA1DF637C500F81CCD /* VGMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66EDCB91DF637C500F81CCD /* VGMapAnnotation.swift */; };
+		E66EF5602645743700FC611D /* Logger+VG.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66EF55F2645743600FC611D /* Logger+VG.swift */; };
 		E6730A2724F2A537003D1D50 /* VGCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6730A2624F2A537003D1D50 /* VGCircleButton.swift */; };
 		E67766A2250BA04000563561 /* VGPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67766A1250BA04000563561 /* VGPermissionView.swift */; };
 		E67766A4250BA07600563561 /* VGPermissionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E67766A3250BA07600563561 /* VGPermissionView.xib */; };
@@ -242,7 +242,6 @@
 		E65503B3255D55F400543F9B /* VGTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorial.swift; sourceTree = "<group>"; };
 		E65503BD255D5FF300543F9B /* VGUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGUserDefaults.swift; sourceTree = "<group>"; };
 		E65503C1255D604600543F9B /* Notification.Name+VG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+VG.swift"; sourceTree = "<group>"; };
-		E65503CB255D60D600543F9B /* VGError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGError.swift; sourceTree = "<group>"; };
 		E6576C3E2148D29500CD31F3 /* UIImage+Tint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Tint.swift"; sourceTree = "<group>"; };
 		E6576C402148D84A00CD31F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6579ABD2614B36D009889ED /* VGMainDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMainDependencyContainer.swift; sourceTree = "<group>"; };
@@ -257,6 +256,7 @@
 		E66BB9E31D7D202C00B8E996 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E66BB9E91D7D202C00B8E996 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E66EDCB91DF637C500F81CCD /* VGMapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGMapAnnotation.swift; sourceTree = "<group>"; };
+		E66EF55F2645743600FC611D /* Logger+VG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+VG.swift"; sourceTree = "<group>"; };
 		E6730A2624F2A537003D1D50 /* VGCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGCircleButton.swift; sourceTree = "<group>"; };
 		E67766A1250BA04000563561 /* VGPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGPermissionView.swift; sourceTree = "<group>"; };
 		E67766A3250BA07600563561 /* VGPermissionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VGPermissionView.xib; sourceTree = "<group>"; };
@@ -676,7 +676,6 @@
 			children = (
 				E65503C1255D604600543F9B /* Notification.Name+VG.swift */,
 				E65503BD255D5FF300543F9B /* VGUserDefaults.swift */,
-				E65503CB255D60D600543F9B /* VGError.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -715,6 +714,14 @@
 				E66BB9E91D7D202C00B8E996 /* Info.plist */,
 			);
 			path = Plists;
+			sourceTree = "<group>";
+		};
+		E66EF55E2645741800FC611D /* OS */ = {
+			isa = PBXGroup;
+			children = (
+				E66EF55F2645743600FC611D /* Logger+VG.swift */,
+			);
+			path = OS;
 			sourceTree = "<group>";
 		};
 		E67766A0250BA02000563561 /* Permission */ = {
@@ -762,6 +769,7 @@
 				E64558F5261CA8AD00584C64 /* AVFoundation */,
 				E64558F6261CA8BB00584C64 /* CoreLocation */,
 				E66A0373260CCDA900EE2679 /* Foundation */,
+				E66EF55E2645741800FC611D /* OS */,
 				E6E93A5B260B666300FC91F6 /* UIKit */,
 			);
 			path = Extension;
@@ -1212,7 +1220,6 @@
 				E6DF395124DF052F0077FC71 /* VGMainViewController.swift in Sources */,
 				E635540724B31070004E30B9 /* VGGuideViewModel.swift in Sources */,
 				E64558ED261CA13E00584C64 /* VGCaptureDevice.swift in Sources */,
-				E65503CC255D60D600543F9B /* VGError.swift in Sources */,
 				E6E00FB52503BD31009C1F5D /* UIViewController+AdditionRemoval.swift in Sources */,
 				E64558F8261CA8D500584C64 /* VGLocationManager.swift in Sources */,
 				E635540924B31311004E30B9 /* VGGuidePullUpModel.swift in Sources */,
@@ -1243,6 +1250,7 @@
 				E6E00FBA2503C8D0009C1F5D /* VGRootViewController.swift in Sources */,
 				E6AF01D1250F92AD00F9F40D /* VGTutorialSlideView.swift in Sources */,
 				E6E00FB82503C849009C1F5D /* VGNiblessViewController.swift in Sources */,
+				E66EF5602645743700FC611D /* Logger+VG.swift in Sources */,
 				E6FBD11E1DB84EDE000AA91D /* VGSearchView.swift in Sources */,
 				E63CC59A1DAB5F7A00492356 /* VGGuideViewController.swift in Sources */,
 				E65E851224E4333100DFF7FE /* VGARDependencyContainer.swift in Sources */,
@@ -1538,7 +1546,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Distribution: Kenzan Hase (6RYZ4RB738)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.0.1;
+				CURRENT_PROJECT_VERSION = 1.0.2;
 				DEVELOPMENT_TEAM = 6RYZ4RB738;
 				ENABLE_BITCODE = YES;
 				ENABLE_TESTABILITY = NO;
@@ -1655,7 +1663,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1.0.1;
+				CURRENT_PROJECT_VERSION = 1.0.2;
 				DEVELOPMENT_TEAM = 6RYZ4RB738;
 				ENABLE_BITCODE = YES;
 				ENABLE_TESTABILITY = YES;

@@ -1,8 +1,5 @@
 import CoreLocation
-import os
 import UIKit
-
-let logger = Logger(subsystem: "\(Bundle.main.bundleIdentifier ?? "").logger", category: "main")
 
 // MARK: - AppDelegate
 class AppDelegate: UIResponder, UIApplicationDelegate {

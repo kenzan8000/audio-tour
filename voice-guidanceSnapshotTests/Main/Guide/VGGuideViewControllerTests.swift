@@ -28,7 +28,6 @@ class VGGuideViewControllerTests: XCTestCase {
   }
   
   // MARK: test
-  
   /*
   func testVGGuideViewController_whenInitialState_snapshotTest() throws {
     [(UIUserInterfaceStyle.dark, "dark"), (UIUserInterfaceStyle.light, "light")].forEach { style, named in
