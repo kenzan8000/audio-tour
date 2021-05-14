@@ -9,6 +9,8 @@
 [Audio Tour](https://apps.apple.com/us/app/audio-tour-san-francisco/id1182851195) offers an audio guide of the spots, similar to how a museum audio guide helps you understand the works of art at a deeper level.
 There are two modes to assist with your sight-seeing.
 
+![audio-tour](https://user-images.githubusercontent.com/225808/118213027-200a8d80-b4a8-11eb-9cff-6e192f4cf8da.jpg)
+
 ### Map Guide
 
 The map view gives you a birds-eye view of the city. You can plan places to visit before going out or check them out during your trip.
