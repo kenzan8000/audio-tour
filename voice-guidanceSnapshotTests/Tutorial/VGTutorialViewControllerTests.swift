@@ -8,6 +8,7 @@ class VGTutorialViewControllerTests: XCTestCase {
   // MARK: property
   
   var sut: VGTutorialViewController!
+  
   // MARK: life cycle
 
   override func setUpWithError() throws {
