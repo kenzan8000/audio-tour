@@ -48,6 +48,16 @@
                ReferencedContainer = "container:voice-guidance.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E6A22B54266913BA008CB15F"
+               BuildableName = "voice-guidanceUITests.xctest"
+               BlueprintName = "voice-guidanceUITests"
+               ReferencedContainer = "container:voice-guidance.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

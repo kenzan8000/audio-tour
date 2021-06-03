@@ -48,6 +48,9 @@ class VGGuideViewController: PullUpController {
   }()
   
   var pullUpModel: VGGuidePullUpModel
+  
+  // MARK: PullUpController
+  
   override var pullUpControllerMiddleStickyPoints: [CGFloat] {
     pullUpModel.pullUpControllerMiddleStickyPoints
   }
@@ -251,7 +254,7 @@ class VGGuideViewController: PullUpController {
         guard let self = self else {
           return
         }
-        let alertController: UIAlertController = .guide(
+        let alertController: UIAlertController = .guideOpenInMap(
           title: self.guideViewModel.spotName,
           message: nil,
           preferredStyle: .actionSheet,

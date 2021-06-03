@@ -14,7 +14,7 @@ extension UIAlertController {
   ///   - preferredStyle: preferredStyle of alert
   ///   - coordinate: spot's coordinate
   /// - Returns: alert controller for voice guide
-  static func guide(
+  static func guideOpenInMap(
     title: String?,
     message: String?,
     preferredStyle: UIAlertController.Style,
