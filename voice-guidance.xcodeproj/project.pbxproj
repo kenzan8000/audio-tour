@@ -43,6 +43,7 @@
 		E635540924B31311004E30B9 /* VGGuidePullUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E635540824B31311004E30B9 /* VGGuidePullUpModel.swift */; };
 		E636228E2090768800A7C089 /* VGARLocationAnnotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E636228D2090768800A7C089 /* VGARLocationAnnotationNode.swift */; };
 		E63CC59A1DAB5F7A00492356 /* VGGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63CC5991DAB5F7A00492356 /* VGGuideViewController.swift */; };
+		E63E9A2126983FD2005926A0 /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E9A2026983FD2005926A0 /* Snapshot.swift */; };
 		E63FA09D2625AB91001FB5F5 /* VGMapHeadingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FA09C2625AB91001FB5F5 /* VGMapHeadingTests.swift */; };
 		E63FA0A02625ADD1001FB5F5 /* VGMapZoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FA09F2625ADD1001FB5F5 /* VGMapZoomTests.swift */; };
 		E63FA0A42625B917001FB5F5 /* VGMapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FA0A32625B917001FB5F5 /* VGMapViewModelTests.swift */; };
@@ -222,6 +223,7 @@
 		E63CC5991DAB5F7A00492356 /* VGGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGGuideViewController.swift; sourceTree = "<group>"; };
 		E63DA16B1DEAEC5C00DE1536 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E63DA16C1DEAECA300DE1536 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E63E9A2026983FD2005926A0 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
 		E63FA09C2625AB91001FB5F5 /* VGMapHeadingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapHeadingTests.swift; sourceTree = "<group>"; };
 		E63FA09F2625ADD1001FB5F5 /* VGMapZoomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapZoomTests.swift; sourceTree = "<group>"; };
 		E63FA0A32625B917001FB5F5 /* VGMapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapViewModelTests.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				E61AE66526272D940071D327 /* Permission */,
 				E61AE64F262724630071D327 /* Extension */,
 				E61AE6322627229B0071D327 /* Info.plist */,
+				E63E9A2026983FD2005926A0 /* Snapshot.swift */,
 			);
 			path = "voice-guidanceSnapshotTests";
 			sourceTree = "<group>";
@@ -1184,6 +1187,7 @@
 				E6A71AD32629C40C005A6F36 /* VGSearchTableViewCellTests.swift in Sources */,
 				E61AE654262724B50071D327 /* VGCircleButtonTests.swift in Sources */,
 				E61AE63F262722B40071D327 /* VGMockCaptureDevice.swift in Sources */,
+				E63E9A2126983FD2005926A0 /* Snapshot.swift in Sources */,
 				E6A71B122629D37C005A6F36 /* VGMainViewControllerTests.swift in Sources */,
 				E6A71B042629D24A005A6F36 /* VGMapViewControllerTests.swift in Sources */,
 				E61AE66026272A1C0071D327 /* UIImage+TintTests.swift in Sources */,
