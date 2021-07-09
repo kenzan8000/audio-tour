@@ -30,18 +30,67 @@ extension Snapshotting where Value == UIView, Format == UIImage {
   }
 }
 
+// MARK: - ViewImageConfig + Model
+extension ViewImageConfig {
+  public static let iPhoneProMax = ViewImageConfig.iPhoneProMax(.portrait)
+  public static func iPhoneProMax(_ orientation: Orientation) -> ViewImageConfig {
+    let safeArea: UIEdgeInsets
+    let size: CGSize
+    switch orientation {
+    case .landscape:
+      safeArea = .init(top: 0, left: 47, bottom: 21, right: 47)
+      size = .init(width: 926, height: 428)
+    case .portrait:
+      safeArea = .init(top: 47, left: 0, bottom: 34, right: 0)
+      size = .init(width: 428, height: 926)
+    }
+    return .init(safeArea: safeArea, size: size, traits: .iPhoneProMax(orientation))
+  }
+}
+
+// MARK: - UITraitCollection + Model
+extension UITraitCollection {
+  public static func iPhoneProMax(_ orientation: ViewImageConfig.Orientation)
+   -> UITraitCollection {
+     let base: [UITraitCollection] = [
+       //    .init(displayGamut: .P3),
+       //    .init(displayScale: 3),
+       .init(forceTouchCapability: .available),
+       .init(layoutDirection: .leftToRight),
+       .init(preferredContentSizeCategory: .medium),
+       .init(userInterfaceIdiom: .phone)
+     ]
+     switch orientation {
+     case .landscape:
+       return .init(
+         traitsFrom: base + [
+           .init(horizontalSizeClass: .regular),
+           .init(verticalSizeClass: .compact)
+         ]
+       )
+     case .portrait:
+       return .init(
+         traitsFrom: base + [
+           .init(horizontalSizeClass: .compact),
+           .init(verticalSizeClass: .regular)
+         ]
+       )
+     }
+   }
+}
+
 // MARK: - Model
 enum Model {
   case iPhoneSe
-  case iPhoneXsMax
+  case iPhoneProMax
   case otherDevice
   
   func config(_ orientation: ViewImageConfig.Orientation = .portrait) -> ViewImageConfig {
     switch self {
     case .iPhoneSe:
       return .iPhoneSe
-    case .iPhoneXsMax:
-      return .iPhoneXsMax
+    case .iPhoneProMax:
+      return .iPhoneProMax
     case .otherDevice:
       return .init()
     }
@@ -51,8 +100,8 @@ enum Model {
     switch self {
     case .iPhoneSe:
       return .iPhoneSe(orientation)
-    case .iPhoneXsMax:
-      return .iPhoneXsMax(orientation)
+    case .iPhoneProMax:
+      return .iPhoneProMax(orientation)
     case .otherDevice:
       return .init()
     }
@@ -145,10 +194,10 @@ var model: Model = {
     #endif
   }
   let modelName = mapToDevice(identifier: identifier)
-  if modelName.hasSuffix("iPhone SE (2nd generation)") || modelName.hasSuffix("iPhone SE") {
+  if modelName.hasSuffix("iPhone SE (2nd generation)") {
     return .iPhoneSe
-  } else if modelName.hasSuffix("iPhone XS Max") {
-    return .iPhoneXsMax
+  } else if modelName.hasSuffix("iPhone 12 Pro Max") {
+    return .iPhoneProMax
   } else {
     return .otherDevice
   }
