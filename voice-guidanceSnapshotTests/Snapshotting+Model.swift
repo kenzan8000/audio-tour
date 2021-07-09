@@ -194,7 +194,7 @@ var model: Model = {
     #endif
   }
   let modelName = mapToDevice(identifier: identifier)
-  if modelName.hasSuffix("iPhone SE (2nd generation)") {
+  if modelName.hasSuffix("iPhone SE") || modelName.hasSuffix("iPod touch (7th generation)") {
     return .iPhoneSe
   } else if modelName.hasSuffix("iPhone 12 Pro Max") {
     return .iPhoneProMax
