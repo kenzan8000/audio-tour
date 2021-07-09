@@ -1,8 +1,37 @@
 import SnapshotTesting
 import UIKit
 
-// MARK: - Snapshot
-enum Snapshot {
+// MARK: - Snapshotting (UIViewController) + Model
+extension Snapshotting where Value == UIViewController, Format == UIImage {
+  public static func img(
+    precision: Float = 1,
+    size: CGSize? = nil,
+    orientation: ViewImageConfig.Orientation = .portrait
+  ) -> Snapshotting {
+    .image(
+      on: model.config(orientation),
+      precision: precision,
+      size: size,
+      traits: model.traits(orientation)
+    )
+  }
+}
+
+// MARK: - Snapshotting (UIView) + Model
+extension Snapshotting where Value == UIView, Format == UIImage {
+  public static func img(
+    precision: Float = 1,
+    orientation: ViewImageConfig.Orientation = .portrait
+  ) -> Snapshotting {
+    .image(
+      precision: precision,
+      traits: model.traits(orientation)
+    )
+  }
+}
+
+// MARK: - Model
+enum Model {
   case iPhoneSe
   case iPhoneXsMax
   case otherDevice
@@ -14,7 +43,7 @@ enum Snapshot {
     case .iPhoneXsMax:
       return .iPhoneXsMax
     case .otherDevice:
-      return .iPhoneSe
+      return .init()
     }
   }
   
@@ -25,7 +54,7 @@ enum Snapshot {
     case .iPhoneXsMax:
       return .iPhoneXsMax(orientation)
     case .otherDevice:
-      return .iPhoneSe(orientation)
+      return .init()
     }
   }
   
@@ -34,7 +63,7 @@ enum Snapshot {
   }
 }
 
-var snapshot: Snapshot = {
+var model: Model = {
   var systemInfo = utsname()
   uname(&systemInfo)
   let machineMirror = Mirror(reflecting: systemInfo.machine)
