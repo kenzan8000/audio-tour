@@ -23,7 +23,8 @@ class UIImageTintTests: XCTestCase {
     imageView.frame = CGRect(x: 0, y: 0, width: sut.size.width * sut.scale, height:  sut.size.height * sut.scale)
     assertSnapshot(
       matching: imageView,
-      as: .image(precision: 0.98, traits: .iPhone8(.portrait))
+      as: .img(precision: 0.98),
+      named: model.name
     )
   }
 }

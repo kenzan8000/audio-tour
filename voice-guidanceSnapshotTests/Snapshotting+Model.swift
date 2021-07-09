@@ -32,8 +32,8 @@ extension Snapshotting where Value == UIView, Format == UIImage {
 
 // MARK: - ViewImageConfig + Model
 extension ViewImageConfig {
-  public static let iPhoneProMax = ViewImageConfig.iPhoneProMax(.portrait)
-  public static func iPhoneProMax(_ orientation: Orientation) -> ViewImageConfig {
+  public static let iPhone12ProMax = ViewImageConfig.iPhone12ProMax(.portrait)
+  public static func iPhone12ProMax(_ orientation: Orientation) -> ViewImageConfig {
     let safeArea: UIEdgeInsets
     let size: CGSize
     switch orientation {
@@ -44,13 +44,13 @@ extension ViewImageConfig {
       safeArea = .init(top: 47, left: 0, bottom: 34, right: 0)
       size = .init(width: 428, height: 926)
     }
-    return .init(safeArea: safeArea, size: size, traits: .iPhoneProMax(orientation))
+    return .init(safeArea: safeArea, size: size, traits: .iPhone12ProMax(orientation))
   }
 }
 
 // MARK: - UITraitCollection + Model
 extension UITraitCollection {
-  public static func iPhoneProMax(_ orientation: ViewImageConfig.Orientation)
+  public static func iPhone12ProMax(_ orientation: ViewImageConfig.Orientation)
    -> UITraitCollection {
      let base: [UITraitCollection] = [
        //    .init(displayGamut: .P3),
@@ -82,15 +82,15 @@ extension UITraitCollection {
 // MARK: - Model
 enum Model {
   case iPhoneSe
-  case iPhoneProMax
+  case iPhone12ProMax
   case otherDevice
   
   func config(_ orientation: ViewImageConfig.Orientation = .portrait) -> ViewImageConfig {
     switch self {
     case .iPhoneSe:
       return .iPhoneSe
-    case .iPhoneProMax:
-      return .iPhoneProMax
+    case .iPhone12ProMax:
+      return .iPhone12ProMax
     case .otherDevice:
       return .init()
     }
@@ -100,8 +100,8 @@ enum Model {
     switch self {
     case .iPhoneSe:
       return .iPhoneSe(orientation)
-    case .iPhoneProMax:
-      return .iPhoneProMax(orientation)
+    case .iPhone12ProMax:
+      return .iPhone12ProMax(orientation)
     case .otherDevice:
       return .init()
     }
@@ -197,7 +197,7 @@ var model: Model = {
   if modelName.hasSuffix("iPhone SE") || modelName.hasSuffix("iPod touch (7th generation)") {
     return .iPhoneSe
   } else if modelName.hasSuffix("iPhone 12 Pro Max") {
-    return .iPhoneProMax
+    return .iPhone12ProMax
   } else {
     return .otherDevice
   }

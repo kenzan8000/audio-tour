@@ -40,8 +40,8 @@ class VGARViewControllerTests: XCTestCase {
       sut.overrideUserInterfaceStyle = style
       assertSnapshot(
         matching: sut,
-        as: .image(on: .iPhone8, precision: 0.98, traits: .iPhone8(.portrait)),
-        named: named
+        as: .img(precision: 0.98),
+        named: named + "." + model.name
       )
     }
   }
