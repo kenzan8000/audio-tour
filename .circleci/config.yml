@@ -56,13 +56,26 @@ jobs:
           path: unit_test_output
           destination: scan-output
       - slack_notify_fail
-  snapshot-tests:
+  snapshot-tests-on-iphone12promax:
     executor:
       name: macos-executor
     steps:
       - setup
       - setup_mapbox
-      - run: bundle exec fastlane snapshot_tests
+      - run: bundle exec fastlane snapshot_tests_on_iphone12promax
+      - store_test_results:
+          path: snapshot_test_output
+      - store_artifacts:
+          path: snapshot_test_output
+          destination: scan-output
+      - slack_notify_fail
+  snapshot-tests-on-ipodtouch7thgeneration:
+    executor:
+      name: macos-executor
+    steps:
+      - setup
+      - setup_mapbox
+      - run: bundle exec fastlane snapshot_tests_on_ipodtouch7thgeneration
       - store_test_results:
           path: snapshot_test_output
       - store_artifacts:
@@ -94,7 +107,12 @@ workflows:
           filters:
             branches:
               only: main
-      - snapshot-tests:
+      - snapshot-tests-on-iphone12promax:
+          context: audio-tour
+          filters:
+            branches:
+              only: main
+      - snapshot-tests-on-ipodtouch7thgeneration:
           context: audio-tour
           filters:
             branches:
@@ -102,7 +120,8 @@ workflows:
       - beta:
           requires:
             - unit-tests
-            - snapshot-tests
+            - snapshot-tests-on-iphone12promax
+            - snapshot-tests-on-ipodtouch7thgeneration
           context: audio-tour
           filters:
             branches:

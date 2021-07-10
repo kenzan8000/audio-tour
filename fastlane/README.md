@@ -21,9 +21,14 @@ or alternatively using `brew install fastlane`
 fastlane ios unit_tests
 ```
 Unit testing
-### ios snapshot_tests
+### ios snapshot_tests_on_iphone12promax
 ```
-fastlane ios snapshot_tests
+fastlane ios snapshot_tests_on_iphone12promax
+```
+Snapshot testing on iPhone 12 Pro Max
+### ios snapshot_tests_on_ipodtouch7thgeneration
+```
+fastlane ios snapshot_tests_on_ipodtouch7thgeneration
 ```
 Snapshot testing
 ### ios beta_upload

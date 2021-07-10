@@ -17,14 +17,26 @@ platform :ios do
     )
   end
 
-  desc "Snapshot testing"
-  lane :snapshot_tests do
+  desc "Snapshot testing on iPhone 12 Pro Max"
+  lane :snapshot_tests_on_iphone12promax do
     scan(
       include_simulator_logs: false,
       code_coverage: true,
       clean: true,
       scheme: "voice-guidance",
-      device: "iPhone 8",
+      device: "iPhone 12 Pro Max",
+      only_testing: "voice-guidanceSnapshotTests"
+    )
+  end
+
+  desc "Snapshot testing"
+  lane :snapshot_tests_on_ipodtouch7thgeneration do
+    scan(
+      include_simulator_logs: false,
+      code_coverage: true,
+      clean: true,
+      scheme: "voice-guidance",
+      device: "iPod touch (7th generation)",
       only_testing: "voice-guidanceSnapshotTests"
     )
   end
