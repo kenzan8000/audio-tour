@@ -29,7 +29,7 @@ platform :ios do
     )
   end
 
-  desc "Snapshot testing"
+  desc "Snapshot testing on iPod touch 7th generation"
   lane :snapshot_tests_on_ipodtouch7thgeneration do
     scan(
       include_simulator_logs: false,
@@ -43,6 +43,9 @@ platform :ios do
 
   desc "Upload beta build"
   lane :beta_upload do
+    increment_build_number(
+      build_number: "#{ENV['CIRCLE_BUILD_NUM']}"
+    )
     app_store_connect_api_key(
       key_id: "#{ENV['APP_STORE_CONNECT_KEY_ID']}",
       issuer_id: "#{ENV['APP_STORE_CONNECT_ISSUER_ID']}",
