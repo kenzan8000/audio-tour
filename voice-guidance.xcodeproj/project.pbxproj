@@ -75,6 +75,11 @@
 		E65E851024E4316300DFF7FE /* VGMapDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E850F24E4316300DFF7FE /* VGMapDependencyContainer.swift */; };
 		E65E851224E4333100DFF7FE /* VGARDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E851124E4333100DFF7FE /* VGARDependencyContainer.swift */; };
 		E66018A8261B3C9F0029524B /* Mapbox-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E66018A7261B3C9F0029524B /* Mapbox-Info.plist */; };
+		E66B22AB26A3E50200CFF95F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B22AA26A3E50200CFF95F /* SceneDelegate.swift */; };
+		E66B22EC26A3E98800CFF95F /* VGTestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B22AC26A3E61100CFF95F /* VGTestingSceneDelegate.swift */; };
+		E66B22ED26A3E98800CFF95F /* VGTestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B22AC26A3E61100CFF95F /* VGTestingSceneDelegate.swift */; };
+		E66B22EE26A3E99900CFF95F /* VGTestingRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B22AE26A3E66C00CFF95F /* VGTestingRootViewController.swift */; };
+		E66B22EF26A3E99A00CFF95F /* VGTestingRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B22AE26A3E66C00CFF95F /* VGTestingRootViewController.swift */; };
 		E66BB9EA1D7D202C00B8E996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66BB9E31D7D202C00B8E996 /* AppDelegate.swift */; };
 		E66EDCBA1DF637C500F81CCD /* VGMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66EDCB91DF637C500F81CCD /* VGMapAnnotation.swift */; };
 		E66EF5602645743700FC611D /* Logger+VG.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66EF55F2645743600FC611D /* Logger+VG.swift */; };
@@ -255,6 +260,9 @@
 		E65E850F24E4316300DFF7FE /* VGMapDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapDependencyContainer.swift; sourceTree = "<group>"; };
 		E65E851124E4333100DFF7FE /* VGARDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGARDependencyContainer.swift; sourceTree = "<group>"; };
 		E66018A7261B3C9F0029524B /* Mapbox-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Mapbox-Info.plist"; sourceTree = "<group>"; };
+		E66B22AA26A3E50200CFF95F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E66B22AC26A3E61100CFF95F /* VGTestingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTestingSceneDelegate.swift; sourceTree = "<group>"; };
+		E66B22AE26A3E66C00CFF95F /* VGTestingRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTestingRootViewController.swift; sourceTree = "<group>"; };
 		E66BB9E31D7D202C00B8E996 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E66BB9E91D7D202C00B8E996 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E66EDCB91DF637C500F81CCD /* VGMapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGMapAnnotation.swift; sourceTree = "<group>"; };
@@ -633,6 +641,8 @@
 			isa = PBXGroup;
 			children = (
 				E6A671032608320500DF17C9 /* VGTestingAppDelegate.swift */,
+				E66B22AC26A3E61100CFF95F /* VGTestingSceneDelegate.swift */,
+				E66B22AE26A3E66C00CFF95F /* VGTestingRootViewController.swift */,
 				E63369B1261E00AA0048FD82 /* Extension */,
 				E63369A3261DF81B0048FD82 /* Model */,
 			);
@@ -688,6 +698,7 @@
 			children = (
 				E6A670D826082EDB00DF17C9 /* main.swift */,
 				E66BB9E31D7D202C00B8E996 /* AppDelegate.swift */,
+				E66B22AA26A3E50200CFF95F /* SceneDelegate.swift */,
 				E6E00FB92503C8D0009C1F5D /* VGRootViewController.swift */,
 				E6E00FBB2503C914009C1F5D /* VGRootViewModel.swift */,
 				E6B096EE1DD1EC000083942A /* Tutorial */,
@@ -1181,6 +1192,7 @@
 				E61AE66726272DA40071D327 /* VGPermissionViewTests.swift in Sources */,
 				E6A71AFE2629D08D005A6F36 /* VGMapZoomButtonTests.swift in Sources */,
 				E6256F7E2628727C00904104 /* VGTutorialViewControllerTests.swift in Sources */,
+				E66B22EF26A3E99A00CFF95F /* VGTestingRootViewController.swift in Sources */,
 				E6A71AC62629C285005A6F36 /* VGSideMenuTableViewCellTests.swift in Sources */,
 				E6256F782628709400904104 /* VGTutorialSlideViewTests.swift in Sources */,
 				E6A71AF52629CF3A005A6F36 /* VGARViewController.swift in Sources */,
@@ -1196,6 +1208,7 @@
 				E6A71AD92629C512005A6F36 /* VGSearchTableViewTests.swift in Sources */,
 				E6A71AE62629C928005A6F36 /* VGGuideProgressSliderTests.swift in Sources */,
 				E61AE63A262722AF0071D327 /* VGTestingAppDelegate.swift in Sources */,
+				E66B22ED26A3E98800CFF95F /* VGTestingSceneDelegate.swift in Sources */,
 				E6A71ACC2629C34E005A6F36 /* VGSideMenuViewControllerTests.swift in Sources */,
 				E61AE645262722BC0071D327 /* VGMockUserDefaults.swift in Sources */,
 			);
@@ -1240,6 +1253,7 @@
 				E6172CF81E762095003FE26A /* VGSearchTableView.swift in Sources */,
 				E63FA0AF2625CAAD001FB5F5 /* VGARViewController+VGPermissionView.swift in Sources */,
 				E6F592F524E1692900BEF6CC /* VGNibView.swift in Sources */,
+				E66B22AB26A3E50200CFF95F /* SceneDelegate.swift in Sources */,
 				E6B096F01DD1EC000083942A /* VGTutorialViewController.swift in Sources */,
 				E6A670D926082EDB00DF17C9 /* main.swift in Sources */,
 				E658D22B24E4FB2E004E5C7C /* VGMapZoomButton.swift in Sources */,
@@ -1277,6 +1291,7 @@
 				E64558E7261C976600584C64 /* VGPermissionViewTests.swift in Sources */,
 				E601324026209F9F00C4E3E4 /* VGSideMenuViewControllerTests.swift in Sources */,
 				E601320A261F2808002FCD64 /* VGTutorialSlideViewTests.swift in Sources */,
+				E66B22EE26A3E99900CFF95F /* VGTestingRootViewController.swift in Sources */,
 				E63FA0B72625CFD4001FB5F5 /* VGARViewControllerTests.swift in Sources */,
 				E6AE2A9B2620AAAA00FEB1D2 /* VGSearchViewTests.swift in Sources */,
 				E63FA0A42625B917001FB5F5 /* VGMapViewModelTests.swift in Sources */,
@@ -1294,6 +1309,7 @@
 				E63FA0A82625BC12001FB5F5 /* VGARTutorialViewTests.swift in Sources */,
 				E60132442620A10700C4E3E4 /* VGSearchTableViewCellTests.swift in Sources */,
 				E61C531C261F2D5600BBCA33 /* VGTutorialViewModelTests.swift in Sources */,
+				E66B22EC26A3E98800CFF95F /* VGTestingSceneDelegate.swift in Sources */,
 				E601323D26209E8F00C4E3E4 /* VGSideMenuTableViewCellTests.swift in Sources */,
 				E61C5321261F35E800BBCA33 /* VGTutorialViewControllerTests.swift in Sources */,
 			);
