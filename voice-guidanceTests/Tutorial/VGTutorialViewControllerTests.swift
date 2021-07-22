@@ -19,9 +19,9 @@ class VGTutorialViewControllerTests: XCTestCase {
   func testVGTutorialViewController_whenInitialState_outletsShouldBeConnected() throws {
     let sut = VGTutorialViewController(
       viewModel: VGTutorialViewModel(
-        userDefaults: VGMockUserDefaults(),
-        locationManagerFactory: { VGMockLocationManager(delegate: nil, authorizationStatus: .authorizedWhenInUse) },
-        captureDeviceFactory: { VGMockCaptureDevice(authorizationStatus: .authorized) }
+        userDefaults: VGUserDefaultsStub(),
+        locationManagerFactory: { VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse) },
+        captureDeviceFactory: { VGCaptureDeviceStub(authorizationStatus: .authorized) }
       )
     )
     sut.loadViewIfNeeded()

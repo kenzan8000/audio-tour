@@ -1,8 +1,8 @@
 import CoreLocation
 @testable import voice_guidance
 
-// MARK: - VGMockLocationManager
-struct VGMockLocationManager: VGLocationManager {
+// MARK: - VGLocationManagerDummy
+struct VGLocationManagerDummy: VGLocationManager {
   var delegate: CLLocationManagerDelegate?
   var authorizationStatus: CLAuthorizationStatus
   func requestWhenInUseAuthorization() { }

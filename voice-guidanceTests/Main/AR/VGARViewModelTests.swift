@@ -15,7 +15,7 @@ class VGARViewModelTests: XCTestCase {
     let storageProvider = VGStorageProvider(source: Bundle(for: type(of: VGARViewModelTests())), name: "VGCoreData", group: "org.kenzan8000.voice-guidanceTests")
     sut = VGARViewModel(
       storageProvider: storageProvider,
-      locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: .authorizedWhenInUse)
+      locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse)
     )
     super.setUp()
   }

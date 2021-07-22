@@ -18,19 +18,19 @@ class VGTutorialViewModelTests: XCTestCase {
   
   func testVGTutorialViewModel_whenInitialState_tutorialShouldBeIntro() throws {
     let sut = VGTutorialViewModel(
-      userDefaults: VGMockUserDefaults(),
-      locationManagerFactory: { VGMockLocationManager(delegate: nil, authorizationStatus: .authorizedWhenInUse) },
-      captureDeviceFactory: { VGMockCaptureDevice(authorizationStatus: .authorized) }
+      userDefaults: VGUserDefaultsStub(),
+      locationManagerFactory: { VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse) },
+      captureDeviceFactory: { VGCaptureDeviceStub(authorizationStatus: .authorized) }
     )
     XCTAssertEqual(sut.tutorial, .intro)
   }
   
   func testVGTutorialViewModel_whenLocationAndCameraAreAuthorized_shouldBeAbleToSeeAllTutorial() throws {
-    let userDefaults = VGMockUserDefaults()
+    let userDefaults = VGUserDefaultsStub()
     let sut = VGTutorialViewModel(
       userDefaults: userDefaults,
-      locationManagerFactory: { VGMockLocationManager(delegate: nil, authorizationStatus: .authorizedWhenInUse) },
-      captureDeviceFactory: { VGMockCaptureDevice(authorizationStatus: .authorized) }
+      locationManagerFactory: { VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse) },
+      captureDeviceFactory: { VGCaptureDeviceStub(authorizationStatus: .authorized) }
     )
     XCTAssertFalse(userDefaults.bool(forKey: VGUserDefaultsKey.doneTutorial))
     XCTAssertEqual(sut.tutorial, .intro)
@@ -47,9 +47,9 @@ class VGTutorialViewModelTests: XCTestCase {
   
   func testVGTutorialViewModel_whenLocationIsNotDetermined_shouldStopAtMap() throws {
     let sut = VGTutorialViewModel(
-      userDefaults: VGMockUserDefaults(),
-      locationManagerFactory: { VGMockLocationManager(delegate: nil, authorizationStatus: .notDetermined) },
-      captureDeviceFactory: { VGMockCaptureDevice(authorizationStatus: .authorized) }
+      userDefaults: VGUserDefaultsStub(),
+      locationManagerFactory: { VGLocationManagerDummy(delegate: nil, authorizationStatus: .notDetermined) },
+      captureDeviceFactory: { VGCaptureDeviceStub(authorizationStatus: .authorized) }
     )
     XCTAssertEqual(sut.tutorial, .intro)
     sut.nextView()
@@ -60,9 +60,9 @@ class VGTutorialViewModelTests: XCTestCase {
   
   func testVGTutorialViewModel_whenCameraIsNotDetermined_shouldStopAtAr() throws {
     let sut = VGTutorialViewModel(
-      userDefaults: VGMockUserDefaults(),
-      locationManagerFactory: { VGMockLocationManager(delegate: nil, authorizationStatus: .authorizedWhenInUse) },
-      captureDeviceFactory: { VGMockCaptureDevice(authorizationStatus: .notDetermined) }
+      userDefaults: VGUserDefaultsStub(),
+      locationManagerFactory: { VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse) },
+      captureDeviceFactory: { VGCaptureDeviceStub(authorizationStatus: .notDetermined) }
     )
     XCTAssertEqual(sut.tutorial, .intro)
     sut.nextView()

@@ -1,8 +1,8 @@
 import AVFoundation
 @testable import voice_guidance
 
-// MARK: - VGMockCaptureDevice
-struct VGMockCaptureDevice: VGCaptureDevice {
+// MARK: - VGCaptureDeviceStub
+struct VGCaptureDeviceStub: VGCaptureDevice {
   let authorizationStatus: AVAuthorizationStatus
   
   func authorizationStatus(for mediaType: AVMediaType) -> AVAuthorizationStatus {

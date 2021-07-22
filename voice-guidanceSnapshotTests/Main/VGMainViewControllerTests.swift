@@ -15,8 +15,8 @@ class VGMainViewControllerTests: XCTestCase {
     let mapDependencyContainer = VGMapDependencyContainer()
     let arDependencyContainer = VGARDependencyContainer()
     let storageProvider = VGStorageProvider(source: Bundle(for: type(of: VGMainViewControllerTests())), name: "VGCoreData", group: "org.kenzan8000.voice-guidanceVGStorageProviderTests")
-    let userDefaults = VGMockUserDefaults()
-    let locationManagerFactory = { VGMockLocationManager(delegate: nil, authorizationStatus: .authorizedWhenInUse) }
+    let userDefaults = VGUserDefaultsStub()
+    let locationManagerFactory = { VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse) }
     sut = VGMainViewController(viewControllers: [
       VGMapViewController(
         viewModel: VGMapViewModel(storageProvider: storageProvider),

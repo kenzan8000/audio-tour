@@ -16,7 +16,7 @@ class VGMapViewControllerTests: XCTestCase {
     let storageProvider = VGStorageProvider(source: Bundle(for: type(of: VGMapViewControllerTests())), name: "VGCoreData", group: "org.kenzan8000.voice-guidanceVGStorageProviderTests")
     sut = VGMapViewController(
       viewModel: VGMapViewModel(storageProvider: storageProvider),
-      userDefaults: VGMockUserDefaults(),
+      userDefaults: VGUserDefaultsStub(),
       mapViewFactory: { view in mapDependencyContainer.makeMapView(on: view) },
       searchViewFactory: { view in mapDependencyContainer.makeSearchView(on: view) }
     )

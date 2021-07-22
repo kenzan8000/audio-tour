@@ -55,7 +55,7 @@ class VGSpotTests: XCTestCase {
   
   func testVGSpot_whenInitialState_shouldBeAbleToSaveInitialSpots() throws {
     let storageProvider = VGStorageProvider(storeType: .inMemory)
-    storageProvider.saveInitialSpots(userDefaults: VGMockUserDefaults())
+    storageProvider.saveInitialSpots(userDefaults: VGUserDefaultsStub())
     let spots = storageProvider.fetch(language: .en)
     XCTAssertGreaterThan(spots.count, 0)
   }

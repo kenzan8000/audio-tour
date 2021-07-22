@@ -21,8 +21,8 @@ class VGPermissionViewTests: XCTestCase {
     let sut = VGPermissionView(
       viewModel: VGPermissionViewModel(
         permissionType: .locationAndVideo,
-        locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: .authorizedWhenInUse),
-        captureDevice: VGMockCaptureDevice(authorizationStatus: .authorized)
+        locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse),
+        captureDevice: VGCaptureDeviceStub(authorizationStatus: .authorized)
       )
     )
     [(UIUserInterfaceStyle.dark, "dark"), (UIUserInterfaceStyle.light, "light")].forEach { style, named in
@@ -39,8 +39,8 @@ class VGPermissionViewTests: XCTestCase {
     let sut = VGPermissionView(
       viewModel: VGPermissionViewModel(
         permissionType: .locationAndVideo,
-        locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: .denied),
-        captureDevice: VGMockCaptureDevice(authorizationStatus: .authorized)
+        locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: .denied),
+        captureDevice: VGCaptureDeviceStub(authorizationStatus: .authorized)
       )
     )
     [(UIUserInterfaceStyle.dark, "dark"), (UIUserInterfaceStyle.light, "light")].forEach { style, named in
@@ -57,8 +57,8 @@ class VGPermissionViewTests: XCTestCase {
     let sut = VGPermissionView(
       viewModel: VGPermissionViewModel(
         permissionType: .locationAndVideo,
-        locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: .authorizedWhenInUse),
-        captureDevice: VGMockCaptureDevice(authorizationStatus: .denied)
+        locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse),
+        captureDevice: VGCaptureDeviceStub(authorizationStatus: .denied)
       )
     )
     [(UIUserInterfaceStyle.dark, "dark"), (UIUserInterfaceStyle.light, "light")].forEach { style, named in
@@ -75,8 +75,8 @@ class VGPermissionViewTests: XCTestCase {
     let sut = VGPermissionView(
       viewModel: VGPermissionViewModel(
         permissionType: .locationAndVideo,
-        locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: .denied),
-        captureDevice: VGMockCaptureDevice(authorizationStatus: .denied)
+        locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: .denied),
+        captureDevice: VGCaptureDeviceStub(authorizationStatus: .denied)
       )
     )
     [(UIUserInterfaceStyle.dark, "dark"), (UIUserInterfaceStyle.light, "light")].forEach { style, named in

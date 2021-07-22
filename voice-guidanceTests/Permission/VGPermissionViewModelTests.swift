@@ -25,8 +25,8 @@ class VGPermissionViewModelTests: XCTestCase {
       videos.forEach { video in
         let result = VGPermissionViewModel.authorized(
           permissionType: .locationAndVideo,
-          locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: location),
-          captureDevice: VGMockCaptureDevice(authorizationStatus: video)
+          locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: location),
+          captureDevice: VGCaptureDeviceStub(authorizationStatus: video)
         )
         let authorized = (location == .authorizedAlways || location == .authorizedWhenInUse) && video == .authorized
         XCTAssertEqual(result, authorized)
@@ -41,8 +41,8 @@ class VGPermissionViewModelTests: XCTestCase {
       videos.forEach { video in
         let result = VGPermissionViewModel.authorized(
           permissionType: .location,
-          locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: location),
-          captureDevice: VGMockCaptureDevice(authorizationStatus: video)
+          locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: location),
+          captureDevice: VGCaptureDeviceStub(authorizationStatus: video)
         )
         let authorized = location == .authorizedAlways || location == .authorizedWhenInUse
         XCTAssertEqual(result, authorized)
@@ -57,8 +57,8 @@ class VGPermissionViewModelTests: XCTestCase {
       videos.forEach { video in
         let result = VGPermissionViewModel.authorized(
           permissionType: .video,
-          locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: location),
-          captureDevice: VGMockCaptureDevice(authorizationStatus: video)
+          locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: location),
+          captureDevice: VGCaptureDeviceStub(authorizationStatus: video)
         )
         let authorized = video == .authorized
         XCTAssertEqual(result, authorized)
@@ -73,8 +73,8 @@ class VGPermissionViewModelTests: XCTestCase {
       videos.forEach { video in
         let result = VGPermissionViewModel.authorized(
           permissionType: .notNeeded,
-          locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: location),
-          captureDevice: VGMockCaptureDevice(authorizationStatus: video)
+          locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: location),
+          captureDevice: VGCaptureDeviceStub(authorizationStatus: video)
         )
         XCTAssertTrue(result)
       }
@@ -88,8 +88,8 @@ class VGPermissionViewModelTests: XCTestCase {
       videos.forEach { video in
         let result = VGPermissionViewModel.determined(
           permissionType: .locationAndVideo,
-          locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: location),
-          captureDevice: VGMockCaptureDevice(authorizationStatus: video)
+          locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: location),
+          captureDevice: VGCaptureDeviceStub(authorizationStatus: video)
         )
         let determined = location != .notDetermined && video != .notDetermined
         XCTAssertEqual(result, determined)
@@ -104,8 +104,8 @@ class VGPermissionViewModelTests: XCTestCase {
       videos.forEach { video in
         let result = VGPermissionViewModel.determined(
           permissionType: .location,
-          locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: location),
-          captureDevice: VGMockCaptureDevice(authorizationStatus: video)
+          locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: location),
+          captureDevice: VGCaptureDeviceStub(authorizationStatus: video)
         )
         let determined = location != .notDetermined
         XCTAssertEqual(result, determined)
@@ -120,8 +120,8 @@ class VGPermissionViewModelTests: XCTestCase {
       videos.forEach { video in
         let result = VGPermissionViewModel.determined(
           permissionType: .video,
-          locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: location),
-          captureDevice: VGMockCaptureDevice(authorizationStatus: video)
+          locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: location),
+          captureDevice: VGCaptureDeviceStub(authorizationStatus: video)
         )
         let determined = video != .notDetermined
         XCTAssertEqual(result, determined)
@@ -136,8 +136,8 @@ class VGPermissionViewModelTests: XCTestCase {
       videos.forEach { video in
         let result = VGPermissionViewModel.determined(
           permissionType: .notNeeded,
-          locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: location),
-          captureDevice: VGMockCaptureDevice(authorizationStatus: video)
+          locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: location),
+          captureDevice: VGCaptureDeviceStub(authorizationStatus: video)
         )
         XCTAssertTrue(result)
       }

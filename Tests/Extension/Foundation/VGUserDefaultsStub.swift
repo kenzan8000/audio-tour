@@ -1,7 +1,7 @@
 @testable import voice_guidance
 
-// MARK: - VGMockCaptureDevice
-class VGMockUserDefaults: VGUserDefaults {
+// MARK: - VGUserDefaultsStub
+class VGUserDefaultsStub: VGUserDefaults {
   var boolValues = [String: Bool]()
   var intValues = [String: Int]()
   

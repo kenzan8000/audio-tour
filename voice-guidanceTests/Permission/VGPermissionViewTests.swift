@@ -20,8 +20,8 @@ class VGPermissionViewTests: XCTestCase {
     let sut = VGPermissionView(
       viewModel: VGPermissionViewModel(
         permissionType: .locationAndVideo,
-        locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: .authorizedWhenInUse),
-        captureDevice: VGMockCaptureDevice(authorizationStatus: .authorized)
+        locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse),
+        captureDevice: VGCaptureDeviceStub(authorizationStatus: .authorized)
       )
     )
     XCTAssertNotNil(sut.headingLable)
@@ -37,8 +37,8 @@ class VGPermissionViewTests: XCTestCase {
     let sut = VGPermissionView(
       viewModel: VGPermissionViewModel(
         permissionType: .locationAndVideo,
-        locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: .authorizedWhenInUse),
-        captureDevice: VGMockCaptureDevice(authorizationStatus: .authorized)
+        locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse),
+        captureDevice: VGCaptureDeviceStub(authorizationStatus: .authorized)
       )
     )
     XCTAssertFalse(sut.cameraPermissionView.isHidden)
@@ -48,8 +48,8 @@ class VGPermissionViewTests: XCTestCase {
     let sut = VGPermissionView(
       viewModel: VGPermissionViewModel(
         permissionType: .video,
-        locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: .authorizedWhenInUse),
-        captureDevice: VGMockCaptureDevice(authorizationStatus: .authorized)
+        locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse),
+        captureDevice: VGCaptureDeviceStub(authorizationStatus: .authorized)
       )
     )
     XCTAssertFalse(sut.cameraPermissionView.isHidden)
@@ -59,8 +59,8 @@ class VGPermissionViewTests: XCTestCase {
     let sut = VGPermissionView(
       viewModel: VGPermissionViewModel(
         permissionType: .location,
-        locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: .authorizedWhenInUse),
-        captureDevice: VGMockCaptureDevice(authorizationStatus: .authorized)
+        locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse),
+        captureDevice: VGCaptureDeviceStub(authorizationStatus: .authorized)
       )
     )
     XCTAssertTrue(sut.cameraPermissionView.isHidden)
@@ -70,8 +70,8 @@ class VGPermissionViewTests: XCTestCase {
     let sut = VGPermissionView(
       viewModel: VGPermissionViewModel(
         permissionType: .locationAndVideo,
-        locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: .authorizedWhenInUse),
-        captureDevice: VGMockCaptureDevice(authorizationStatus: .authorized)
+        locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse),
+        captureDevice: VGCaptureDeviceStub(authorizationStatus: .authorized)
       )
     )
     XCTAssertFalse(sut.locationPermissionStatusImageView.isHidden)
@@ -86,8 +86,8 @@ class VGPermissionViewTests: XCTestCase {
     let sut = VGPermissionView(
       viewModel: VGPermissionViewModel(
         permissionType: .location,
-        locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: .denied),
-        captureDevice: VGMockCaptureDevice(authorizationStatus: .authorized)
+        locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: .denied),
+        captureDevice: VGCaptureDeviceStub(authorizationStatus: .authorized)
       )
     )
     XCTAssertTrue(sut.locationPermissionStatusImageView.isHidden)
@@ -102,8 +102,8 @@ class VGPermissionViewTests: XCTestCase {
     let sut = VGPermissionView(
       viewModel: VGPermissionViewModel(
         permissionType: .video,
-        locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: .authorizedWhenInUse),
-        captureDevice: VGMockCaptureDevice(authorizationStatus: .denied)
+        locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse),
+        captureDevice: VGCaptureDeviceStub(authorizationStatus: .denied)
       )
     )
     XCTAssertFalse(sut.locationPermissionStatusImageView.isHidden)

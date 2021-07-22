@@ -17,11 +17,11 @@ class VGGuideRateTests: XCTestCase {
   // MARK: test
   
   func testVGGuideRate_whenInitialState_shouldBe10X() throws {
-    XCTAssertEqual(VGGuideRate.current(userDeafults: VGMockUserDefaults()), ._10X)
+    XCTAssertEqual(VGGuideRate.current(userDeafults: VGUserDefaultsStub()), ._10X)
   }
   
   func testVGGuideRate_whenThereIsUserDefaultsValue_shouldEqualToCurrent() throws {
-    let userDefaults = VGMockUserDefaults()
+    let userDefaults = VGUserDefaultsStub()
     let values: [VGGuideRate] = [._10X, ._05X, ._20X]
     values.forEach {
       userDefaults.set($0.rawValue, forKey: VGUserDefaultsKey.guideSpeechRate)
@@ -30,7 +30,7 @@ class VGGuideRateTests: XCTestCase {
   }
   
   func testVGGuideRate_whenInitialState_shouldToggleProperly() throws {
-    var sut = VGGuideRate.current(userDeafults: VGMockUserDefaults())
+    var sut = VGGuideRate.current(userDeafults: VGUserDefaultsStub())
     XCTAssertEqual(sut, ._10X)
     sut.toggle()
     XCTAssertEqual(sut, ._20X)

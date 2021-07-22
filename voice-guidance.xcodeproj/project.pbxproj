@@ -19,9 +19,9 @@
 		E6172CF91E762095003FE26A /* VGSearchTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6172CF71E762095003FE26A /* VGSearchTableView.xib */; };
 		E61924D324F5306400104FC4 /* VGNibTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61924D224F5306400104FC4 /* VGNibTableViewCell.swift */; };
 		E61AE63A262722AF0071D327 /* VGTestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A671032608320500DF17C9 /* VGTestingAppDelegate.swift */; };
-		E61AE63F262722B40071D327 /* VGMockCaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558F1261CA5F100584C64 /* VGMockCaptureDevice.swift */; };
-		E61AE642262722B80071D327 /* VGMockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558FC261CB0B100584C64 /* VGMockLocationManager.swift */; };
-		E61AE645262722BC0071D327 /* VGMockUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63369B4261E00D80048FD82 /* VGMockUserDefaults.swift */; };
+		E61AE63F262722B40071D327 /* VGCaptureDeviceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558F1261CA5F100584C64 /* VGCaptureDeviceStub.swift */; };
+		E61AE642262722B80071D327 /* VGLocationManagerDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558FC261CB0B100584C64 /* VGLocationManagerDummy.swift */; };
+		E61AE645262722BC0071D327 /* VGUserDefaultsStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63369B4261E00D80048FD82 /* VGUserDefaultsStub.swift */; };
 		E61AE64C262722E30071D327 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E61AE64B262722E30071D327 /* SnapshotTesting */; };
 		E61AE654262724B50071D327 /* VGCircleButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61AE653262724B50071D327 /* VGCircleButtonTests.swift */; };
 		E61AE66026272A1C0071D327 /* UIImage+TintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61AE65F26272A1C0071D327 /* UIImage+TintTests.swift */; };
@@ -38,7 +38,7 @@
 		E63369A7261DF84C0048FD82 /* VGCoreData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E63369A4261DF84C0048FD82 /* VGCoreData.sqlite */; };
 		E63369A8261DF84C0048FD82 /* VGCoreData.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = E63369A5261DF84C0048FD82 /* VGCoreData.sqlite-wal */; };
 		E63369A9261DF84C0048FD82 /* VGCoreData.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = E63369A6261DF84C0048FD82 /* VGCoreData.sqlite-shm */; };
-		E63369B5261E00D80048FD82 /* VGMockUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63369B4261E00D80048FD82 /* VGMockUserDefaults.swift */; };
+		E63369B5261E00D80048FD82 /* VGUserDefaultsStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63369B4261E00D80048FD82 /* VGUserDefaultsStub.swift */; };
 		E635540724B31070004E30B9 /* VGGuideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E635540624B31070004E30B9 /* VGGuideViewModel.swift */; };
 		E635540924B31311004E30B9 /* VGGuidePullUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E635540824B31311004E30B9 /* VGGuidePullUpModel.swift */; };
 		E636228E2090768800A7C089 /* VGARLocationAnnotationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E636228D2090768800A7C089 /* VGARLocationAnnotationNode.swift */; };
@@ -57,9 +57,9 @@
 		E64558E7261C976600584C64 /* VGPermissionViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558E6261C976600584C64 /* VGPermissionViewTests.swift */; };
 		E64558EA261C9E3B00584C64 /* VGPermissionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558E9261C9E3B00584C64 /* VGPermissionViewModelTests.swift */; };
 		E64558ED261CA13E00584C64 /* VGCaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558EC261CA13E00584C64 /* VGCaptureDevice.swift */; };
-		E64558F2261CA5F100584C64 /* VGMockCaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558F1261CA5F100584C64 /* VGMockCaptureDevice.swift */; };
+		E64558F2261CA5F100584C64 /* VGCaptureDeviceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558F1261CA5F100584C64 /* VGCaptureDeviceStub.swift */; };
 		E64558F8261CA8D500584C64 /* VGLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558F7261CA8D500584C64 /* VGLocationManager.swift */; };
-		E6455900261CB1A700584C64 /* VGMockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558FC261CB0B100584C64 /* VGMockLocationManager.swift */; };
+		E6455900261CB1A700584C64 /* VGLocationManagerDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558FC261CB0B100584C64 /* VGLocationManagerDummy.swift */; };
 		E646601D1DB15DE3006CBDB7 /* VGGuideProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E646601C1DB15DE3006CBDB7 /* VGGuideProgressSlider.swift */; };
 		E65503B4255D55F400543F9B /* VGTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65503B3255D55F400543F9B /* VGTutorial.swift */; };
 		E65503BE255D5FF300543F9B /* VGUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65503BD255D5FF300543F9B /* VGUserDefaults.swift */; };
@@ -221,7 +221,7 @@
 		E63369A4261DF84C0048FD82 /* VGCoreData.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = VGCoreData.sqlite; sourceTree = "<group>"; };
 		E63369A5261DF84C0048FD82 /* VGCoreData.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VGCoreData.sqlite-wal"; sourceTree = "<group>"; };
 		E63369A6261DF84C0048FD82 /* VGCoreData.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VGCoreData.sqlite-shm"; sourceTree = "<group>"; };
-		E63369B4261E00D80048FD82 /* VGMockUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMockUserDefaults.swift; sourceTree = "<group>"; };
+		E63369B4261E00D80048FD82 /* VGUserDefaultsStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGUserDefaultsStub.swift; sourceTree = "<group>"; };
 		E635540624B31070004E30B9 /* VGGuideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGGuideViewModel.swift; sourceTree = "<group>"; };
 		E635540824B31311004E30B9 /* VGGuidePullUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGGuidePullUpModel.swift; sourceTree = "<group>"; };
 		E636228D2090768800A7C089 /* VGARLocationAnnotationNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGARLocationAnnotationNode.swift; sourceTree = "<group>"; };
@@ -242,9 +242,9 @@
 		E64558E6261C976600584C64 /* VGPermissionViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGPermissionViewTests.swift; sourceTree = "<group>"; };
 		E64558E9261C9E3B00584C64 /* VGPermissionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGPermissionViewModelTests.swift; sourceTree = "<group>"; };
 		E64558EC261CA13E00584C64 /* VGCaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGCaptureDevice.swift; sourceTree = "<group>"; };
-		E64558F1261CA5F100584C64 /* VGMockCaptureDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMockCaptureDevice.swift; sourceTree = "<group>"; };
+		E64558F1261CA5F100584C64 /* VGCaptureDeviceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGCaptureDeviceStub.swift; sourceTree = "<group>"; };
 		E64558F7261CA8D500584C64 /* VGLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGLocationManager.swift; sourceTree = "<group>"; };
-		E64558FC261CB0B100584C64 /* VGMockLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMockLocationManager.swift; sourceTree = "<group>"; };
+		E64558FC261CB0B100584C64 /* VGLocationManagerDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGLocationManagerDummy.swift; sourceTree = "<group>"; };
 		E646601C1DB15DE3006CBDB7 /* VGGuideProgressSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGGuideProgressSlider.swift; sourceTree = "<group>"; };
 		E65503B3255D55F400543F9B /* VGTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorial.swift; sourceTree = "<group>"; };
 		E65503BD255D5FF300543F9B /* VGUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGUserDefaults.swift; sourceTree = "<group>"; };
@@ -414,7 +414,7 @@
 		E61C5319261F2D1400BBCA33 /* AVFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				E64558F1261CA5F100584C64 /* VGMockCaptureDevice.swift */,
+				E64558F1261CA5F100584C64 /* VGCaptureDeviceStub.swift */,
 			);
 			path = AVFoundation;
 			sourceTree = "<group>";
@@ -422,7 +422,7 @@
 		E61C531A261F2D2700BBCA33 /* CoreLocation */ = {
 			isa = PBXGroup;
 			children = (
-				E64558FC261CB0B100584C64 /* VGMockLocationManager.swift */,
+				E64558FC261CB0B100584C64 /* VGLocationManagerDummy.swift */,
 			);
 			path = CoreLocation;
 			sourceTree = "<group>";
@@ -498,7 +498,7 @@
 		E63369B2261E00B60048FD82 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				E63369B4261E00D80048FD82 /* VGMockUserDefaults.swift */,
+				E63369B4261E00D80048FD82 /* VGUserDefaultsStub.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1198,19 +1198,19 @@
 				E6A71AF52629CF3A005A6F36 /* VGARViewController.swift in Sources */,
 				E6A71AD32629C40C005A6F36 /* VGSearchTableViewCellTests.swift in Sources */,
 				E61AE654262724B50071D327 /* VGCircleButtonTests.swift in Sources */,
-				E61AE63F262722B40071D327 /* VGMockCaptureDevice.swift in Sources */,
+				E61AE63F262722B40071D327 /* VGCaptureDeviceStub.swift in Sources */,
 				E63E9A2126983FD2005926A0 /* Snapshotting+Model.swift in Sources */,
 				E6A71B122629D37C005A6F36 /* VGMainViewControllerTests.swift in Sources */,
 				E6A71B042629D24A005A6F36 /* VGMapViewControllerTests.swift in Sources */,
 				E61AE66026272A1C0071D327 /* UIImage+TintTests.swift in Sources */,
-				E61AE642262722B80071D327 /* VGMockLocationManager.swift in Sources */,
+				E61AE642262722B80071D327 /* VGLocationManagerDummy.swift in Sources */,
 				E6A71ADF2629C6A6005A6F36 /* VGSearchViewTests.swift in Sources */,
 				E6A71AD92629C512005A6F36 /* VGSearchTableViewTests.swift in Sources */,
 				E6A71AE62629C928005A6F36 /* VGGuideProgressSliderTests.swift in Sources */,
 				E61AE63A262722AF0071D327 /* VGTestingAppDelegate.swift in Sources */,
 				E66B22ED26A3E98800CFF95F /* VGTestingSceneDelegate.swift in Sources */,
 				E6A71ACC2629C34E005A6F36 /* VGSideMenuViewControllerTests.swift in Sources */,
-				E61AE645262722BC0071D327 /* VGMockUserDefaults.swift in Sources */,
+				E61AE645262722BC0071D327 /* VGUserDefaultsStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1298,14 +1298,14 @@
 				E64558EA261C9E3B00584C64 /* VGPermissionViewModelTests.swift in Sources */,
 				E63369A1261DF7D70048FD82 /* VGSpotTests.swift in Sources */,
 				E6A671042608320500DF17C9 /* VGTestingAppDelegate.swift in Sources */,
-				E6455900261CB1A700584C64 /* VGMockLocationManager.swift in Sources */,
+				E6455900261CB1A700584C64 /* VGLocationManagerDummy.swift in Sources */,
 				E641CFEF26246B1C0051B07A /* VGGuideRateTests.swift in Sources */,
 				E60132472620A1BC00C4E3E4 /* VGSearchTableViewTests.swift in Sources */,
 				E61245F42624934E001454D3 /* VGGuideViewControllerTests.swift in Sources */,
 				E61C5317261F2B4800BBCA33 /* VGCircleButtonTests.swift in Sources */,
-				E64558F2261CA5F100584C64 /* VGMockCaptureDevice.swift in Sources */,
+				E64558F2261CA5F100584C64 /* VGCaptureDeviceStub.swift in Sources */,
 				E641CFF226246E9F0051B07A /* VGGuideViewModelTests.swift in Sources */,
-				E63369B5261E00D80048FD82 /* VGMockUserDefaults.swift in Sources */,
+				E63369B5261E00D80048FD82 /* VGUserDefaultsStub.swift in Sources */,
 				E63FA0A82625BC12001FB5F5 /* VGARTutorialViewTests.swift in Sources */,
 				E60132442620A10700C4E3E4 /* VGSearchTableViewCellTests.swift in Sources */,
 				E61C531C261F2D5600BBCA33 /* VGTutorialViewModelTests.swift in Sources */,

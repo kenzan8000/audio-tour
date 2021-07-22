@@ -17,10 +17,10 @@ class VGARViewControllerTests: XCTestCase {
     sut = VGARViewController(
       viewModel: VGARViewModel(
         storageProvider: storageProvider,
-        locationManager: VGMockLocationManager(delegate: nil, authorizationStatus: .authorizedWhenInUse)
+        locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse)
       ),
-      userDefaults: VGMockUserDefaults(),
-      locationManagerFactory: { VGMockLocationManager(delegate: nil, authorizationStatus: .authorizedWhenInUse) },
+      userDefaults: VGUserDefaultsStub(),
+      locationManagerFactory: { VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse) },
       mapViewFactory: { view in arDependencyContainer.makeMapView(on: view) },
       searchViewFactory: { view in arDependencyContainer.makeSearchView(on: view) }
     )
