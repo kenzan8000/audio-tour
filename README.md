@@ -4,7 +4,7 @@
 
 # Audio Tour
 
-![circleci](https://circleci.com/gh/kenzan8000/audio-tour.svg?style=shield)
+[![CircleCI](https://circleci.com/gh/kenzan8000/audio-tour/tree/main.svg?style=svg)](https://circleci.com/gh/kenzan8000/audio-tour/tree/main)
 
 [Audio Tour](https://apps.apple.com/us/app/audio-tour-san-francisco/id1182851195) offers an audio guide of the spots, similar to how a museum audio guide helps you understand the works of art at a deeper level.
 There are two modes to assist with your sight-seeing.
