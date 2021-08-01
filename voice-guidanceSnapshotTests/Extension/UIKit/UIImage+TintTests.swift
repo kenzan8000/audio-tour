@@ -18,7 +18,7 @@ class UIImageTintTests: XCTestCase {
   // MARK: test
   
   func testVGImageTint_whenInitialState_snapshotTest() throws {
-    let sut = UIImage(named: "annotation_1")!.tint(color: UIColor(red: 231.0 / 255.0, green: 76.0 / 255.0, blue: 60.0 / 255.0, alpha: 1.0))!
+    let sut = try XCTUnwrap((try XCTUnwrap(UIImage(named: "annotation_1"))).tint(color: UIColor(red: 231.0 / 255.0, green: 76.0 / 255.0, blue: 60.0 / 255.0, alpha: 1.0)))
     let imageView = UIImageView(image: sut)
     imageView.frame = CGRect(x: 0, y: 0, width: sut.size.width * sut.scale, height:  sut.size.height * sut.scale)
     assertSnapshot(

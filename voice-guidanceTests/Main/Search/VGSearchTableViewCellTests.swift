@@ -17,7 +17,7 @@ class VGSearchTableViewCellTests: XCTestCase {
   // MARK: test
   
   func testVGSearchTableViewCell_whenInitialState_outletsShouldBeConnected() throws {
-    let sut = VGSearchTableViewCell(image: UIImage(systemName: "plus")!, title: "title")
+    let sut = VGSearchTableViewCell(image: try XCTUnwrap(UIImage(systemName: "plus")), title: "title")
     XCTAssertNotNil(sut.iconImageView)
     XCTAssertNotNil(sut.titleLabel)
   }

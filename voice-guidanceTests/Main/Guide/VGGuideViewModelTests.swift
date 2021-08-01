@@ -12,7 +12,7 @@ class VGGuideViewModelTests: XCTestCase {
 
   override func setUpWithError() throws {
     let storageProvider = VGStorageProvider(source: Bundle(for: type(of: VGGuideViewModelTests())), name: "VGCoreData", group: "org.kenzan8000.voice-guidanceTests")
-    let spot = storageProvider.fetch(language: .en, text: "The Golden Gate Bridge").first!
+    let spot = try XCTUnwrap(storageProvider.fetch(language: .en, text: "The Golden Gate Bridge").first)
     sut = VGGuideViewModel(spot: spot, rate: ._10X, userDefaults: VGUserDefaultsStub())
     super.setUp()
   }

@@ -18,7 +18,7 @@ class VGSearchTableViewCellTests: XCTestCase {
   // MARK: test
   
   func testVGSearchTableViewCell_whenInitialState_snapshotTest() throws {
-    let sut = VGSearchTableViewCell(image: UIImage(named: "annotation_107")!, title: "The Golden Gate Bridge")
+    let sut = VGSearchTableViewCell(image: try XCTUnwrap(UIImage(named: "annotation_107")), title: "The Golden Gate Bridge")
     
     [(UIUserInterfaceStyle.dark, "dark"), (UIUserInterfaceStyle.light, "light")].forEach { style, named in
       sut.overrideUserInterfaceStyle = style
