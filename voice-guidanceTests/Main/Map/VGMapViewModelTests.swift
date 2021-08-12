@@ -23,7 +23,7 @@ class VGMapViewModelTests: XCTestCase {
   
   // MARK: test
 
-  func testVGMapViewModel_whenInitialState_shouldBeStpos() throws {
+  func testVGMapViewModel_whenInitialState_shouldBeZeroSearchSpots() throws {
     XCTAssertGreaterThan(sut.spots.count, 0)
   }
   

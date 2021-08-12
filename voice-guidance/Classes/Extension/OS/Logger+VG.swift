@@ -3,7 +3,7 @@ import os
 
 let logger = Logger(subsystem: Bundle.main.bundleIdentifier ?? "org.kenzan8000.san-francisco", category: "audio-tour")
 
-// MARK: - Logger + LDR
+// MARK: - Logger + VG
 extension Logger {
   func prefix(_ instance: String = #file, _ function: String = #function) -> String {
     """

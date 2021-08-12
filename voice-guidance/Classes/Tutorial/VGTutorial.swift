@@ -8,18 +8,18 @@ enum VGTutorial: Int {
   
   var currentPage: Int { rawValue }
   
-  mutating func next() {
+  var next: VGTutorial {
     switch self {
     case .intro:
-      self = .map
+      return .map
     case .map:
-      self = .ar
+      return .ar
     case .ar:
-      self = .last
+      return .last
     case .last:
-      self = .end
-    case .end:
-      return
+      return .end
+    default:
+      return .end
     }
   }
 }

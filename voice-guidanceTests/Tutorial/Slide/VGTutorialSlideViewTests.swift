@@ -28,4 +28,17 @@ class VGTutorialSlideViewTests: XCTestCase {
     XCTAssertNotNil(sut.scenaryImageView)
     XCTAssertNotNil(sut.tutorialImageView)
   }
+
+  func testVGTutorialSlideView_whenInitialState_contentsShouldBeEqualToPassedParameters() throws {
+    let sut = VGTutorialSlideView(
+      heading: "heading",
+      paragraph: "paragraph",
+      scenaryImage: UIImage(named: "tutorial_scenary_02"),
+      tutorialImage: UIImage(named: "tutorial_02")
+    )
+    XCTAssertEqual(sut.headingLabel.text, "heading")
+    XCTAssertEqual(sut.paragraphLabel.text, "paragraph")
+    XCTAssertEqual(sut.scenaryImageView.image, UIImage(named: "tutorial_scenary_02"))
+    XCTAssertEqual(sut.tutorialImageView.image, UIImage(named: "tutorial_02"))
+  }
 }

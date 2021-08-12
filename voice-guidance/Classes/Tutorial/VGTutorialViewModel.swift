@@ -49,7 +49,7 @@ class VGTutorialViewModel {
     if !canGoToNextView() {
       return
     }
-    tutorial.next()
+    tutorial = tutorial.next
   }
   
   // MARK: private api
