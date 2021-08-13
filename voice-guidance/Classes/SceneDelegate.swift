@@ -1,4 +1,4 @@
-import CoreLocation
+import RxSwift
 import UIKit
 
 // MARK: - SceneDelegate
@@ -7,6 +7,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   // MARK: property
   
   var window: UIWindow?
+  private var sceneCoordinator: SceneCoordinator?
+  private let disposeBag = DisposeBag()
   private let userDefaults: VGUserDefaults = UserDefaults.standard
   private let storageProvider = VGStorageProvider()
 
@@ -20,31 +22,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else {
       return
     }
+    window = UIWindow(windowScene: windowScene)
+    guard let window = window else {
+      return
+    }
     
     storageProvider.saveInitialSpots(userDefaults: userDefaults)
     
-    window = UIWindow(windowScene: windowScene)
-    window?.makeKeyAndVisible()
-    window?.rootViewController = VGRootViewController(
-      viewModel: VGRootViewModel(userDefaults: userDefaults),
-      tutorialViewControllerFactory: { [unowned self] in
-        VGTutorialViewController(
-          viewModel: VGTutorialViewModel(
-            userDefaults: userDefaults,
-            locationManagerFactory: { CLLocationManager() },
-            captureDeviceFactory: { VGAVCaptureDevice() }
-          )
-        )
-      },
-      mainViewControllerFactory: { [unowned self] in
-        VGMainDependencyContainer().makeMainViewController(
-          mapDependencyContainer: VGMapDependencyContainer(),
-          arDependencyContainer: VGARDependencyContainer(),
-          userDefaults: userDefaults,
-          storageProvider: storageProvider
-        ) { CLLocationManager() }
-      }
-    )
+    sceneCoordinator = SceneCoordinator(window: window, userDefaults: userDefaults, storageProvider: storageProvider)
+    sceneCoordinator?.start()
+      .subscribe()
+      .disposed(by: disposeBag)
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {

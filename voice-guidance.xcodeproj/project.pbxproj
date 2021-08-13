@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E600A08C26C6914C002C5752 /* VGRootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600A08B26C6914B002C5752 /* VGRootCoordinator.swift */; };
+		E600A08E26C6938A002C5752 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600A08D26C6938A002C5752 /* SceneCoordinator.swift */; };
 		E601320A261F2808002FCD64 /* VGTutorialSlideViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6013209261F2808002FCD64 /* VGTutorialSlideViewTests.swift */; };
 		E601323D26209E8F00C4E3E4 /* VGSideMenuTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601323C26209E8F00C4E3E4 /* VGSideMenuTableViewCellTests.swift */; };
 		E601324026209F9F00C4E3E4 /* VGSideMenuViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601323F26209F9F00C4E3E4 /* VGSideMenuViewControllerTests.swift */; };
@@ -193,6 +195,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E600A08B26C6914B002C5752 /* VGRootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGRootCoordinator.swift; sourceTree = "<group>"; };
+		E600A08D26C6938A002C5752 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		E6013209261F2808002FCD64 /* VGTutorialSlideViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialSlideViewTests.swift; sourceTree = "<group>"; };
 		E601323C26209E8F00C4E3E4 /* VGSideMenuTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSideMenuTableViewCellTests.swift; sourceTree = "<group>"; };
 		E601323F26209F9F00C4E3E4 /* VGSideMenuViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSideMenuViewControllerTests.swift; sourceTree = "<group>"; };
@@ -701,8 +705,10 @@
 				E6A670D826082EDB00DF17C9 /* main.swift */,
 				E66BB9E31D7D202C00B8E996 /* AppDelegate.swift */,
 				E66B22AA26A3E50200CFF95F /* SceneDelegate.swift */,
+				E600A08D26C6938A002C5752 /* SceneCoordinator.swift */,
 				E6E00FB92503C8D0009C1F5D /* VGRootViewController.swift */,
 				E6E00FBB2503C914009C1F5D /* VGRootViewModel.swift */,
+				E600A08B26C6914B002C5752 /* VGRootCoordinator.swift */,
 				E6A67A9226C662BC00968857 /* VGCoordinator.swift */,
 				E6B096EE1DD1EC000083942A /* Tutorial */,
 				E6E00FB62503C50B009C1F5D /* Main */,
@@ -1238,6 +1244,7 @@
 				E65E851024E4316300DFF7FE /* VGMapDependencyContainer.swift in Sources */,
 				E63FA0B32625CC34001FB5F5 /* VGARViewController+VGARTutorialView.swift in Sources */,
 				E6DF395124DF052F0077FC71 /* VGMainViewController.swift in Sources */,
+				E600A08E26C6938A002C5752 /* SceneCoordinator.swift in Sources */,
 				E635540724B31070004E30B9 /* VGGuideViewModel.swift in Sources */,
 				E64558ED261CA13E00584C64 /* VGCaptureDevice.swift in Sources */,
 				E6E00FB52503BD31009C1F5D /* UIViewController+AdditionRemoval.swift in Sources */,
@@ -1264,6 +1271,7 @@
 				E6F7EBE324EE972200AC2EC5 /* VGARSceneLocationView.swift in Sources */,
 				E67876ED255D649C00793C5E /* VGSpot+AR.swift in Sources */,
 				E61924D324F5306400104FC4 /* VGNibTableViewCell.swift in Sources */,
+				E600A08C26C6914C002C5752 /* VGRootCoordinator.swift in Sources */,
 				E6D1823E2609FD59002521C1 /* VGSideMenuViewModel.swift in Sources */,
 				E65503C2255D604600543F9B /* Notification.Name+VG.swift in Sources */,
 				E68E90311D9B99F800ABC487 /* VGStorageProvider.swift in Sources */,
