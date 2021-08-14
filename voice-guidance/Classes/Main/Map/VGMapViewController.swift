@@ -123,7 +123,7 @@ class VGMapViewController: VGTabViewController {
         vc.rx.itemSelected
           .subscribe { _ in
             menu.dismiss(animated: true, completion: nil)
-            // NotificationCenter.default.post(Notification(name: .startTutorial))
+            NotificationCenter.default.post(Notification(name: .startTutorial))
           }
           .disposed(by: vc.disposeBag)
       }

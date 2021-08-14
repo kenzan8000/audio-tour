@@ -264,8 +264,7 @@ class VGARViewController: VGTabViewController {
             }
             switch tap {
             case .tutorial:
-              // NotificationCenter.default.post(Notification(name: .startTutorial))
-              break
+              NotificationCenter.default.post(Notification(name: .startTutorial))
             case .arTutorial:
               self.presentTutorialView(forced: true, userDefaults: self.userDefaults)
             }

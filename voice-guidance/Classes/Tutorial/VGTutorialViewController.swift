@@ -65,7 +65,7 @@ class VGTutorialViewController: UIViewController {
       doneButton.setTitle(NSLocalizedString("tutorial_button_end", comment: ""), for: .normal)
       presentEnd()
     case .end:
-      // NotificationCenter.default.post(name: .startMain, object: nil)
+      NotificationCenter.default.post(name: .startMain, object: nil)
       return
     }
     if let slideView = slideView {

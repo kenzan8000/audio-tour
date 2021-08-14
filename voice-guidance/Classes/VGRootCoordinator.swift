@@ -74,9 +74,13 @@ class VGRootCoordinator: VGBaseCoordinator<Void> {
   
   /// Presents main root view
   private func presentMain() {
-    window.rootViewController?.children.forEach { [weak self] in
-      self?.window.rootViewController?.remove(childViewController: $0)
+    guard let rootViewController = window.rootViewController else {
+      return
     }
-    window.rootViewController?.addFullScreen(childViewController: mainViewControllerFactory())
+    let coordinator = VGMainCoordinator(
+      rootViewController: rootViewController,
+      mainViewControllerFactory: mainViewControllerFactory
+    )
+    _ = coordinate(to: coordinator)
   }
 }

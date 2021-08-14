@@ -89,6 +89,7 @@
 		E67766A2250BA04000563561 /* VGPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67766A1250BA04000563561 /* VGPermissionView.swift */; };
 		E67766A4250BA07600563561 /* VGPermissionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E67766A3250BA07600563561 /* VGPermissionView.xib */; };
 		E6778EC926C7DE3C0073E896 /* VGTutorialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6778EC826C7DE3C0073E896 /* VGTutorialCoordinator.swift */; };
+		E6778ECB26C7F2510073E896 /* VGMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6778ECA26C7F2510073E896 /* VGMainCoordinator.swift */; };
 		E67876E5255D61FA00793C5E /* VGMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67876E4255D61FA00793C5E /* VGMap.swift */; };
 		E67876E9255D62C000793C5E /* VGARMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67876E8255D62C000793C5E /* VGARMap.swift */; };
 		E67876ED255D649C00793C5E /* VGSpot+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67876EC255D649C00793C5E /* VGSpot+AR.swift */; };
@@ -277,6 +278,7 @@
 		E67766A1250BA04000563561 /* VGPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGPermissionView.swift; sourceTree = "<group>"; };
 		E67766A3250BA07600563561 /* VGPermissionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VGPermissionView.xib; sourceTree = "<group>"; };
 		E6778EC826C7DE3C0073E896 /* VGTutorialCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialCoordinator.swift; sourceTree = "<group>"; };
+		E6778ECA26C7F2510073E896 /* VGMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMainCoordinator.swift; sourceTree = "<group>"; };
 		E67876E4255D61FA00793C5E /* VGMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMap.swift; sourceTree = "<group>"; };
 		E67876E8255D62C000793C5E /* VGARMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGARMap.swift; sourceTree = "<group>"; };
 		E67876EC255D649C00793C5E /* VGSpot+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VGSpot+AR.swift"; sourceTree = "<group>"; };
@@ -919,6 +921,7 @@
 			children = (
 				E6579ABD2614B36D009889ED /* VGMainDependencyContainer.swift */,
 				E6DF395024DF052F0077FC71 /* VGMainViewController.swift */,
+				E6778ECA26C7F2510073E896 /* VGMainCoordinator.swift */,
 				E680FFE21DA6F44C0053100B /* Map */,
 				E65837F61DDBDD35004807DF /* AR */,
 				E64507981DAA15C90088B630 /* Guide */,
@@ -1239,6 +1242,7 @@
 				E62C5C0C24FE79F300C2C6CC /* VGMapViewModel.swift in Sources */,
 				E6BC93C62559683E0058D4C8 /* VGSpot.swift in Sources */,
 				E6D182372609E2CD002521C1 /* VGSideMenuTableViewCell.swift in Sources */,
+				E6778ECB26C7F2510073E896 /* VGMainCoordinator.swift in Sources */,
 				E6E00FBC2503C914009C1F5D /* VGRootViewModel.swift in Sources */,
 				E65837F81DDBDD35004807DF /* VGARViewController.swift in Sources */,
 				E65BCE582618A05100330932 /* VGGuideRate.swift in Sources */,

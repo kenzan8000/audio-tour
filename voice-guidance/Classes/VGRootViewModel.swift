@@ -1,4 +1,4 @@
-// import Combine
+import Combine
 import Foundation
 import RxSwift
 
@@ -15,14 +15,14 @@ class VGRootViewModel {
   
   private var view: Observable<VGRootView> { viewSubject.asObservable() }
   let viewSubject: BehaviorSubject<VGRootView>
-  // private var cancellable = Set<AnyCancellable>()
+  private var cancellable = Set<AnyCancellable>()
 
   // MARK: initializer
   
   init(userDefaults: VGUserDefaults) {
     let initialView: VGRootView = userDefaults.bool(forKey: VGUserDefaultsKey.doneTutorial) ? .main : .tutorial
     viewSubject = BehaviorSubject<VGRootView>(value: initialView)
-    /*
+    
     NotificationCenter.default.publisher(for: .startMain)
       .receive(on: DispatchQueue.main)
       .sink { [weak self] _ in
@@ -35,6 +35,6 @@ class VGRootViewModel {
         self?.viewSubject.onNext(.tutorial)
       }
       .store(in: &cancellable)
-    */
+    
   }
 }
