@@ -1,4 +1,4 @@
-import CoreLocation
+// import CoreLocation
 import RxSwift
 import UIKit
 
@@ -10,6 +10,8 @@ class VGRootCoordinator: VGBaseCoordinator<Void> {
   private let window: UIWindow
   private let userDefaults: VGUserDefaults
   private let storageProvider: VGStorageProvider
+  private let tutorialViewControllerFactory: VGTutorialViewControllerFactory
+  private let mainViewControllerFactory: VGMainViewControllerFactory
 
   // MARK: initializer
   
@@ -18,36 +20,63 @@ class VGRootCoordinator: VGBaseCoordinator<Void> {
   ///   - window: UIWIndow
   ///   - userDefaults: VGUserDefaults
   ///   - storageProvider: VGStorageProvider
-  init(window: UIWindow, userDefaults: VGUserDefaults, storageProvider: VGStorageProvider) {
+  ///   - tutorialViewControllerFactory: tutorialViewControllerFactory
+  ///   - mainViewControllerFactory: mainViewControllerFactory
+  init(
+    window: UIWindow,
+    userDefaults: VGUserDefaults,
+    storageProvider: VGStorageProvider,
+    tutorialViewControllerFactory: @escaping VGTutorialViewControllerFactory,
+    mainViewControllerFactory: @escaping VGMainViewControllerFactory
+  ) {
     self.window = window
     self.userDefaults = userDefaults
     self.storageProvider = storageProvider
+    self.tutorialViewControllerFactory = tutorialViewControllerFactory
+    self.mainViewControllerFactory = mainViewControllerFactory
   }
 
   // MARK: VGCoordinator
   
   override func start() -> Observable<Void> {
-    window.rootViewController = VGRootViewController(
-      viewModel: VGRootViewModel(userDefaults: userDefaults),
-      tutorialViewControllerFactory: { [unowned self] in
-        VGTutorialViewController(
-          viewModel: VGTutorialViewModel(
-            userDefaults: userDefaults,
-            locationManagerFactory: { CLLocationManager() },
-            captureDeviceFactory: { VGAVCaptureDevice() }
-          )
-        )
-      },
-      mainViewControllerFactory: { [unowned self] in
-        VGMainDependencyContainer().makeMainViewController(
-          mapDependencyContainer: VGMapDependencyContainer(),
-          arDependencyContainer: VGARDependencyContainer(),
-          userDefaults: userDefaults,
-          storageProvider: storageProvider
-        ) { CLLocationManager() }
+    let viewModel = VGRootViewModel(userDefaults: userDefaults)
+    window.rootViewController = VGRootViewController(viewModel: viewModel)
+    viewModel.viewSubject
+      .subscribe { [weak self] event in
+        guard let self = self, let view = event.element else {
+          return
+        }
+        switch view {
+        case .main:
+          self.presentMain()
+        case .tutorial:
+          self.presentTutorial()
+        }
       }
-    )
+      .disposed(by: disposeBag)
     window.makeKeyAndVisible()
     return Observable.never()
+  }
+  
+  // MARK: private api
+  
+  /// Presents tutorial root view
+  private func presentTutorial() {
+    guard let rootViewController = window.rootViewController else {
+      return
+    }
+    let coordinator = VGTutorialCoordinator(
+      rootViewController: rootViewController,
+      tutorialViewControllerFactory: tutorialViewControllerFactory
+    )
+    _ = coordinate(to: coordinator)
+  }
+  
+  /// Presents main root view
+  private func presentMain() {
+    window.rootViewController?.children.forEach { [weak self] in
+      self?.window.rootViewController?.remove(childViewController: $0)
+    }
+    window.rootViewController?.addFullScreen(childViewController: mainViewControllerFactory())
   }
 }

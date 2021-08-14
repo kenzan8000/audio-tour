@@ -1,3 +1,4 @@
+import CoreLocation
 import RxSwift
 import UIKit
 
@@ -26,7 +27,28 @@ class SceneCoordinator: VGBaseCoordinator<Void> {
   // MARK: VGCoordinator
   
   override func start() -> Observable<Void> {
-    let coordinator = VGRootCoordinator(window: window, userDefaults: userDefaults, storageProvider: storageProvider)
+    let coordinator = VGRootCoordinator(
+      window: window,
+      userDefaults: userDefaults,
+      storageProvider: storageProvider,
+      tutorialViewControllerFactory: { [unowned self] in
+        VGTutorialViewController(
+          viewModel: VGTutorialViewModel(
+            userDefaults: userDefaults,
+            locationManagerFactory: { CLLocationManager() },
+            captureDeviceFactory: { VGAVCaptureDevice() }
+          )
+        )
+      },
+      mainViewControllerFactory: { [unowned self] in
+        VGMainDependencyContainer().makeMainViewController(
+          mapDependencyContainer: VGMapDependencyContainer(),
+          arDependencyContainer: VGARDependencyContainer(),
+          userDefaults: userDefaults,
+          storageProvider: storageProvider
+        ) { CLLocationManager() }
+      }
+    )
     return coordinate(to: coordinator)
   }
 }

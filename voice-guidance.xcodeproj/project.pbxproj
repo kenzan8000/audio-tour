@@ -88,6 +88,7 @@
 		E6730A2724F2A537003D1D50 /* VGCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6730A2624F2A537003D1D50 /* VGCircleButton.swift */; };
 		E67766A2250BA04000563561 /* VGPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67766A1250BA04000563561 /* VGPermissionView.swift */; };
 		E67766A4250BA07600563561 /* VGPermissionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E67766A3250BA07600563561 /* VGPermissionView.xib */; };
+		E6778EC926C7DE3C0073E896 /* VGTutorialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6778EC826C7DE3C0073E896 /* VGTutorialCoordinator.swift */; };
 		E67876E5255D61FA00793C5E /* VGMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67876E4255D61FA00793C5E /* VGMap.swift */; };
 		E67876E9255D62C000793C5E /* VGARMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67876E8255D62C000793C5E /* VGARMap.swift */; };
 		E67876ED255D649C00793C5E /* VGSpot+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67876EC255D649C00793C5E /* VGSpot+AR.swift */; };
@@ -275,6 +276,7 @@
 		E6730A2624F2A537003D1D50 /* VGCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGCircleButton.swift; sourceTree = "<group>"; };
 		E67766A1250BA04000563561 /* VGPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGPermissionView.swift; sourceTree = "<group>"; };
 		E67766A3250BA07600563561 /* VGPermissionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VGPermissionView.xib; sourceTree = "<group>"; };
+		E6778EC826C7DE3C0073E896 /* VGTutorialCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialCoordinator.swift; sourceTree = "<group>"; };
 		E67876E4255D61FA00793C5E /* VGMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMap.swift; sourceTree = "<group>"; };
 		E67876E8255D62C000793C5E /* VGARMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGARMap.swift; sourceTree = "<group>"; };
 		E67876EC255D649C00793C5E /* VGSpot+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VGSpot+AR.swift"; sourceTree = "<group>"; };
@@ -885,6 +887,7 @@
 				E6B096EF1DD1EC000083942A /* VGTutorialViewController.swift */,
 				E6DF394B24DF03C30077FC71 /* VGTutorialViewController.xib */,
 				E620F6631E6FFD41008F0C70 /* VGTutorialViewModel.swift */,
+				E6778EC826C7DE3C0073E896 /* VGTutorialCoordinator.swift */,
 				E6AF01CF250F926000F9F40D /* Slide */,
 			);
 			path = Tutorial;
@@ -1270,6 +1273,7 @@
 				E6F6D4851E768CE200738FBE /* VGSearchTableViewCell.swift in Sources */,
 				E6F7EBE324EE972200AC2EC5 /* VGARSceneLocationView.swift in Sources */,
 				E67876ED255D649C00793C5E /* VGSpot+AR.swift in Sources */,
+				E6778EC926C7DE3C0073E896 /* VGTutorialCoordinator.swift in Sources */,
 				E61924D324F5306400104FC4 /* VGNibTableViewCell.swift in Sources */,
 				E600A08C26C6914C002C5752 /* VGRootCoordinator.swift in Sources */,
 				E6D1823E2609FD59002521C1 /* VGSideMenuViewModel.swift in Sources */,
