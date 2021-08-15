@@ -9,13 +9,6 @@ class VGTutorialCoordinator: VGBaseCoordinator<Void> {
   private let rootViewController: UIViewController
   private let tutorialViewControllerFactory: VGTutorialViewControllerFactory
   private var tutorialViewController: VGTutorialViewController?
-  private var slideView: VGTutorialSlideView = .intro {
-    didSet {
-      oldValue.removeFromSuperview()
-      tutorialViewController?.slideBackgroundView.addSubview(slideView)
-      slideView.frame = tutorialViewController?.slideBackgroundView.bounds ?? .zero
-    }
-  }
 
   // MARK: initializer
   
@@ -31,7 +24,6 @@ class VGTutorialCoordinator: VGBaseCoordinator<Void> {
   // MARK: deinit
   
   deinit {
-    slideView.removeFromSuperview()
     tutorialViewController = nil
   }
 
@@ -44,7 +36,7 @@ class VGTutorialCoordinator: VGBaseCoordinator<Void> {
     let tutorialViewController = tutorialViewControllerFactory()
     rootViewController.addFullScreen(childViewController: tutorialViewController)
     tutorialViewController.viewModel
-      .tutorialEvent
+      .slideEvent
       .subscribe { [weak self] event in
         guard let self = self, let slide = event.element else {
           return
@@ -52,21 +44,21 @@ class VGTutorialCoordinator: VGBaseCoordinator<Void> {
         self.presentSlide(slide)
       }
       .disposed(by: disposeBag)
+    tutorialViewController.presentSlideView(.intro)
     self.tutorialViewController = tutorialViewController
-    slideView = .intro
     return Observable.never()
   }
   
   func presentSlide(_ slide: VGTutorialSlide) {
     switch slide {
     case .intro:
-      self.slideView = .intro
+      tutorialViewController?.presentSlideView(.intro)
     case .map:
-      self.slideView = .map
+      tutorialViewController?.presentSlideView(.map)
     case .ar:
-      self.slideView = .ar
+      tutorialViewController?.presentSlideView(.ar)
     case .last:
-      self.slideView = .last
+      tutorialViewController?.presentSlideView(.last)
     case .end:
       NotificationCenter.default.post(name: .startMain, object: nil)
     }

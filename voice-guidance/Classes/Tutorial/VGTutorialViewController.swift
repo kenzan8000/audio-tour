@@ -8,7 +8,15 @@ class VGTutorialViewController: UIViewController {
   
   private let disposeBag = DisposeBag()
   let viewModel: VGTutorialViewModel
-  private var slideView: VGTutorialSlideView?
+  private var slideView: VGTutorialSlideView? {
+    didSet {
+      oldValue?.removeFromSuperview()
+      if let slideView = slideView {
+        slideBackgroundView.addSubview(slideView)
+        slideView.frame = slideBackgroundView.bounds
+      }
+    }
+  }
   @IBOutlet private(set) weak var slideBackgroundView: UIView!
   @IBOutlet private(set) weak var pageControl: UIPageControl!
   @IBOutlet private(set) weak var doneButton: UIButton!
@@ -30,15 +38,17 @@ class VGTutorialViewController: UIViewController {
   // MARK: destruction
   
   deinit {
-    slideView?.removeFromSuperview()
+    slideView = nil
   }
 
   // MARK: life cycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     view.frame = UIScreen.main.bounds
-    viewModel.tutorialEvent
+    
+    viewModel.slideEvent
       .subscribe { [weak self] event in
         guard let self = self, let slide = event.element else {
           return
@@ -49,15 +59,16 @@ class VGTutorialViewController: UIViewController {
         }
       }
       .disposed(by: disposeBag)
+    
     doneButton.rx.tap
-      .subscribe { [weak self] _ in
-        self?.viewModel.nextView()
-      }
+      .subscribe { [weak self] _ in self?.viewModel.presentNextView() }
       .disposed(by: disposeBag)
   }
   
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
+  // MARK: public api
+  
+  func presentSlideView(_ slideView: VGTutorialSlideView) {
+    self.slideView = slideView
   }
 }
 

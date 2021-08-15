@@ -10,16 +10,16 @@ class VGTutorialViewModel {
   private let userDefaults: VGUserDefaults
   private let locationManagerFactory: VGLocationManagerFactory
   private let captureDeviceFactory: VGCaptureDeviceFactory
-  private(set) var tutorial: VGTutorialSlide {
+  var slide: VGTutorialSlide {
     didSet {
-      if tutorial == .end {
+      if slide == .end {
         userDefaults.set(true, forKey: VGUserDefaultsKey.doneTutorial)
       }
-      tutorialSubject.onNext(tutorial)
+      slideSubject.onNext(slide)
     }
   }
-  private let tutorialSubject: BehaviorSubject<VGTutorialSlide>
-  var tutorialEvent: Observable<VGTutorialSlide> { tutorialSubject.asObservable() }
+  private let slideSubject: BehaviorSubject<VGTutorialSlide>
+  var slideEvent: Observable<VGTutorialSlide> { slideSubject.asObservable() }
   private var locationPermissionModel: VGPermissionViewModel?
   private var videoPermissionModel: VGPermissionViewModel?
   
@@ -38,18 +38,18 @@ class VGTutorialViewModel {
     self.userDefaults = userDefaults
     self.locationManagerFactory = locationManagerFactory
     self.captureDeviceFactory = captureDeviceFactory
-    tutorial = .intro
-    tutorialSubject = BehaviorSubject<VGTutorialSlide>(value: tutorial)
+    slide = .intro
+    slideSubject = BehaviorSubject<VGTutorialSlide>(value: slide)
   }
   
   // MARK: pubilc api
   
   /// Moves to next VGTutorialView
-  func nextView() {
+  func presentNextView() {
     if !canGoToNextView() {
       return
     }
-    tutorial = tutorial.next
+    slide = slide.next
   }
   
   // MARK: private api
@@ -57,7 +57,7 @@ class VGTutorialViewModel {
   /// Calls when ending the current view and returns if you can go to next view
   /// - Returns: Bool
   private func canGoToNextView() -> Bool {
-    switch tutorial {
+    switch slide {
     case .intro, .last, .end:
       break
     case .map:
@@ -78,7 +78,7 @@ class VGTutorialViewModel {
     locationPermissionModel?.locationAuthorizationStatusEvent
       .subscribe { [weak self] event in
         if let status = event.element, status != .notDetermined {
-          DispatchQueue.main.async { [weak self] in self?.nextView() }
+          DispatchQueue.main.async { [weak self] in self?.presentNextView() }
         }
       }
       .disposed(by: disposeBag)
@@ -96,7 +96,7 @@ class VGTutorialViewModel {
     videoPermissionModel?.cameraAuthorizationStatusEvent
       .subscribe { [weak self] event in
         if let status = event.element, status != .notDetermined {
-          DispatchQueue.main.async { [weak self] in self?.nextView() }
+          DispatchQueue.main.async { [weak self] in self?.presentNextView() }
         }
       }
       .disposed(by: disposeBag)

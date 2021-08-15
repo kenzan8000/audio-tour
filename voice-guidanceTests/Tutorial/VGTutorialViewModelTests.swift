@@ -22,7 +22,7 @@ class VGTutorialViewModelTests: XCTestCase {
       locationManagerFactory: { VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse) },
       captureDeviceFactory: { VGCaptureDeviceStub(authorizationStatus: .authorized) }
     )
-    XCTAssertEqual(sut.tutorial, .intro)
+    XCTAssertEqual(sut.slide, .intro)
   }
   
   func testVGTutorialViewModel_whenLocationAndCameraAreAuthorized_shouldBeAbleToSeeAllTutorial() throws {
@@ -33,15 +33,15 @@ class VGTutorialViewModelTests: XCTestCase {
       captureDeviceFactory: { VGCaptureDeviceStub(authorizationStatus: .authorized) }
     )
     XCTAssertFalse(userDefaults.bool(forKey: VGUserDefaultsKey.doneTutorial))
-    XCTAssertEqual(sut.tutorial, .intro)
-    sut.nextView()
-    XCTAssertEqual(sut.tutorial, .map)
-    sut.nextView()
-    XCTAssertEqual(sut.tutorial, .ar)
-    sut.nextView()
-    XCTAssertEqual(sut.tutorial, .last)
-    sut.nextView()
-    XCTAssertEqual(sut.tutorial, .end)
+    XCTAssertEqual(sut.slide, .intro)
+    sut.presentNextView()
+    XCTAssertEqual(sut.slide, .map)
+    sut.presentNextView()
+    XCTAssertEqual(sut.slide, .ar)
+    sut.presentNextView()
+    XCTAssertEqual(sut.slide, .last)
+    sut.presentNextView()
+    XCTAssertEqual(sut.slide, .end)
     XCTAssertTrue(userDefaults.bool(forKey: VGUserDefaultsKey.doneTutorial))
   }
   
@@ -51,11 +51,11 @@ class VGTutorialViewModelTests: XCTestCase {
       locationManagerFactory: { VGLocationManagerDummy(delegate: nil, authorizationStatus: .notDetermined) },
       captureDeviceFactory: { VGCaptureDeviceStub(authorizationStatus: .authorized) }
     )
-    XCTAssertEqual(sut.tutorial, .intro)
-    sut.nextView()
-    XCTAssertEqual(sut.tutorial, .map)
-    sut.nextView()
-    XCTAssertEqual(sut.tutorial, .map)
+    XCTAssertEqual(sut.slide, .intro)
+    sut.presentNextView()
+    XCTAssertEqual(sut.slide, .map)
+    sut.presentNextView()
+    XCTAssertEqual(sut.slide, .map)
   }
   
   func testVGTutorialViewModel_whenCameraIsNotDetermined_shouldStopAtAr() throws {
@@ -64,13 +64,13 @@ class VGTutorialViewModelTests: XCTestCase {
       locationManagerFactory: { VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse) },
       captureDeviceFactory: { VGCaptureDeviceStub(authorizationStatus: .notDetermined) }
     )
-    XCTAssertEqual(sut.tutorial, .intro)
-    sut.nextView()
-    XCTAssertEqual(sut.tutorial, .map)
-    sut.nextView()
-    XCTAssertEqual(sut.tutorial, .ar)
-    sut.nextView()
-    XCTAssertEqual(sut.tutorial, .ar)
+    XCTAssertEqual(sut.slide, .intro)
+    sut.presentNextView()
+    XCTAssertEqual(sut.slide, .map)
+    sut.presentNextView()
+    XCTAssertEqual(sut.slide, .ar)
+    sut.presentNextView()
+    XCTAssertEqual(sut.slide, .ar)
   }
   
 }
