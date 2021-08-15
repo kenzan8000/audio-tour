@@ -1,6 +1,12 @@
 import RxSwift
 import UIKit
 
+// MARK: - VGMainTab
+enum VGMainTab {
+  case map
+  case ar
+}
+
 // MARK: - VGMainCoordinator
 class VGMainCoordinator: VGBaseCoordinator<Void> {
 

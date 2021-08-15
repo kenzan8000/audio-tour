@@ -10,7 +10,7 @@ class VGTutorialViewModel {
   private let userDefaults: VGUserDefaults
   private let locationManagerFactory: VGLocationManagerFactory
   private let captureDeviceFactory: VGCaptureDeviceFactory
-  private(set) var tutorial: VGTutorial {
+  private(set) var tutorial: VGTutorialSlide {
     didSet {
       if tutorial == .end {
         userDefaults.set(true, forKey: VGUserDefaultsKey.doneTutorial)
@@ -18,8 +18,8 @@ class VGTutorialViewModel {
       tutorialSubject.onNext(tutorial)
     }
   }
-  private let tutorialSubject: BehaviorSubject<VGTutorial>
-  var tutorialEvent: Observable<VGTutorial> { tutorialSubject.asObservable() }
+  private let tutorialSubject: BehaviorSubject<VGTutorialSlide>
+  var tutorialEvent: Observable<VGTutorialSlide> { tutorialSubject.asObservable() }
   private var locationPermissionModel: VGPermissionViewModel?
   private var videoPermissionModel: VGPermissionViewModel?
   
@@ -39,7 +39,7 @@ class VGTutorialViewModel {
     self.locationManagerFactory = locationManagerFactory
     self.captureDeviceFactory = captureDeviceFactory
     tutorial = .intro
-    tutorialSubject = BehaviorSubject<VGTutorial>(value: tutorial)
+    tutorialSubject = BehaviorSubject<VGTutorialSlide>(value: tutorial)
   }
   
   // MARK: pubilc api
@@ -75,12 +75,13 @@ class VGTutorialViewModel {
       return true
     }
     locationPermissionModel = VGPermissionViewModel(permissionType: .location, locationManager: locationManagerFactory(), captureDevice: captureDeviceFactory())
-    locationPermissionModel?.locationAuthorizationStatusEvent.subscribe { [weak self] event in
-      if let status = event.element, status != .notDetermined {
-        DispatchQueue.main.async { [weak self] in self?.nextView() }
+    locationPermissionModel?.locationAuthorizationStatusEvent
+      .subscribe { [weak self] event in
+        if let status = event.element, status != .notDetermined {
+          DispatchQueue.main.async { [weak self] in self?.nextView() }
+        }
       }
-    }
-    .disposed(by: disposeBag)
+      .disposed(by: disposeBag)
     locationPermissionModel?.requestLocationAuthorization()
     return false
   }
@@ -92,12 +93,13 @@ class VGTutorialViewModel {
       return true
     }
     videoPermissionModel = VGPermissionViewModel(permissionType: .locationAndVideo, locationManager: locationManagerFactory(), captureDevice: captureDeviceFactory())
-    videoPermissionModel?.cameraAuthorizationStatusEvent.subscribe { [weak self] event in
-      if let status = event.element, status != .notDetermined {
-        DispatchQueue.main.async { [weak self] in self?.nextView() }
+    videoPermissionModel?.cameraAuthorizationStatusEvent
+      .subscribe { [weak self] event in
+        if let status = event.element, status != .notDetermined {
+          DispatchQueue.main.async { [weak self] in self?.nextView() }
+        }
       }
-    }
-    .disposed(by: disposeBag)
+      .disposed(by: disposeBag)
     videoPermissionModel?.requestCameraAuthorization()
     return false
   }

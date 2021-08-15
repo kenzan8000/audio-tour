@@ -1,5 +1,8 @@
-// MARK: - VGTutorial
-enum VGTutorial: Int {
+import RxSwift
+import UIKit
+
+// MARK: - VGTutorialSlide
+enum VGTutorialSlide: Int {
   case intro = 0
   case map = 1
   case ar = 2
@@ -8,7 +11,7 @@ enum VGTutorial: Int {
   
   var currentPage: Int { rawValue }
   
-  var next: VGTutorial {
+  var next: VGTutorialSlide {
     switch self {
     case .intro:
       return .map

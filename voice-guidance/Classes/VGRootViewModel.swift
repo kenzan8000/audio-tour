@@ -35,6 +35,5 @@ class VGRootViewModel {
         self?.viewSubject.onNext(.tutorial)
       }
       .store(in: &cancellable)
-    
   }
 }
