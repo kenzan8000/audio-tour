@@ -2,12 +2,6 @@ import Combine
 import Foundation
 import RxSwift
 
-// MARK: - VGRootView
-enum VGRootView {
-  case tutorial
-  case main
-}
-
 // MARK: - VGRootViewModel
 class VGRootViewModel {
 

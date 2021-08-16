@@ -63,7 +63,6 @@
 		E64558F8261CA8D500584C64 /* VGLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558F7261CA8D500584C64 /* VGLocationManager.swift */; };
 		E6455900261CB1A700584C64 /* VGLocationManagerDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64558FC261CB0B100584C64 /* VGLocationManagerDummy.swift */; };
 		E646601D1DB15DE3006CBDB7 /* VGGuideProgressSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E646601C1DB15DE3006CBDB7 /* VGGuideProgressSlider.swift */; };
-		E65503B4255D55F400543F9B /* VGTutorialSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65503B3255D55F400543F9B /* VGTutorialSlide.swift */; };
 		E65503BE255D5FF300543F9B /* VGUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65503BD255D5FF300543F9B /* VGUserDefaults.swift */; };
 		E65503C2255D604600543F9B /* Notification.Name+VG.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65503C1255D604600543F9B /* Notification.Name+VG.swift */; };
 		E6576C3F2148D29500CD31F3 /* UIImage+Tint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6576C3E2148D29500CD31F3 /* UIImage+Tint.swift */; };
@@ -254,7 +253,6 @@
 		E64558F7261CA8D500584C64 /* VGLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGLocationManager.swift; sourceTree = "<group>"; };
 		E64558FC261CB0B100584C64 /* VGLocationManagerDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGLocationManagerDummy.swift; sourceTree = "<group>"; };
 		E646601C1DB15DE3006CBDB7 /* VGGuideProgressSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGGuideProgressSlider.swift; sourceTree = "<group>"; };
-		E65503B3255D55F400543F9B /* VGTutorialSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialSlide.swift; sourceTree = "<group>"; };
 		E65503BD255D5FF300543F9B /* VGUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGUserDefaults.swift; sourceTree = "<group>"; };
 		E65503C1255D604600543F9B /* Notification.Name+VG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification.Name+VG.swift"; sourceTree = "<group>"; };
 		E6576C3E2148D29500CD31F3 /* UIImage+Tint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Tint.swift"; sourceTree = "<group>"; };
@@ -878,7 +876,6 @@
 		E6AF01CF250F926000F9F40D /* Slide */ = {
 			isa = PBXGroup;
 			children = (
-				E65503B3255D55F400543F9B /* VGTutorialSlide.swift */,
 				E6AF01D0250F92AD00F9F40D /* VGTutorialSlideView.swift */,
 				E6AF01D2250F973A00F9F40D /* VGTutorialSlideView.xib */,
 				E662601526CA3A9600175106 /* VGTutorialSlideViewModel.swift */,
@@ -1297,7 +1294,6 @@
 				E65E851224E4333100DFF7FE /* VGARDependencyContainer.swift in Sources */,
 				E636228E2090768800A7C089 /* VGARLocationAnnotationNode.swift in Sources */,
 				E67766A2250BA04000563561 /* VGPermissionView.swift in Sources */,
-				E65503B4255D55F400543F9B /* VGTutorialSlide.swift in Sources */,
 				E6BE8D5F24EC02E000B96D15 /* VGMapZoom.swift in Sources */,
 				E6A67A9326C662BC00968857 /* VGCoordinator.swift in Sources */,
 				E6899CA41DF7A2B6007D6B97 /* VGMapView.swift in Sources */,

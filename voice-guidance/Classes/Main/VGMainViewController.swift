@@ -2,10 +2,6 @@ import UIKit
 
 // MARK: - VGMainViewController
 class VGMainViewController: UITabBarController {
-
-  // MARK: properties
-  
-  private var tabViewControllers: [VGTabViewController]
   
   // MARK: initializer
   
@@ -17,28 +13,21 @@ class VGMainViewController: UITabBarController {
   /// Inits
   /// - Parameter viewControllers: viewControllers stored in the tabs
   init(viewControllers: [VGTabViewController]) {
-    tabViewControllers = viewControllers
     super.init(nibName: nil, bundle: nil)
     self.viewControllers = viewControllers
     updateTabs()
-  }
-  
-  // MARK: life cycle
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
   }
 
   // MARK: private api
   
   /// Updates tab's images and titles
   private func updateTabs() {
-    guard let tabBarItems = tabBar.items else {
+    guard let tabBarItems = tabBar.items, let tabViewControllers = viewControllers as? [VGTabViewController] else {
       return
     }
-    for (i, item) in tabBarItems.enumerated() {
-      item.image = tabViewControllers[i].tabBarImage
-      item.title = tabViewControllers[i].tabBarTitle
+    zip(tabBarItems, tabViewControllers).forEach { item, tabViewController in
+      item.image = tabViewController.tabBarImage
+      item.title = tabViewController.tabBarTitle
     }
   }
 }

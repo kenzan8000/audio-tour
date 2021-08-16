@@ -2,6 +2,12 @@
 import RxSwift
 import UIKit
 
+// MARK: - VGRootView
+enum VGRootView {
+  case tutorial
+  case main
+}
+
 // MARK: - VGRootCoordinator
 class VGRootCoordinator: VGBaseCoordinator<Void> {
 
