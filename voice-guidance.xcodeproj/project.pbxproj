@@ -77,6 +77,7 @@
 		E65E851024E4316300DFF7FE /* VGMapDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E850F24E4316300DFF7FE /* VGMapDependencyContainer.swift */; };
 		E65E851224E4333100DFF7FE /* VGARDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65E851124E4333100DFF7FE /* VGARDependencyContainer.swift */; };
 		E66018A8261B3C9F0029524B /* Mapbox-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E66018A7261B3C9F0029524B /* Mapbox-Info.plist */; };
+		E662601626CA3A9600175106 /* VGTutorialSlideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E662601526CA3A9600175106 /* VGTutorialSlideViewModel.swift */; };
 		E66B22AB26A3E50200CFF95F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B22AA26A3E50200CFF95F /* SceneDelegate.swift */; };
 		E66B22EC26A3E98800CFF95F /* VGTestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B22AC26A3E61100CFF95F /* VGTestingSceneDelegate.swift */; };
 		E66B22ED26A3E98800CFF95F /* VGTestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B22AC26A3E61100CFF95F /* VGTestingSceneDelegate.swift */; };
@@ -267,6 +268,7 @@
 		E65E850F24E4316300DFF7FE /* VGMapDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapDependencyContainer.swift; sourceTree = "<group>"; };
 		E65E851124E4333100DFF7FE /* VGARDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGARDependencyContainer.swift; sourceTree = "<group>"; };
 		E66018A7261B3C9F0029524B /* Mapbox-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Mapbox-Info.plist"; sourceTree = "<group>"; };
+		E662601526CA3A9600175106 /* VGTutorialSlideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialSlideViewModel.swift; sourceTree = "<group>"; };
 		E66B22AA26A3E50200CFF95F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E66B22AC26A3E61100CFF95F /* VGTestingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTestingSceneDelegate.swift; sourceTree = "<group>"; };
 		E66B22AE26A3E66C00CFF95F /* VGTestingRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTestingRootViewController.swift; sourceTree = "<group>"; };
@@ -879,6 +881,7 @@
 				E65503B3255D55F400543F9B /* VGTutorialSlide.swift */,
 				E6AF01D0250F92AD00F9F40D /* VGTutorialSlideView.swift */,
 				E6AF01D2250F973A00F9F40D /* VGTutorialSlideView.xib */,
+				E662601526CA3A9600175106 /* VGTutorialSlideViewModel.swift */,
 			);
 			path = Slide;
 			sourceTree = "<group>";
@@ -1236,6 +1239,7 @@
 				E6CAF5E124EABC0900BE5E6A /* VGMapHeading.swift in Sources */,
 				E60C3E961DF53089002E4965 /* VGLocale.swift in Sources */,
 				E6BEFE5C257650FE00F12261 /* VGARTutorialView.swift in Sources */,
+				E662601626CA3A9600175106 /* VGTutorialSlideViewModel.swift in Sources */,
 				E65E850624E420B300DFF7FE /* VGARViewModel.swift in Sources */,
 				E680FFE41DA6F44C0053100B /* VGMapViewController.swift in Sources */,
 				E65503BE255D5FF300543F9B /* VGUserDefaults.swift in Sources */,

@@ -69,9 +69,7 @@ class VGRootCoordinator: VGBaseCoordinator<Void> {
       rootViewController: rootViewController,
       tutorialViewControllerFactory: tutorialViewControllerFactory
     )
-    coordinate(to: coordinator)
-      .subscribe()
-      .disposed(by: disposeBag)
+    _ = coordinate(to: coordinator)
   }
   
   /// Presents main root view
@@ -83,8 +81,6 @@ class VGRootCoordinator: VGBaseCoordinator<Void> {
       rootViewController: rootViewController,
       mainViewControllerFactory: mainViewControllerFactory
     )
-    coordinate(to: coordinator)
-      .subscribe()
-      .disposed(by: disposeBag)
+    _ = coordinate(to: coordinator)
   }
 }

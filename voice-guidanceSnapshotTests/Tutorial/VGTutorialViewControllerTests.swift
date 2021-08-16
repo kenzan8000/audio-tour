@@ -31,7 +31,7 @@ class VGTutorialViewControllerTests: XCTestCase {
   // MARK: test
   
   func testVGTutorialViewController_whenIntro_snapshotTest() throws {
-    sut.presentSlideView(.intro)
+    sut.presentSlideView(.init(viewModel: .intro))
     [(UIUserInterfaceStyle.dark, "dark"), (UIUserInterfaceStyle.light, "light")].forEach { style, named in
       sut.overrideUserInterfaceStyle = style
       assertSnapshot(
@@ -43,7 +43,7 @@ class VGTutorialViewControllerTests: XCTestCase {
   }
   
   func testVGTutorialViewController_whenMap_snapshotTest() throws {
-    sut.presentSlideView(.map)
+    sut.presentSlideView(.init(viewModel: .map))
     [(UIUserInterfaceStyle.dark, "dark"), (UIUserInterfaceStyle.light, "light")].forEach { style, named in
       sut.overrideUserInterfaceStyle = style
       assertSnapshot(
@@ -55,7 +55,7 @@ class VGTutorialViewControllerTests: XCTestCase {
   }
   
   func testVGTutorialViewController_whenAr_snapshotTest() throws {
-    sut.presentSlideView(.ar)
+    sut.presentSlideView(.init(viewModel: .ar))
     [(UIUserInterfaceStyle.dark, "dark"), (UIUserInterfaceStyle.light, "light")].forEach { style, named in
       sut.overrideUserInterfaceStyle = style
       assertSnapshot(
@@ -67,7 +67,7 @@ class VGTutorialViewControllerTests: XCTestCase {
   }
   
   func testVGTutorialViewController_whenLast_snapshotTest() throws {
-    sut.presentSlideView(.last)
+    sut.presentSlideView(.init(viewModel: .last))
     [(UIUserInterfaceStyle.dark, "dark"), (UIUserInterfaceStyle.light, "light")].forEach { style, named in
       sut.overrideUserInterfaceStyle = style
       assertSnapshot(

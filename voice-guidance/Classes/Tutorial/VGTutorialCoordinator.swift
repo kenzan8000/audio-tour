@@ -44,7 +44,7 @@ class VGTutorialCoordinator: VGBaseCoordinator<Void> {
         self.presentSlide(slide)
       }
       .disposed(by: disposeBag)
-    tutorialViewController.presentSlideView(.intro)
+    tutorialViewController.presentSlideView(.init(viewModel: .intro))
     self.tutorialViewController = tutorialViewController
     return Observable.never()
   }
@@ -52,13 +52,13 @@ class VGTutorialCoordinator: VGBaseCoordinator<Void> {
   func presentSlide(_ slide: VGTutorialSlide) {
     switch slide {
     case .intro:
-      tutorialViewController?.presentSlideView(.intro)
+      tutorialViewController?.presentSlideView(.init(viewModel: .intro))
     case .map:
-      tutorialViewController?.presentSlideView(.map)
+      tutorialViewController?.presentSlideView(.init(viewModel: .map))
     case .ar:
-      tutorialViewController?.presentSlideView(.ar)
+      tutorialViewController?.presentSlideView(.init(viewModel: .ar))
     case .last:
-      tutorialViewController?.presentSlideView(.last)
+      tutorialViewController?.presentSlideView(.init(viewModel: .last))
     case .end:
       NotificationCenter.default.post(name: .startMain, object: nil)
     }

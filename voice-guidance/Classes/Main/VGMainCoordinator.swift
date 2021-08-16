@@ -32,7 +32,8 @@ class VGMainCoordinator: VGBaseCoordinator<Void> {
     rootViewController.children.forEach { [weak self] in
       self?.rootViewController.remove(childViewController: $0)
     }
-    rootViewController.addFullScreen(childViewController: mainViewControllerFactory())
+    let mainViewController = mainViewControllerFactory()
+    rootViewController.addFullScreen(childViewController: mainViewController)
     return Observable.never()
   }
 }
