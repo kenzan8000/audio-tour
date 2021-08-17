@@ -31,7 +31,7 @@ class VGSideMenuViewController: UIViewController {
     super.viewDidLoad()
     viewModel.sideMenuWasUpdatedEvent
       .bind(to: tableView.rx.items) { _, _, sideMenu in
-        VGSideMenuTableViewCell(title: sideMenu.title)
+        VGSideMenuTableViewCell(viewModel: .init(title: sideMenu.title))
       }
       .disposed(by: disposeBag)
     viewModel.sideMenuWasUpdatedEvent

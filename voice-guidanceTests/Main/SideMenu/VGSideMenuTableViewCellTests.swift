@@ -17,7 +17,12 @@ class VGSideMenuTableViewCellTests: XCTestCase {
   // MARK: test
   
   func testVGSideMenuTableViewCell_whenInitialState_outletsShouldBeConnected() throws {
-    let sut = VGSideMenuTableViewCell(title: "title")
+    let sut = VGSideMenuTableViewCell(viewModel: .init(title: "title"))
     XCTAssertNotNil(sut.titleLabel)
+  }
+  
+  func testVGSideMenuTableViewCell_whenInitialState_labelTextShouldBeEqualToTitle() throws {
+    let sut = VGSideMenuTableViewCell(viewModel: .init(title: "title"))
+    XCTAssertEqual(sut.titleLabel.text, "title")
   }
 }

@@ -18,7 +18,7 @@ class VGSideMenuTableViewCellTests: XCTestCase {
   // MARK: test
   
   func testVGSideMenuTableViewCell_whenInitialState_snapshotTest() throws {
-    let sut = VGSideMenuTableViewCell(title: "Tutorial")
+    let sut = VGSideMenuTableViewCell(viewModel: .init(title: "Tutorial"))
     
     [(UIUserInterfaceStyle.dark, "dark"), (UIUserInterfaceStyle.light, "light")].forEach { style, named in
       sut.overrideUserInterfaceStyle = style

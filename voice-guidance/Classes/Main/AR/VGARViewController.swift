@@ -251,7 +251,7 @@ class VGARViewController: VGTabViewController {
   private func bindSearchView() {
     searchView.rx.tapMenu
       .subscribe { [weak self] _ in
-        let vc = VGSideMenuViewController(viewModel: VGSideMenuViewModel(sideMenus: [VGSideMenu(title: NSLocalizedString("ar_sidemenu_0", comment: "")), VGSideMenu(title: NSLocalizedString("ar_sidemenu_1", comment: ""))]))
+        let vc = VGSideMenuViewController(viewModel: .ar)
         let menu = VGSideMenuNavigationController(rootViewController: vc)
         self?.present(menu, animated: true, completion: nil)
         vc.rx.itemSelected

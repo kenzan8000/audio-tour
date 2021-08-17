@@ -117,7 +117,7 @@ class VGMapViewController: VGTabViewController {
   private func bindSearchView() {
     searchView.rx.tapMenu
       .subscribe { [weak self] _ in
-        let vc = VGSideMenuViewController(viewModel: VGSideMenuViewModel(sideMenus: [VGSideMenu(title: NSLocalizedString("map_sidemenu_0", comment: ""))]))
+        let vc = VGSideMenuViewController(viewModel: .map)
         let menu = VGSideMenuNavigationController(rootViewController: vc)
         self?.present(menu, animated: true, completion: nil)
         vc.rx.itemSelected

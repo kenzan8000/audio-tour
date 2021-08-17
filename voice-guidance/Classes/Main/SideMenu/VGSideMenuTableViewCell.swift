@@ -6,6 +6,7 @@ class VGSideMenuTableViewCell: VGNibTableViewCell {
   // MARK: property
   
   @IBOutlet private(set) weak var titleLabel: UILabel!
+  private let viewModel: VGSideMenuTableViewCellModel
 
   // MARK: initializer
   
@@ -16,12 +17,13 @@ class VGSideMenuTableViewCell: VGNibTableViewCell {
   
   /// Inits
   /// - Parameters:
-  ///   - image: icon image
-  init(title: String) {
+  ///   - viewModel: VGSideMenuTableViewCellModel
+  init(viewModel: VGSideMenuTableViewCellModel) {
+    self.viewModel = viewModel
     super.init(
       style: .default,
       reuseIdentifier: nil
     )
-    titleLabel.text = title
+    titleLabel.text = viewModel.title
   }
 }

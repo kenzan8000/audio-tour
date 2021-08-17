@@ -101,6 +101,7 @@
 		E6868C07261B05CA007D58F1 /* MapboxMobileEvents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E6BB2B3D26083D2E001DE0D6 /* MapboxMobileEvents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E6899CA41DF7A2B6007D6B97 /* VGMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6899CA31DF7A2B6007D6B97 /* VGMapView.swift */; };
 		E68E90311D9B99F800ABC487 /* VGStorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68E902F1D9B99F800ABC487 /* VGStorageProvider.swift */; };
+		E69F403326CBD715003A3869 /* VGSideMenuTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69F403226CBD715003A3869 /* VGSideMenuTableViewCellModel.swift */; };
 		E6A1B7BD1DEADA1100A61E30 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6A1B7BF1DEADA1100A61E30 /* Localizable.strings */; };
 		E6A670D926082EDB00DF17C9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A670D826082EDB00DF17C9 /* main.swift */; };
 		E6A671042608320500DF17C9 /* VGTestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A671032608320500DF17C9 /* VGTestingAppDelegate.swift */; };
@@ -286,6 +287,7 @@
 		E680FFE31DA6F44C0053100B /* VGMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGMapViewController.swift; sourceTree = "<group>"; };
 		E6899CA31DF7A2B6007D6B97 /* VGMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGMapView.swift; sourceTree = "<group>"; };
 		E68E902F1D9B99F800ABC487 /* VGStorageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGStorageProvider.swift; sourceTree = "<group>"; };
+		E69F403226CBD715003A3869 /* VGSideMenuTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSideMenuTableViewCellModel.swift; sourceTree = "<group>"; };
 		E6A1B7BE1DEADA1100A61E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E6A1B7C01DEADA1300A61E30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E6A1B7C11DEADA1500A61E30 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -912,6 +914,7 @@
 				E6D182322609DA5C002521C1 /* VGSideMenuViewController.xib */,
 				E6D182362609E2CD002521C1 /* VGSideMenuTableViewCell.swift */,
 				E6D182392609E37E002521C1 /* VGSideMenuTableViewCell.xib */,
+				E69F403226CBD715003A3869 /* VGSideMenuTableViewCellModel.swift */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -1235,6 +1238,7 @@
 			files = (
 				E6CAF5E124EABC0900BE5E6A /* VGMapHeading.swift in Sources */,
 				E60C3E961DF53089002E4965 /* VGLocale.swift in Sources */,
+				E69F403326CBD715003A3869 /* VGSideMenuTableViewCellModel.swift in Sources */,
 				E6BEFE5C257650FE00F12261 /* VGARTutorialView.swift in Sources */,
 				E662601626CA3A9600175106 /* VGTutorialSlideViewModel.swift in Sources */,
 				E65E850624E420B300DFF7FE /* VGARViewModel.swift in Sources */,

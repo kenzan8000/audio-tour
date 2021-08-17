@@ -18,7 +18,7 @@ class VGSideMenuViewControllerTests: XCTestCase {
   // MARK: test
   
   func testVGSideMenuViewController_whenInitialState_snapshotTest() throws {
-    let sut = VGSideMenuViewController(viewModel: VGSideMenuViewModel(sideMenus: [.init(title: "Tutorial"), .init(title: "AR Tutorial")]))
+    let sut = VGSideMenuViewController(viewModel: .ar)
     
     [(UIUserInterfaceStyle.dark, "dark"), (UIUserInterfaceStyle.light, "light")].forEach { style, named in
       sut.overrideUserInterfaceStyle = style
