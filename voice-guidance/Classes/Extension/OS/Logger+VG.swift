@@ -5,12 +5,12 @@ let logger = Logger(subsystem: Bundle.main.bundleIdentifier ?? "org.kenzan8000.s
 
 // MARK: - Logger + VG
 extension Logger {
-  func prefix(_ instance: String = #file, _ function: String = #function) -> String {
+  func prefix(_ file: String = #fileID, _ function: String = #function, _ line: Int = #line) -> String {
     """
     
-    [file] \(String(describing: type(of: instance)))
-    [func] \(function)
-    --------------------------------------------------
+    
+    -----------------------------------------------------
+    [\(file):\(line)] \(function)
     
     """
   }

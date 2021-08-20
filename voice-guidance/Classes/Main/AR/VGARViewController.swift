@@ -197,11 +197,8 @@ class VGARViewController: VGTabViewController {
   /// Binds location settings in view model
   private func bindLocation() {
     viewModel.latestHeadingEvent
-      .subscribe { [weak self] event in
-        guard let self = self, let heading = event.element else {
-          return
-        }
-        self.mapView.setDirection(heading, animated: false)
+      .subscribe { [weak self] _ in
+        self?.mapView.userTrackingMode = .followWithHeading
       }
       .disposed(by: disposeBag)
     viewModel.latestLocationEvent
