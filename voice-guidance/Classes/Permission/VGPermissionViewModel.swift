@@ -108,7 +108,7 @@ class VGPermissionViewModel: NSObject, CLLocationManagerDelegate {
   /// Requests camera permission
   func requestCameraAuthorization() {
     captureDevice.requestAccess(for: .video) { [weak self] _ in
-      self?.handleCameraAuthorization()
+      DispatchQueue.main.async { [weak self] in self?.handleCameraAuthorization() }
     }
   }
   

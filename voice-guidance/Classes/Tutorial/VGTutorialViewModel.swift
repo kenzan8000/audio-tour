@@ -92,7 +92,7 @@ class VGTutorialViewModel {
     if VGPermissionViewModel.determined(permissionType: .video, locationManager: locationManagerFactory(), captureDevice: captureDeviceFactory()) {
       return true
     }
-    videoPermissionModel = VGPermissionViewModel(permissionType: .locationAndVideo, locationManager: locationManagerFactory(), captureDevice: captureDeviceFactory())
+    videoPermissionModel = VGPermissionViewModel(permissionType: .video, locationManager: locationManagerFactory(), captureDevice: captureDeviceFactory())
     videoPermissionModel?.cameraAuthorizationStatusEvent
       .subscribe { [weak self] event in
         if let status = event.element, status != .notDetermined {
