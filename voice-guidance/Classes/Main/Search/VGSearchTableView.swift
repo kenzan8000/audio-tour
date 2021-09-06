@@ -1,3 +1,4 @@
+import Combine
 import RxCocoa
 import RxSwift
 import UIKit
@@ -7,9 +8,16 @@ class VGSearchTableView: VGNibView {
 
   // MARK: property
   
-  private let disposeBag = DisposeBag()
-  
   @IBOutlet private(set) weak var tableView: UITableView!
+  
+  private let disposeBag = DisposeBag()
+  private var cancellable = Set<AnyCancellable>()
+  
+  private var keyboardHeight = CGFloat(0) {
+    didSet { designTableView() }
+  }
+  private var tableViewTop = CGFloat(0)
+  private let bottomOffset = CGFloat(16)
 
   // MARK: initializer
   
@@ -21,6 +29,14 @@ class VGSearchTableView: VGNibView {
   /// Inits
   init() {
     super.init(frame: .zero)
+    NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)
+      .receive(on: DispatchQueue.main)
+      .sink { [weak self] notification in
+        if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+          self?.keyboardHeight = keyboardFrame.cgRectValue.height
+        }
+      }
+      .store(in: &cancellable)
   }
 
   // MARK: public api
@@ -31,14 +47,8 @@ class VGSearchTableView: VGNibView {
   ///   - searchView: VGSearchView
   func present(on parentView: UIView, searchView: VGSearchView) {
     frame = parentView.bounds
-    let top = searchView.center.y + searchView.frame.size.height / 2.0
-    let bottom = tableView.frame.origin.y + tableView.frame.height
-    tableView.frame = CGRect(
-      x: tableView.frame.origin.x,
-      y: top,
-      width: tableView.frame.width,
-      height: bottom - top
-    )
+    tableViewTop = searchView.center.y + searchView.frame.size.height / 2.0
+    designTableView()
     parentView.addSubview(self)
   }
   
@@ -50,6 +60,18 @@ class VGSearchTableView: VGNibView {
   /// Reloads data
   func reloadsData() {
     tableView.reloadData()
+  }
+  
+  // MARK: private api
+  
+  func designTableView() {
+    let bottom = frame.height - (keyboardHeight + bottomOffset)
+    tableView.frame = CGRect(
+      x: tableView.frame.origin.x,
+      y: tableViewTop,
+      width: tableView.frame.width,
+      height: bottom - tableViewTop
+    )
   }
 }
 
