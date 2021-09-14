@@ -17,14 +17,13 @@ class VGSearchTableViewCell: VGNibTableViewCell {
   
   /// Inits
   /// - Parameters:
-  ///   - image: icon image
-  ///   - text: title string
-  init(image: UIImage, title: String) {
+  ///   - viewModel: VGSearchTableViewCellModel
+  init(viewModel: VGSearchTableViewCellModel) {
     super.init(
       style: .default,
       reuseIdentifier: nil
     )
-    iconImageView.image = image
-    titleLabel.text = title
+    iconImageView.image = viewModel.image
+    titleLabel.text = viewModel.title
   }
 }

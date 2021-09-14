@@ -185,7 +185,7 @@ class VGMapViewController: VGTabViewController {
       .disposed(by: disposeBag)
     viewModel.searchResultWasUpdatedEvent
       .bind(to: searchView.rx.items) { _, _, spot in
-        VGSearchTableViewCell(image: spot.image ?? UIImage(), title: spot.name)
+        VGSearchTableViewCell(viewModel: .init(image: spot.image, title: spot.name))
       }
       .disposed(by: disposeBag)
   }
