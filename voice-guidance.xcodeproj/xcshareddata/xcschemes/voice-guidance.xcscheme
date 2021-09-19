@@ -52,9 +52,19 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E6A22B54266913BA008CB15F"
+               BlueprintIdentifier = "E6045F0326F76B7C003EC054"
                BuildableName = "voice-guidanceUITests.xctest"
                BlueprintName = "voice-guidanceUITests"
+               ReferencedContainer = "container:voice-guidance.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E6045F3826F76DF4003EC054"
+               BuildableName = "voice-guidance-UITests.xctest"
+               BlueprintName = "voice-guidance-UITests"
                ReferencedContainer = "container:voice-guidance.xcodeproj">
             </BuildableReference>
          </TestableReference>
