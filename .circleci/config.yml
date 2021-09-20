@@ -82,6 +82,19 @@ jobs:
           path: snapshot_test_output
           destination: scan-output
       - slack_notify_fail
+  ui-tests:
+    executor:
+      name: macos-executor
+    steps:
+      - setup
+      - setup_mapbox
+      - run: bundle exec fastlane ui_tests
+      - store_test_results:
+          path: unit_test_output
+      - store_artifacts:
+          path: unit_test_output
+          destination: scan-output
+      - slack_notify_fail
   beta:
     executor:
       name: macos-executor
@@ -117,11 +130,17 @@ workflows:
           filters:
             branches:
               only: main
+      - ui-tests:
+          context: audio-tour
+          filters:
+            branches:
+              only: main
       - beta:
           requires:
             - unit-tests
             - snapshot-tests-on-iphone12promax
             - snapshot-tests-on-ipodtouch7thgeneration
+            - ui-tests
           context: audio-tour
           filters:
             branches:

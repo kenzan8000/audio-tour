@@ -41,6 +41,18 @@ platform :ios do
     )
   end
 
+  desc "UI testing"
+  lane :ui_tests do
+    scan(
+      include_simulator_logs: false,
+      code_coverage: true,
+      clean: true,
+      scheme: "voice-guidance",
+      device: "iPhone 8",
+      only_testing: "voice-guidanceUITests"
+    )
+  end
+
   desc "Upload beta build"
   lane :beta_upload do
     increment_build_number(
