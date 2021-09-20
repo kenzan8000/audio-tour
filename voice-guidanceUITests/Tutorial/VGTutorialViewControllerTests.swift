@@ -23,12 +23,12 @@ class VGTutorialViewControllerTests: XCTestCase {
     app.buttons["Next"].tap()
     
     app.buttons["Next"].tap()
-    if permission.alerts["Allow “Audio Tour” to use your location?"].waitForExistence(timeout: 2.5) {
+    if permission.alerts["Allow “Audio Tour” to use your location?"].waitForExistence(timeout: 10.0) {
       permission.alerts["Allow “Audio Tour” to use your location?"].buttons["Allow While Using App"].tap()
     }
     
     app.buttons["Next"].tap()
-    if permission.alerts["“Audio Tour” Would Like to Access the Camera"].waitForExistence(timeout: 2.5) {
+    if permission.alerts["“Audio Tour” Would Like to Access the Camera"].waitForExistence(timeout: 10.0) {
       permission.alerts["“Audio Tour” Would Like to Access the Camera"].buttons["OK"].tap()
     }
     
