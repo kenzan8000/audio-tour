@@ -14,6 +14,7 @@
 		E601324026209F9F00C4E3E4 /* VGSideMenuViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601323F26209F9F00C4E3E4 /* VGSideMenuViewControllerTests.swift */; };
 		E60132442620A10700C4E3E4 /* VGSearchTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60132432620A10700C4E3E4 /* VGSearchTableViewCellTests.swift */; };
 		E60132472620A1BC00C4E3E4 /* VGSearchTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60132462620A1BC00C4E3E4 /* VGSearchTableViewTests.swift */; };
+		E602444126F880B600AD290D /* VGUserDefaults+LaunchArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E602444026F880B600AD290D /* VGUserDefaults+LaunchArguments.swift */; };
 		E60C3E961DF53089002E4965 /* VGLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60C3E951DF53089002E4965 /* VGLocale.swift */; };
 		E60CA98724DFC92000863F95 /* VGTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60CA98624DFC92000863F95 /* VGTabViewController.swift */; };
 		E61245F42624934E001454D3 /* VGGuideViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61245F32624934E001454D3 /* VGGuideViewControllerTests.swift */; };
@@ -215,6 +216,7 @@
 		E601323F26209F9F00C4E3E4 /* VGSideMenuViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSideMenuViewControllerTests.swift; sourceTree = "<group>"; };
 		E60132432620A10700C4E3E4 /* VGSearchTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSearchTableViewCellTests.swift; sourceTree = "<group>"; };
 		E60132462620A1BC00C4E3E4 /* VGSearchTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSearchTableViewTests.swift; sourceTree = "<group>"; };
+		E602444026F880B600AD290D /* VGUserDefaults+LaunchArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VGUserDefaults+LaunchArguments.swift"; sourceTree = "<group>"; };
 		E6045EFF26F76A39003EC054 /* voice-guidanceTests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "voice-guidanceTests copy-Info.plist"; path = "/Users/kenzan8000/Dropbox/workspace/job/kenzan8000/voice-guidance/ios/voice-guidanceTests copy-Info.plist"; sourceTree = "<absolute>"; };
 		E6045F5626F770CC003EC054 /* voice-guidanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "voice-guidanceUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6045F5A26F770CC003EC054 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -737,6 +739,7 @@
 			children = (
 				E65503C1255D604600543F9B /* Notification.Name+VG.swift */,
 				E65503BD255D5FF300543F9B /* VGUserDefaults.swift */,
+				E602444026F880B600AD290D /* VGUserDefaults+LaunchArguments.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1354,6 +1357,7 @@
 				E664538E26F0D95D00BDEE7B /* VGSearchTableViewCellModel.swift in Sources */,
 				E6730A2724F2A537003D1D50 /* VGCircleButton.swift in Sources */,
 				E60CA98724DFC92000863F95 /* VGTabViewController.swift in Sources */,
+				E602444126F880B600AD290D /* VGUserDefaults+LaunchArguments.swift in Sources */,
 				E6D1822F2609D95F002521C1 /* VGSideMenuViewController.swift in Sources */,
 				E6F9FCA1250BA65D00654161 /* VGPermissionViewModel.swift in Sources */,
 				E6172CF81E762095003FE26A /* VGSearchTableView.swift in Sources */,
