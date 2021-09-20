@@ -16,7 +16,7 @@ class VGTutorialViewControllerTests: XCTestCase {
   
   func test() throws {
     let app = XCUIApplication()
-    app.launchArguments += ["-VGUserDefaults", "doneTutorial", "false"]
+    app.launchArguments += ["-VGUserDefaults", "VGUserDefaults.doneTutorial", "Bool", "false"]
     app.launch()
   }
 }

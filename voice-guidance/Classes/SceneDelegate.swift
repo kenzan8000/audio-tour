@@ -27,6 +27,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       return
     }
     
+    #if DEBUG
+    userDefaults.setLaunchArguments(CommandLine.arguments)
+    #endif
+    
     storageProvider.saveInitialSpots(userDefaults: userDefaults)
     
     sceneCoordinator = SceneCoordinator(window: window, userDefaults: userDefaults, storageProvider: storageProvider)
