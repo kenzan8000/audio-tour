@@ -23,21 +23,26 @@ struct VGTutorialViewControllerPageObject {
   // MARK: publiic api
   
   func runTutorial() -> XCUIApplication {
-    // page 1
-    nextButton.tap()
-    // page 2
-    nextButton.tap()
-    if locationPermissionAlert.waitForExistence(timeout: 10.0) {
-      locationPermissionAlert.buttons["Allow While Using App"].tap()
+    XCTContext.runActivity(named: "Tutorial") { _ in
+      XCTContext.runActivity(named: "page 1") { _ in
+        nextButton.tap()
+      }
+      XCTContext.runActivity(named: "page 2") { _ in
+        nextButton.tap()
+        if locationPermissionAlert.waitForExistence(timeout: 10.0) {
+          locationPermissionAlert.buttons["Allow While Using App"].tap()
+        }
+      }
+      XCTContext.runActivity(named: "page 3") { _ in
+        nextButton.tap()
+        if cameraPermissionAlert.waitForExistence(timeout: 10.0) {
+          cameraPermissionAlert.buttons["OK"].tap()
+        }
+      }
+      XCTContext.runActivity(named: "page 4") { _ in
+        doneButton.tap()
+      }
     }
-    // page 3
-    nextButton.tap()
-    if cameraPermissionAlert.waitForExistence(timeout: 10.0) {
-      cameraPermissionAlert.buttons["OK"].tap()
-    }
-    // page 4
-    doneButton.tap()
-    
     return app
   }
 }
