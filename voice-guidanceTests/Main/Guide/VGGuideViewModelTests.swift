@@ -39,7 +39,7 @@ class VGGuideViewModelTests: XCTestCase {
     sut.updateTtsProgress(0.1)
     XCTAssertEqual(sut.ttsProgress, 0.1, accuracy: 0.001)
   }
-  
+  /*
   func testVGGuideViewModel_whenTtsStartedSpeaking_ttsShouldBeSpeaking() throws {
     let exp = expectation(description: #function)
     sut.playTts()
@@ -47,7 +47,7 @@ class VGGuideViewModelTests: XCTestCase {
     wait(for: [exp], timeout: 10.0)
     XCTAssertTrue(sut.ttsIsSpeaking)
   }
-  
+  */
   func testVGGuideViewModel_whenTtsPausedSpeaking_ttsShouldNotBeSpeaking() throws {
     let exp1 = expectation(description: #function)
     sut.playTts()
