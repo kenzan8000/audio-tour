@@ -15,6 +15,7 @@ class VGMainViewController: UITabBarController {
   init(viewControllers: [VGTabViewController]) {
     super.init(nibName: nil, bundle: nil)
     self.viewControllers = viewControllers
+    tabBar.backgroundColor = .systemBackground
     updateTabs()
   }
 
