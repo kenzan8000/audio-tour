@@ -131,6 +131,7 @@
 		E6BE8D5F24EC02E000B96D15 /* VGMapZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BE8D5E24EC02E000B96D15 /* VGMapZoom.swift */; };
 		E6BEFE5C257650FE00F12261 /* VGARTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BEFE5B257650FE00F12261 /* VGARTutorialView.swift */; };
 		E6BEFE60257651DA00F12261 /* VGARTutorialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BEFE5F257651DA00F12261 /* VGARTutorialView.xib */; };
+		E6C0D84F26FA2AA00047F405 /* VGTutorialViewControllerPageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C0D84E26FA2AA00047F405 /* VGTutorialViewControllerPageObject.swift */; };
 		E6CAF5E124EABC0900BE5E6A /* VGMapHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CAF5E024EABC0900BE5E6A /* VGMapHeading.swift */; };
 		E6D1822F2609D95F002521C1 /* VGSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1822E2609D95F002521C1 /* VGSideMenuViewController.swift */; };
 		E6D182332609DA5C002521C1 /* VGSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D182322609DA5C002521C1 /* VGSideMenuViewController.xib */; };
@@ -337,6 +338,7 @@
 		E6BE8D5E24EC02E000B96D15 /* VGMapZoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapZoom.swift; sourceTree = "<group>"; };
 		E6BEFE5B257650FE00F12261 /* VGARTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGARTutorialView.swift; sourceTree = "<group>"; };
 		E6BEFE5F257651DA00F12261 /* VGARTutorialView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VGARTutorialView.xib; sourceTree = "<group>"; };
+		E6C0D84E26FA2AA00047F405 /* VGTutorialViewControllerPageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialViewControllerPageObject.swift; sourceTree = "<group>"; };
 		E6CAF5E024EABC0900BE5E6A /* VGMapHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapHeading.swift; sourceTree = "<group>"; };
 		E6D1822E2609D95F002521C1 /* VGSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSideMenuViewController.swift; sourceTree = "<group>"; };
 		E6D182322609DA5C002521C1 /* VGSideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VGSideMenuViewController.xib; sourceTree = "<group>"; };
@@ -962,6 +964,7 @@
 			isa = PBXGroup;
 			children = (
 				E6D5E73826F7A13300DAC52C /* VGTutorialViewControllerTests.swift */,
+				E6C0D84E26FA2AA00047F405 /* VGTutorialViewControllerPageObject.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -1285,6 +1288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6D5E73926F7A13300DAC52C /* VGTutorialViewControllerTests.swift in Sources */,
+				E6C0D84F26FA2AA00047F405 /* VGTutorialViewControllerPageObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1845,7 +1849,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.5;
+				MARKETING_VERSION = 2.1.6;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D SAN_FRANCISCO";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.kenzan8000.san-francisco";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1944,7 +1948,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.5;
+				MARKETING_VERSION = 2.1.6;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG -D SAN_FRANCISCO";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.kenzan8000.san-francisco";
 				PRODUCT_NAME = "$(TARGET_NAME)";
