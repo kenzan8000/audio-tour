@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -42,9 +43,10 @@
                     </userDefinedRuntimeAttributes>
                 </button>
                 <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="1Q0-pO-Alf">
-                    <rect key="frame" x="86" y="769" width="240" height="37"/>
+                    <rect key="frame" x="87" y="769" width="240" height="37"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="37" id="lDK-zp-I5T"/>
+                        <constraint firstAttribute="width" constant="240" id="6LI-zp-XK3"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="37" id="t2g-du-qit"/>
                     </constraints>
                     <color key="pageIndicatorTintColor" systemColor="scrollViewTexturedBackgroundColor"/>
                     <color key="currentPageIndicatorTintColor" systemColor="systemBlueColor"/>
@@ -57,10 +59,9 @@
                 <constraint firstItem="Vlc-Kj-jic" firstAttribute="top" secondItem="1Q0-pO-Alf" secondAttribute="bottom" constant="8" symbolic="YES" id="7wT-Zn-gFp"/>
                 <constraint firstAttribute="bottom" secondItem="kJQ-hO-lFx" secondAttribute="bottom" id="BRx-cg-YJc"/>
                 <constraint firstItem="kJQ-hO-lFx" firstAttribute="top" secondItem="hFa-YY-4sE" secondAttribute="top" id="KcQ-3A-cWD"/>
+                <constraint firstItem="1Q0-pO-Alf" firstAttribute="centerX" secondItem="hFa-YY-4sE" secondAttribute="centerX" id="NeH-4O-vVG"/>
                 <constraint firstAttribute="trailing" secondItem="kJQ-hO-lFx" secondAttribute="trailing" id="TM2-TT-TLe"/>
                 <constraint firstItem="kJQ-hO-lFx" firstAttribute="centerX" secondItem="hFa-YY-4sE" secondAttribute="centerX" id="ThQ-EW-KiK"/>
-                <constraint firstItem="1Q0-pO-Alf" firstAttribute="leading" secondItem="8A4-Si-XSo" secondAttribute="leading" constant="86" id="dwp-fB-p3u"/>
-                <constraint firstItem="8A4-Si-XSo" firstAttribute="trailing" secondItem="1Q0-pO-Alf" secondAttribute="trailing" constant="88" id="gMd-jg-FVK"/>
                 <constraint firstItem="Vlc-Kj-jic" firstAttribute="bottom" secondItem="8A4-Si-XSo" secondAttribute="bottom" id="gYR-DU-win"/>
                 <constraint firstItem="Vlc-Kj-jic" firstAttribute="leading" secondItem="8A4-Si-XSo" secondAttribute="leading" constant="85" id="hif-Sw-k6R"/>
                 <constraint firstItem="8A4-Si-XSo" firstAttribute="trailing" secondItem="Vlc-Kj-jic" secondAttribute="trailing" constant="89" id="kQ6-Da-aNr"/>
