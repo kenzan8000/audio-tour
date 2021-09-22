@@ -22,7 +22,7 @@ struct VGTutorialViewControllerPageObject {
   
   // MARK: publiic api
   
-  func runTutorial() -> XCUIApplication {
+  func runTutorial() -> VGMainViewControllerPageObject {
     XCTContext.runActivity(named: "Tutorial") { _ in
       XCTContext.runActivity(named: "page 1") { _ in
         nextButton.tap()
@@ -43,6 +43,6 @@ struct VGTutorialViewControllerPageObject {
         doneButton.tap()
       }
     }
-    return app
+    return .init(app: app)
   }
 }
