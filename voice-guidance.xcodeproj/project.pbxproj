@@ -172,6 +172,7 @@
 		E6F9FCA1250BA65D00654161 /* VGPermissionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F9FCA0250BA65D00654161 /* VGPermissionViewModel.swift */; };
 		E6FBD11E1DB84EDE000AA91D /* VGSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FBD11B1DB84EDE000AA91D /* VGSearchView.swift */; };
 		E6FBD11F1DB84EDE000AA91D /* VGSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6FBD11C1DB84EDE000AA91D /* VGSearchView.xib */; };
+		E6FC7CFB26FB8EC200A637E2 /* VGMapViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FC7CFA26FB8EC200A637E2 /* VGMapViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -373,6 +374,7 @@
 		E6F9FCA0250BA65D00654161 /* VGPermissionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGPermissionViewModel.swift; sourceTree = "<group>"; };
 		E6FBD11B1DB84EDE000AA91D /* VGSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGSearchView.swift; sourceTree = "<group>"; };
 		E6FBD11C1DB84EDE000AA91D /* VGSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VGSearchView.xib; sourceTree = "<group>"; };
+		E6FC7CFA26FB8EC200A637E2 /* VGMapViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -576,6 +578,7 @@
 		E6421E1926FB79DC0093412C /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				E6FC7CFA26FB8EC200A637E2 /* VGMapViewControllerTests.swift */,
 				E6421E1B26FB7A190093412C /* VGMapViewControllerPageObject.swift */,
 			);
 			path = Map;
@@ -1326,6 +1329,7 @@
 				E6421E1C26FB7A190093412C /* VGMapViewControllerPageObject.swift in Sources */,
 				E6D5E73926F7A13300DAC52C /* VGTutorialViewControllerTests.swift in Sources */,
 				E6421E1E26FB7A420093412C /* VGARViewControllerPageObject.swift in Sources */,
+				E6FC7CFB26FB8EC200A637E2 /* VGMapViewControllerTests.swift in Sources */,
 				E6421E1826FB78390093412C /* VGMainViewControllerPageObject.swift in Sources */,
 				E6421E2026FB84A80093412C /* VGARViewControllerTests.swift in Sources */,
 				E6C0D84F26FA2AA00047F405 /* VGTutorialViewControllerPageObject.swift in Sources */,
