@@ -18,7 +18,9 @@ class VGTutorialViewControllerTests: XCTestCase {
     let app = XCUIApplication()
     app.launchArguments += ["-VGUserDefaults", "VGUserDefaults.doneTutorial", "Bool", "false"]
     app.launch()
-    let mainView = VGTutorialViewControllerPageObject(app: app).runTutorial()
+    let tutorialView = VGTutorialViewControllerPageObject(app: app)
+    XCTAssertTrue(tutorialView.app.staticTexts["Welcome to Audio Tour"].exists)
+    let mainView = tutorialView.runTutorial()
     XCTAssertTrue(mainView.app.tabBars["Tab Bar"].buttons["Map"].isSelected)
   }
 }
