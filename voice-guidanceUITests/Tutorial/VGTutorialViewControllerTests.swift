@@ -14,10 +14,11 @@ class VGTutorialViewControllerTests: XCTestCase {
 
   // MARK: test
   
-  func testVGTutorialViewController_whenInitialState_uiTest() throws {
+  func testVGTutorialViewController_whenRunningTutorial_shouldGoToMapViewAfterTutorial() throws {
     let app = XCUIApplication()
     app.launchArguments += ["-VGUserDefaults", "VGUserDefaults.doneTutorial", "Bool", "false"]
     app.launch()
-    _ = VGTutorialViewControllerPageObject(app: app).runTutorial()
+    let mainView = VGTutorialViewControllerPageObject(app: app).runTutorial()
+    XCTAssertTrue(mainView.app.tabBars["Tab Bar"].buttons["Map"].isSelected)
   }
 }
