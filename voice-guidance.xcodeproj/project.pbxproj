@@ -223,7 +223,6 @@
 		E60132432620A10700C4E3E4 /* VGSearchTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSearchTableViewCellTests.swift; sourceTree = "<group>"; };
 		E60132462620A1BC00C4E3E4 /* VGSearchTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSearchTableViewTests.swift; sourceTree = "<group>"; };
 		E602444026F880B600AD290D /* VGUserDefaults+LaunchArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VGUserDefaults+LaunchArguments.swift"; sourceTree = "<group>"; };
-		E6045EFF26F76A39003EC054 /* voice-guidanceTests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "voice-guidanceTests copy-Info.plist"; path = "/Users/kenzan8000/Dropbox/workspace/job/kenzan8000/voice-guidance/ios/voice-guidanceTests copy-Info.plist"; sourceTree = "<absolute>"; };
 		E6045F5626F770CC003EC054 /* voice-guidanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "voice-guidanceUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6045F5A26F770CC003EC054 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E60C3E951DF53089002E4965 /* VGLocale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGLocale.swift; sourceTree = "<group>"; };
@@ -513,7 +512,6 @@
 				E64558EF261CA5B800584C64 /* Tests */,
 				E62852B41D7D1FC30071957E /* Products */,
 				E6BB2B3C26083D2E001DE0D6 /* Frameworks */,
-				E6045EFF26F76A39003EC054 /* voice-guidanceTests copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1110,9 +1108,9 @@
 				E62852AF1D7D1FC30071957E /* Sources */,
 				E62852B01D7D1FC30071957E /* Frameworks */,
 				E62852B11D7D1FC30071957E /* Resources */,
-				E6859F60246853C000602436 /* ShellScript */,
+				E6859F60246853C000602436 /* Swiftlint */,
 				E6868C05261B05C8007D58F1 /* Embed Frameworks */,
-				E6868C0C261B0916007D58F1 /* ShellScript */,
+				E6868C0C261B0916007D58F1 /* Mapbox */,
 			);
 			buildRules = (
 			);
@@ -1285,7 +1283,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		E6859F60246853C000602436 /* ShellScript */ = {
+		E6859F60246853C000602436 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
 			files = (
@@ -1294,6 +1292,7 @@
 			);
 			inputPaths = (
 			);
+			name = Swiftlint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -1302,7 +1301,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		E6868C0C261B0916007D58F1 /* ShellScript */ = {
+		E6868C0C261B0916007D58F1 /* Mapbox */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1311,6 +1310,7 @@
 			);
 			inputPaths = (
 			);
+			name = Mapbox;
 			outputFileListPaths = (
 			);
 			outputPaths = (
