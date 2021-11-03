@@ -206,7 +206,10 @@ extension VGGuideViewModel: AVSpeechSynthesizerDelegate {
     } catch {
       logger.error("\(logger.prefix(), privacy: .private)\("Failed AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)", privacy: .private)")
     }
-    ttsProgress = 0
+    if !ttsWillBePaused {
+      ttsProgress = 0
+    }
+    ttsWillBePaused = false
     ttsIsSpeaking = false
   }
   
