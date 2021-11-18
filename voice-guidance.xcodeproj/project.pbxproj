@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E600A08C26C6914C002C5752 /* VGRootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600A08B26C6914B002C5752 /* VGRootCoordinator.swift */; };
 		E600A08E26C6938A002C5752 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600A08D26C6938A002C5752 /* SceneCoordinator.swift */; };
+		E600E6C4274688BB0014C58D /* VGLaunchTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E600E6C3274688BB0014C58D /* VGLaunchTimeTests.swift */; };
 		E601320A261F2808002FCD64 /* VGTutorialSlideViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6013209261F2808002FCD64 /* VGTutorialSlideViewTests.swift */; };
 		E601323D26209E8F00C4E3E4 /* VGSideMenuTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601323C26209E8F00C4E3E4 /* VGSideMenuTableViewCellTests.swift */; };
 		E601324026209F9F00C4E3E4 /* VGSideMenuViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E601323F26209F9F00C4E3E4 /* VGSideMenuViewControllerTests.swift */; };
@@ -217,6 +218,7 @@
 /* Begin PBXFileReference section */
 		E600A08B26C6914B002C5752 /* VGRootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGRootCoordinator.swift; sourceTree = "<group>"; };
 		E600A08D26C6938A002C5752 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
+		E600E6C3274688BB0014C58D /* VGLaunchTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGLaunchTimeTests.swift; sourceTree = "<group>"; };
 		E6013209261F2808002FCD64 /* VGTutorialSlideViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialSlideViewTests.swift; sourceTree = "<group>"; };
 		E601323C26209E8F00C4E3E4 /* VGSideMenuTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSideMenuTableViewCellTests.swift; sourceTree = "<group>"; };
 		E601323F26209F9F00C4E3E4 /* VGSideMenuViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSideMenuViewControllerTests.swift; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 		E6045F5726F770CC003EC054 /* voice-guidanceUITests */ = {
 			isa = PBXGroup;
 			children = (
+				E600E6C3274688BB0014C58D /* VGLaunchTimeTests.swift */,
 				E6D5E73726F7A11900DAC52C /* Tutorial */,
 				E6421E1626FB78150093412C /* Main */,
 				E6045F5A26F770CC003EC054 /* Info.plist */,
@@ -1330,6 +1333,7 @@
 				E6D5E73926F7A13300DAC52C /* VGTutorialViewControllerTests.swift in Sources */,
 				E6421E1E26FB7A420093412C /* VGARViewControllerPageObject.swift in Sources */,
 				E6FC7CFB26FB8EC200A637E2 /* VGMapViewControllerTests.swift in Sources */,
+				E600E6C4274688BB0014C58D /* VGLaunchTimeTests.swift in Sources */,
 				E6421E1826FB78390093412C /* VGMainViewControllerPageObject.swift in Sources */,
 				E6421E2026FB84A80093412C /* VGARViewControllerTests.swift in Sources */,
 				E6C0D84F26FA2AA00047F405 /* VGTutorialViewControllerPageObject.swift in Sources */,
@@ -1893,7 +1897,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.7;
+				MARKETING_VERSION = 2.1.8;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D SAN_FRANCISCO";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.kenzan8000.san-francisco";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1992,7 +1996,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.7;
+				MARKETING_VERSION = 2.1.8;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG -D SAN_FRANCISCO";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.kenzan8000.san-francisco";
 				PRODUCT_NAME = "$(TARGET_NAME)";
