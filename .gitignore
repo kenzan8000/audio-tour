@@ -105,3 +105,5 @@ voice-guidance.xcodeproj/xcuserdata
 voice-guidance.xcodeproj/project.xcworkspace
 voice-guidance/Resources/Plists/Mapbox-Info.plist
 Frameworks/*
+
+.env
