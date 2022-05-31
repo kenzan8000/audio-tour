@@ -20,7 +20,7 @@ class VGMapViewController: VGTabViewController {
   private let searchViewFactory: VGSearchViewFactory
   private lazy var mapView: VGMapView = mapViewFactory(view)
   private lazy var searchView: VGSearchView = searchViewFactory(view)
-  private lazy var currentLocaitonButton: VGCircleButton = { VGCircleButton(image: UIImage(systemName: "location.fill")) }()
+  private lazy var currentLocationButton: VGCircleButton = { VGCircleButton(image: UIImage(systemName: "location.fill")) }()
   var guideViewController: VGGuideViewController? {
     willSet {
       if let oldGuideViewController = guideViewController {
@@ -76,9 +76,9 @@ class VGMapViewController: VGTabViewController {
     super.viewDidLayoutSubviews()
     view.frame = UIScreen.main.bounds
     mapView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - view.safeAreaInsets.bottom)
-    currentLocaitonButton.center = CGPoint(
-      x: view.frame.width - currentLocaitonButton.frame.width / 2 - 10,
-      y: view.frame.height - currentLocaitonButton.frame.height / 2 - 10 - view.safeAreaInsets.bottom
+    currentLocationButton.center = CGPoint(
+      x: view.frame.width - currentLocationButton.frame.width / 2 - 10,
+      y: view.frame.height - currentLocationButton.frame.height / 2 - 10 - view.safeAreaInsets.bottom
     )
     searchView.frame = CGRect(
       x: 0, y: view.safeAreaInsets.top,
@@ -95,7 +95,7 @@ class VGMapViewController: VGTabViewController {
   /// Designs view
   private func designView() {
     view.addSubview(mapView)
-    view.addSubview(currentLocaitonButton)
+    view.addSubview(currentLocationButton)
     view.addSubview(searchView)
   }
   
@@ -103,7 +103,7 @@ class VGMapViewController: VGTabViewController {
   private func bindView() {
     bindSearchView()
     bindMapView()
-    currentLocaitonButton.rx.tap
+    currentLocationButton.rx.tap
       .subscribe { [weak self] _ in
         guard let self = self, let location = self.mapView.userLocation?.location else {
           return
@@ -163,10 +163,10 @@ class VGMapViewController: VGTabViewController {
       }
       .disposed(by: disposeBag)
     mapView.rx.didUpdateLocation
-      .subscribe { [weak self] _ in self?.currentLocaitonButton.isHidden = false }
+      .subscribe { [weak self] _ in self?.currentLocationButton.isHidden = false }
       .disposed(by: disposeBag)
     mapView.rx.didFailToLocateUser
-      .subscribe { [weak self] _ in self?.currentLocaitonButton.isHidden = true }
+      .subscribe { [weak self] _ in self?.currentLocationButton.isHidden = true }
       .disposed(by: disposeBag)
   }
 

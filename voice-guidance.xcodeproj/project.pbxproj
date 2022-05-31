@@ -103,12 +103,9 @@
 		E67876ED255D649C00793C5E /* VGSpot+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67876EC255D649C00793C5E /* VGSpot+AR.swift */; };
 		E67C62E91DB6E5C3006F0070 /* VGCircleButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = E67C62E71DB6E5C3006F0070 /* VGCircleButton.xib */; };
 		E680FFE41DA6F44C0053100B /* VGMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E680FFE31DA6F44C0053100B /* VGMapViewController.swift */; };
-		E6868C03261B05C8007D58F1 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BB2B3E26083D2E001DE0D6 /* Mapbox.framework */; };
-		E6868C04261B05C8007D58F1 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E6BB2B3E26083D2E001DE0D6 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E6868C06261B05CA007D58F1 /* MapboxMobileEvents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BB2B3D26083D2E001DE0D6 /* MapboxMobileEvents.framework */; };
-		E6868C07261B05CA007D58F1 /* MapboxMobileEvents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E6BB2B3D26083D2E001DE0D6 /* MapboxMobileEvents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E6899CA41DF7A2B6007D6B97 /* VGMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6899CA31DF7A2B6007D6B97 /* VGMapView.swift */; };
 		E68E90311D9B99F800ABC487 /* VGStorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68E902F1D9B99F800ABC487 /* VGStorageProvider.swift */; };
+		E691EE152846ABF100CA8043 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = E691EE142846ABF100CA8043 /* MapboxMaps */; };
 		E69F403326CBD715003A3869 /* VGSideMenuTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69F403226CBD715003A3869 /* VGSideMenuTableViewCellModel.swift */; };
 		E6A1B7BD1DEADA1100A61E30 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6A1B7BF1DEADA1100A61E30 /* Localizable.strings */; };
 		E6A670D926082EDB00DF17C9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A670D826082EDB00DF17C9 /* main.swift */; };
@@ -207,8 +204,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E6868C07261B05CA007D58F1 /* MapboxMobileEvents.framework in Embed Frameworks */,
-				E6868C04261B05C8007D58F1 /* Mapbox.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,8 +337,6 @@
 		E6B096EF1DD1EC000083942A /* VGTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGTutorialViewController.swift; sourceTree = "<group>"; };
 		E6B951CA214DCCB30089CA0F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		E6B97C6624D07471008650A1 /* UIAlertController+VGGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+VGGuide.swift"; sourceTree = "<group>"; };
-		E6BB2B3D26083D2E001DE0D6 /* MapboxMobileEvents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MapboxMobileEvents.framework; sourceTree = "<group>"; };
-		E6BB2B3E26083D2E001DE0D6 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 		E6BC93C52559683E0058D4C8 /* VGSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSpot.swift; sourceTree = "<group>"; };
 		E6BE8D5E24EC02E000B96D15 /* VGMapZoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGMapZoom.swift; sourceTree = "<group>"; };
 		E6BEFE5B257650FE00F12261 /* VGARTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGARTutorialView.swift; sourceTree = "<group>"; };
@@ -398,7 +391,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6868C06261B05CA007D58F1 /* MapboxMobileEvents.framework in Frameworks */,
 				E6F0C4DE2608901C0064248F /* RxRelay in Frameworks */,
 				E6F0C4D426088F4F0064248F /* VYPlayIndicator in Frameworks */,
 				E6F0C4E02608901C0064248F /* RxCocoa in Frameworks */,
@@ -408,8 +400,8 @@
 				E6F0C4C426088EAE0064248F /* KeychainAccess in Frameworks */,
 				E6F0C4CC26088EFA0064248F /* MarkdownView in Frameworks */,
 				E6E90F962608925A009AFC97 /* ARCL in Frameworks */,
+				E691EE152846ABF100CA8043 /* MapboxMaps in Frameworks */,
 				E6F0C4E22608901C0064248F /* RxSwift in Frameworks */,
-				E6868C03261B05C8007D58F1 /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +506,6 @@
 				E6045F5726F770CC003EC054 /* voice-guidanceUITests */,
 				E64558EF261CA5B800584C64 /* Tests */,
 				E62852B41D7D1FC30071957E /* Products */,
-				E6BB2B3C26083D2E001DE0D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -978,15 +969,6 @@
 			path = Tutorial;
 			sourceTree = "<group>";
 		};
-		E6BB2B3C26083D2E001DE0D6 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E6BB2B3D26083D2E001DE0D6 /* MapboxMobileEvents.framework */,
-				E6BB2B3E26083D2E001DE0D6 /* Mapbox.framework */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
 		E6D18241260A0F9F002521C1 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1131,6 +1113,7 @@
 				E6F0C4DF2608901C0064248F /* RxCocoa */,
 				E6F0C4E12608901C0064248F /* RxSwift */,
 				E6E90F952608925A009AFC97 /* ARCL */,
+				E691EE142846ABF100CA8043 /* MapboxMaps */,
 			);
 			productName = "voice-guidance";
 			productReference = E62852B31D7D1FC30071957E /* voice-guidance.app */;
@@ -1216,6 +1199,7 @@
 				E6F0C4DC2608901C0064248F /* XCRemoteSwiftPackageReference "RxSwift" */,
 				E6E90F9426089259009AFC97 /* XCRemoteSwiftPackageReference "ARKit-CoreLocation" */,
 				E61AE64A262722E30071D327 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				E691EE132846ABF100CA8043 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
 			);
 			productRefGroup = E62852B41D7D1FC30071957E /* Products */;
 			projectDirPath = "";
@@ -2214,6 +2198,14 @@
 				minimumVersion = 1.9.0;
 			};
 		};
+		E691EE132846ABF100CA8043 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		E6E90F9426089259009AFC97 /* XCRemoteSwiftPackageReference "ARKit-CoreLocation" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ProjectDent/ARKit-CoreLocation.git";
@@ -2285,6 +2277,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E61AE64A262722E30071D327 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
+		};
+		E691EE142846ABF100CA8043 /* MapboxMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E691EE132846ABF100CA8043 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
+			productName = MapboxMaps;
 		};
 		E6E90F952608925A009AFC97 /* ARCL */ = {
 			isa = XCSwiftPackageProductDependency;
