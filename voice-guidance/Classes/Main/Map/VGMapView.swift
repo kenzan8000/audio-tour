@@ -16,13 +16,19 @@ class VGMapView: MapView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  init(frame: CGRect, styleURI: StyleURI) {
+  init(frame: CGRect) {
     if let path = Bundle.main.path(forResource: "Mapbox-Info", ofType: "plist"),
        let plist = NSDictionary(contentsOfFile: path),
        let accessToken = plist["MGLMapboxAccessToken"] {
       ResourceOptionsManager.default.resourceOptions.accessToken = "\(accessToken)"
     }
-    super.init(frame: frame, mapInitOptions: .init(styleURI: styleURI))
+    
+    super.init(
+      frame: frame,
+      mapInitOptions: .init(
+        styleURI: UIApplication.shared.windows.first?.traitCollection.userInterfaceStyle == .dark ? .dark : .light
+      )
+    )
   }
   
   // MARK: life cycle

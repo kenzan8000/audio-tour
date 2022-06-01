@@ -11,10 +11,7 @@ class VGMapDependencyContainer {
   ///   - view: parent view
   /// - Returns: mapView
   func makeMapView(on view: UIView) -> VGMapView {
-    let mapView = VGMapView(
-      frame: view.bounds,
-      styleURI: view.traitCollection.userInterfaceStyle == .dark ? .dark : .light
-    )
+    let mapView = VGMapView(frame: view.bounds)
     mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     mapView.tintColor = .systemBlue
     /*
