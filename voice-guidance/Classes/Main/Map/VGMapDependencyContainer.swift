@@ -1,3 +1,4 @@
+import MapboxMaps
 import UIKit
 
 // MARK: - VGMapDependencyContainer
@@ -11,8 +12,8 @@ class VGMapDependencyContainer {
   /// - Returns: mapView
   func makeMapView(on view: UIView) -> VGMapView {
     let mapView = VGMapView(
-      frame: view.bounds // ,
-      // styleURL: view.traitCollection.userInterfaceStyle == .dark ? MGLStyle.darkStyleURL(withVersion: 9) : MGLStyle.lightStyleURL(withVersion: 9)
+      frame: view.bounds,
+      styleURI: view.traitCollection.userInterfaceStyle == .dark ? .dark : .light
     )
     mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     mapView.tintColor = .systemBlue

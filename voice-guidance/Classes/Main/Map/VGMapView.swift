@@ -16,30 +16,23 @@ class VGMapView: MapView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  init(frame: CGRect) {
+  init(frame: CGRect, styleURI: StyleURI) {
     if let path = Bundle.main.path(forResource: "Mapbox-Info", ofType: "plist"),
        let plist = NSDictionary(contentsOfFile: path),
        let accessToken = plist["MGLMapboxAccessToken"] {
       ResourceOptionsManager.default.resourceOptions.accessToken = "\(accessToken)"
     }
-    super.init(frame: frame)
-  }
-/*
-  override init(frame: CGRect, styleURL: URL?) {
-    if let path = Bundle.main.path(forResource: "Mapbox-Info", ofType: "plist"),
-       let plist = NSDictionary(contentsOfFile: path),
-       let accessToken = plist["MGLMapboxAccessToken"] {
-      ResourceOptionsManager.default.resourceOptions.accessToken = "\(accessToken)"
-    }
-    super.init(frame: frame)
+    super.init(frame: frame, mapInitOptions: .init(styleURI: styleURI))
   }
   
   // MARK: life cycle
   override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
     super.traitCollectionDidChange(previousTraitCollection)
-    styleURL = traitCollection.userInterfaceStyle == .dark ? MGLStyle.darkStyleURL(withVersion: 9) : MGLStyle.lightStyleURL(withVersion: 9)
+    mapboxMap.loadStyleURI(
+      traitCollection.userInterfaceStyle == .dark ? .dark : .light,
+      completion: nil
+    )
   }
-*/
   
 }
 /*
