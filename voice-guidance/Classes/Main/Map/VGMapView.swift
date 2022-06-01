@@ -1,9 +1,9 @@
-import Mapbox
-import RxCocoa
-import RxSwift
+import MapboxMaps
+// import RxCocoa
+// import RxSwift
 
 // MARK: - VGMapView
-class VGMapView: MGLMapView {
+class VGMapView: MapView {
   
   // MARK: property
   
@@ -16,25 +16,35 @@ class VGMapView: MGLMapView {
     fatalError("init(coder:) has not been implemented")
   }
   
+  init(frame: CGRect) {
+    if let path = Bundle.main.path(forResource: "Mapbox-Info", ofType: "plist"),
+       let plist = NSDictionary(contentsOfFile: path),
+       let accessToken = plist["MGLMapboxAccessToken"] {
+      ResourceOptionsManager.default.resourceOptions.accessToken = "\(accessToken)"
+    }
+    super.init(frame: frame)
+  }
+/*
   override init(frame: CGRect, styleURL: URL?) {
     if let path = Bundle.main.path(forResource: "Mapbox-Info", ofType: "plist"),
        let plist = NSDictionary(contentsOfFile: path),
        let accessToken = plist["MGLMapboxAccessToken"] {
-      MGLAccountManager.accessToken = "\(accessToken)"
+      ResourceOptionsManager.default.resourceOptions.accessToken = "\(accessToken)"
     }
-    super.init(frame: frame, styleURL: styleURL)
+    super.init(frame: frame)
   }
   
   // MARK: life cycle
-  
   override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
     super.traitCollectionDidChange(previousTraitCollection)
     styleURL = traitCollection.userInterfaceStyle == .dark ? MGLStyle.darkStyleURL(withVersion: 9) : MGLStyle.lightStyleURL(withVersion: 9)
   }
+*/
+  
 }
-
+/*
 // MARK: - VGMapViewDelegateProxy
-class VGMapViewDelegateProxy: DelegateProxy<VGMapView, MGLMapViewDelegate>, DelegateProxyType, MGLMapViewDelegate {
+class VGMapViewDelegateProxy: DelegateProxy<VGMapView, AnnotationInteractionDelegate>, DelegateProxyType, AnnotationInteractionDelegate {
 
   // MARK: - property
   
@@ -74,7 +84,14 @@ class VGMapViewDelegateProxy: DelegateProxy<VGMapView, MGLMapViewDelegate>, Dele
     object.delegate = delegate
   }
     
-  // MARK: - MGLMapViewDelegate
+  // MARK: - AnnotationInteractionDelegate
+  
+  func annotationManager(
+    _ manager: AnnotationManager,
+    didDetectTappedAnnotations annotations: [Annotation]
+  ) {
+    
+  }
   
   func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
     guard let annotation = annotation as? VGMapAnnotation,
@@ -138,6 +155,7 @@ extension Reactive where Base: VGMapView {
     ControlEvent(events: delegateProxy.spotIdForAnnotationObserver)
   }
 }
+*/
 
 // MARK: - VGMapViewFactory
 typealias VGMapViewFactory = (_ view: UIView) -> VGMapView

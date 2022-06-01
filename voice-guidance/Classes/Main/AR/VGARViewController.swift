@@ -1,5 +1,5 @@
-import Mapbox
-import MapKit
+// import Mapbox
+// import MapKit
 import RxSwift
 import SideMenu
 import UIKit
@@ -43,7 +43,7 @@ class VGARViewController: VGTabViewController {
         .subscribe { [weak self] alert in self?.present(alert, animated: true, completion: nil) }
         .disposed(by: disposeBag)
       guideViewController?.presentGuideViewController(on: self, animated: true)
-      mapView.selectedAnnotations.forEach { [weak self] in self?.mapView.deselectAnnotation($0, animated: false) }
+      // mapView.selectedAnnotations.forEach { [weak self] in self?.mapView.deselectAnnotation($0, animated: false) }
       searchView.endSearch()
     }
   }
@@ -176,6 +176,7 @@ class VGARViewController: VGTabViewController {
   
   /// Binds zoom settings in view model
   private func bindZoom() {
+    /*
     viewModel.zoomLevelEvent
       .subscribe { [weak self] event in
         if let self = self, let zoomLevel = event.element {
@@ -183,6 +184,7 @@ class VGARViewController: VGTabViewController {
         }
       }
       .disposed(by: disposeBag)
+    */
     viewModel.zoomStateEvent
       .subscribe { [weak self] event in
         guard let self = self, let zoomState = event.element else {
@@ -196,6 +198,7 @@ class VGARViewController: VGTabViewController {
   
   /// Binds location settings in view model
   private func bindLocation() {
+    /*
     viewModel.latestHeadingEvent
       .subscribe { [weak self] _ in
         self?.mapView.userTrackingMode = .followWithHeading
@@ -209,19 +212,22 @@ class VGARViewController: VGTabViewController {
         self.mapView.setCenter(location.coordinate, animated: false)
       }
       .disposed(by: disposeBag)
+    */
   }
   
   /// Binds spots settings in view model
   private func bindSpots() {
     viewModel.spotsWereUpdatedEvent
-      .subscribe { [weak self] event in
-        guard let self = self, let spots = event.element else {
+      .subscribe { [weak self] /* event */ _ in
+        guard let self = self /*, let spots = event.element */ else {
           return
         }
+        /*
         self.mapView.removeAnnotations(self.mapView.annotations ?? [])
         self.mapView.addAnnotations(
           spots.map { VGMapAnnotation(id: $0.id, coordinate: $0.coordinate) }
         )
+        */
         self.sceneLocationView.resetLocationNodes(self.viewModel.spotNodes)
       }
       .disposed(by: disposeBag)
@@ -289,6 +295,7 @@ class VGARViewController: VGTabViewController {
   
   /// Binds map view
   private func bindMapView() {
+    /*
     mapView.rx.spotIdForAnnotation
       .subscribe { [weak self] event in
         self?.mapView.spotForAnnotation = self?.viewModel.spots.first { $0.id == event.element }
@@ -302,6 +309,7 @@ class VGARViewController: VGTabViewController {
         }
       }
       .disposed(by: disposeBag)
+    */
   }
   
   /// Designs view

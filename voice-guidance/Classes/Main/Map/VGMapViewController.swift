@@ -1,4 +1,3 @@
-import Mapbox
 import RxSwift
 import SideMenu
 import UIKit
@@ -32,7 +31,7 @@ class VGMapViewController: VGTabViewController {
         .subscribe { [weak self] alert in self?.present(alert, animated: true, completion: nil) }
         .disposed(by: disposeBag)
       guideViewController?.presentGuideViewController(on: self, animated: true)
-      mapView.selectedAnnotations.forEach { [weak self] in self?.mapView.deselectAnnotation($0, animated: false) }
+      // mapView.selectedAnnotations.forEach { [weak self] in self?.mapView.deselectAnnotation($0, animated: false) }
       searchView.endSearch()
     }
   }
@@ -103,6 +102,7 @@ class VGMapViewController: VGTabViewController {
   private func bindView() {
     bindSearchView()
     bindMapView()
+    /*
     currentLocationButton.rx.tap
       .subscribe { [weak self] _ in
         guard let self = self, let location = self.mapView.userLocation?.location else {
@@ -111,6 +111,7 @@ class VGMapViewController: VGTabViewController {
         self.mapView.setCenter(location.coordinate, animated: true)
       }
       .disposed(by: disposeBag)
+    */
   }
   
   /// Binds search view
@@ -133,7 +134,7 @@ class VGMapViewController: VGTabViewController {
         guard let self = self, let indexPath = event.element else {
           return
         }
-        self.mapView.setCenter(self.viewModel.searchResult[indexPath.row].coordinate, animated: true)
+        // self.mapView.setCenter(self.viewModel.searchResult[indexPath.row].coordinate, animated: true)
         self.presentGuideViewController(spot: self.viewModel.searchResult[indexPath.row])
       }
       .disposed(by: disposeBag)
@@ -149,6 +150,7 @@ class VGMapViewController: VGTabViewController {
   
   /// Binds map view
   private func bindMapView() {
+    /*
     mapView.rx.spotIdForAnnotation
       .subscribe { [weak self] event in
         self?.mapView.spotForAnnotation = self?.viewModel.spots.first { $0.id == event.element }
@@ -168,10 +170,12 @@ class VGMapViewController: VGTabViewController {
     mapView.rx.didFailToLocateUser
       .subscribe { [weak self] _ in self?.currentLocationButton.isHidden = true }
       .disposed(by: disposeBag)
+    */
   }
 
   /// Binds view model
   private func bindViewModel() {
+    /*
     viewModel.spotsWereUpdatedEvent
       .subscribe { [weak self] event in
         guard let self = self, let spots = event.element else {
@@ -183,6 +187,7 @@ class VGMapViewController: VGTabViewController {
         )
       }
       .disposed(by: disposeBag)
+    */
     viewModel.searchResultWasUpdatedEvent
       .bind(to: searchView.rx.items) { _, _, spot in
         VGSearchTableViewCell(viewModel: .init(image: spot.image, title: spot.name))

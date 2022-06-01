@@ -1,4 +1,5 @@
-import Mapbox
+// import Mapbox
+import UIKit
 
 // MARK: - VGARDependencyContainer
 class VGARDependencyContainer {
@@ -12,11 +13,12 @@ class VGARDependencyContainer {
   /// - Returns: mapView
   func makeMapView(on view: UIView) -> VGMapView {
     let mapView = VGMapView(
-      frame: view.bounds,
-      styleURL: view.traitCollection.userInterfaceStyle == .dark ? MGLStyle.darkStyleURL(withVersion: 9) : MGLStyle.lightStyleURL(withVersion: 9)
+      frame: view.bounds //,
+      // styleURL: view.traitCollection.userInterfaceStyle == .dark ? MGLStyle.darkStyleURL(withVersion: 9) : MGLStyle.lightStyleURL(withVersion: 9)
     )
     mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     mapView.tintColor = .systemBlue
+    /*
     mapView.minimumZoomLevel = VGARMap.minimumZoomLevel
     mapView.maximumZoomLevel = VGARMap.maximumZoomLevel
     mapView.isZoomEnabled = false
@@ -24,6 +26,7 @@ class VGARDependencyContainer {
     mapView.isRotateEnabled = false
     mapView.isPitchEnabled = false
     mapView.showsUserLocation = true
+    */
     mapView.layer.cornerRadius = mapView.frame.width / 2
     mapView.layer.borderColor = UIColor.darkGray.cgColor
     mapView.layer.borderWidth = 4.0

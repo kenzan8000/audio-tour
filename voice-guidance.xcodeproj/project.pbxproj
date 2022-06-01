@@ -1095,7 +1095,6 @@
 				E62852B11D7D1FC30071957E /* Resources */,
 				E6859F60246853C000602436 /* Swiftlint */,
 				E6868C05261B05C8007D58F1 /* Embed Frameworks */,
-				E6868C0C261B0916007D58F1 /* Mapbox */,
 			);
 			buildRules = (
 			);
@@ -1287,24 +1286,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		E6868C0C261B0916007D58F1 /* Mapbox */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Mapbox;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework/strip-frameworks.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

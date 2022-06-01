@@ -1,3 +1,4 @@
+/*
 import Mapbox
 
 // MARK: - VGMapAnnotation
@@ -15,3 +16,4 @@ class VGMapAnnotation: MGLPointAnnotation {
     self.coordinate = coordinate
   }
 }
+*/
