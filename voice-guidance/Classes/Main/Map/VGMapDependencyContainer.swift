@@ -14,9 +14,8 @@ class VGMapDependencyContainer {
     let mapView = VGMapView(frame: view.bounds)
     mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     mapView.tintColor = .systemBlue
+    mapView.mapboxMap.setCamera(to: .init(center: VGMap.defaultCoordinate, zoom: VGMap.defaultZoomLevel))
     /*
-    mapView.setCenter(VGMap.defaultCoordinate, zoomLevel: VGMap.defaultZoomLevel, animated: false)
-    mapView.maximumZoomLevel = VGMap.maximumZoomLevel
     mapView.showsUserLocation = true
     mapView.compassView.isHidden = true
     */

@@ -1,4 +1,4 @@
-// import Mapbox
+import MapboxMaps
 import UIKit
 
 // MARK: - VGARDependencyContainer
@@ -14,6 +14,10 @@ class VGARDependencyContainer {
     let mapView = VGMapView(frame: view.bounds)
     mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     mapView.tintColor = .systemBlue
+    mapView.mapboxMap.setCamera(to: .init(
+      center: mapView.location.latestLocation?.coordinate ?? VGMap.defaultCoordinate,
+      zoom: VGARMap.minimumZoomLevel
+    ))
     /*
     mapView.minimumZoomLevel = VGARMap.minimumZoomLevel
     mapView.maximumZoomLevel = VGARMap.maximumZoomLevel
