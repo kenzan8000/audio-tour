@@ -176,15 +176,13 @@ class VGARViewController: VGTabViewController {
   
   /// Binds zoom settings in view model
   private func bindZoom() {
-    /*
     viewModel.zoomLevelEvent
       .subscribe { [weak self] event in
         if let self = self, let zoomLevel = event.element {
-          self.mapView.setZoomLevel(zoomLevel, animated: false)
+          self.mapView.mapboxMap.setCamera(to: .init(zoom: zoomLevel))
         }
       }
       .disposed(by: disposeBag)
-    */
     viewModel.zoomStateEvent
       .subscribe { [weak self] event in
         guard let self = self, let zoomState = event.element else {
