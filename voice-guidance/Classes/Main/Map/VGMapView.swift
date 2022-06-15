@@ -1,6 +1,6 @@
 import MapboxMaps
-// import RxCocoa
-// import RxSwift
+import RxCocoa
+import RxSwift
 
 // MARK: - VGMapView
 class VGMapView: MapView {
@@ -8,6 +8,7 @@ class VGMapView: MapView {
   // MARK: property
   
   var spotForAnnotation: VGSpot?
+  weak var delegate: VGMapViewDelegate?
   
   // MARK: initializer
   
@@ -29,6 +30,8 @@ class VGMapView: MapView {
         styleURI: UIApplication.shared.windows.first?.traitCollection.userInterfaceStyle == .dark ? .dark : .light
       )
     )
+    
+    setup()
   }
   
   // MARK: life cycle
@@ -40,51 +43,98 @@ class VGMapView: MapView {
     )
   }
   
+  // MARK: private api
+  private func setup() {
+    mapboxMap.onNext(.mapLoaded) { [weak self] _ in
+      self?.location.addLocationConsumer(newConsumer: VGMapViewLocationConsumer(delegate: self))
+    }
+  }
 }
-/*
-// MARK: - VGMapViewDelegateProxy
-class VGMapViewDelegateProxy: DelegateProxy<VGMapView, AnnotationInteractionDelegate>, DelegateProxyType, AnnotationInteractionDelegate {
 
-  // MARK: - property
+// MARK: - VGMapViewDelegate
+protocol VGMapViewDelegate: AnyObject {
+  func mapView(_ mapView: VGMapView, didUpdate location: Location)
+}
+  
+// MARK: - VGMapView + Delegates
+extension VGMapView: VGMapViewLocationConsumerDelegate {
+  // MARK: VGMapViewLocationConsumerDelegate
+  func locationUpdate(newLocation: Location) {
+    delegate?.mapView(self, didUpdate: newLocation)
+  }
+}
+  
+// MARK: - VGMapViewLocationConsumer
+class VGMapViewLocationConsumer: LocationConsumer {
+  
+  // MARK: property
+  weak var delegate: VGMapViewLocationConsumerDelegate?
+  
+  // MARK: initialization
+  init(delegate: VGMapViewLocationConsumerDelegate?) {
+    self.delegate = delegate
+  }
+  
+  func locationUpdate(newLocation: Location) {
+    delegate?.locationUpdate(newLocation: newLocation)
+  }
+}
+
+// MARK: - VGMapViewLocationConsumerDelegate
+protocol VGMapViewLocationConsumerDelegate: AnyObject {
+  func locationUpdate(newLocation: Location)
+}
+
+// MARK: - VGMapViewDelegateProxy
+class VGMapViewDelegateProxy: DelegateProxy<VGMapView, VGMapViewDelegate>, DelegateProxyType, VGMapViewDelegate {
+
+  // MARK: property
   
   private weak var parentObject: VGMapView?
+  let didUpdateLocationObserver = PublishSubject<Location>()
+/*
   let didSelectAnnotationObserver = PublishSubject<VGMapAnnotation>()
-  let didUpdateLocationObserver = PublishSubject<MGLUserLocation>()
-  let didFailToLocateUserObserver = PublishSubject<Error>()
   let spotIdForAnnotationObserver = PublishSubject<Int>()
-    
-  // MARK: - initialization
+*/
+  
+  // MARK: initialization
   
   init(parentObject: VGMapView) {
     super.init(parentObject: parentObject, delegateProxy: VGMapViewDelegateProxy.self)
     self.parentObject = parentObject
   }
     
-  // MARK: - destruction
+  // MARK: destruction
     
   deinit {
-    didSelectAnnotationObserver.on(.completed)
     didUpdateLocationObserver.on(.completed)
-    didFailToLocateUserObserver.on(.completed)
+/*
+    didSelectAnnotationObserver.on(.completed)
     spotIdForAnnotationObserver.on(.completed)
+*/
   }
  
-  // MARK: - public api
+  // MARK: public api
     
   static func registerKnownImplementations() {
     register { VGMapViewDelegateProxy(parentObject: $0) }
   }
     
-  static func currentDelegate(for object: ParentObject) -> MGLMapViewDelegate? {
+  static func currentDelegate(for object: ParentObject) -> VGMapViewDelegate? {
     object.delegate
   }
     
-  static func setCurrentDelegate(_ delegate: MGLMapViewDelegate?, to object: ParentObject) {
+  static func setCurrentDelegate(_ delegate: VGMapViewDelegate?, to object: ParentObject) {
     object.delegate = delegate
   }
-    
-  // MARK: - AnnotationInteractionDelegate
   
+  // MARK: VGMapViewDelegate
+  
+  func mapView(_ mapView: VGMapView, didUpdate location: Location) {
+    didUpdateLocationObserver.on(.next(location))
+  }
+  
+/*
   func annotationManager(
     _ manager: AnnotationManager,
     didDetectTappedAnnotations annotations: [Annotation]
@@ -116,18 +166,7 @@ class VGMapViewDelegateProxy: DelegateProxy<VGMapView, AnnotationInteractionDele
     }
     didSelectAnnotationObserver.on(.next(annotation))
   }
-  
-  func mapView(_ mapView: MGLMapView, didUpdate userLocation: MGLUserLocation?) {
-    guard let userLocation = userLocation else {
-      return
-    }
-    didUpdateLocationObserver.on(.next(userLocation))
-  }
-  
-  func mapView(_ mapView: MGLMapView, didFailToLocateUserWithError error: Error) {
-    didFailToLocateUserObserver.on(.next(error))
-  }
-  
+*/
 }
 
 // MARK: - Reactive Extension
@@ -138,23 +177,20 @@ extension Reactive where Base: VGMapView {
     VGMapViewDelegateProxy.proxy(for: base)
   }
   
+  var didUpdateLocation: ControlEvent<Location> {
+    ControlEvent(events: delegateProxy.didUpdateLocationObserver)
+  }
+/*
   var didSelectAnnotation: ControlEvent<VGMapAnnotation> {
     ControlEvent(events: delegateProxy.didSelectAnnotationObserver)
   }
-  
-  var didUpdateLocation: ControlEvent<MGLUserLocation> {
-    ControlEvent(events: delegateProxy.didUpdateLocationObserver)
-  }
-  
-  var didFailToLocateUser: ControlEvent<Error> {
-    ControlEvent(events: delegateProxy.didFailToLocateUserObserver)
-  }
-  
+*/
+/*
   var spotIdForAnnotation: ControlEvent<Int> {
     ControlEvent(events: delegateProxy.spotIdForAnnotationObserver)
   }
-}
 */
+}
 
 // MARK: - VGMapViewFactory
 typealias VGMapViewFactory = (_ view: UIView) -> VGMapView

@@ -164,13 +164,15 @@ class VGMapViewController: VGTabViewController {
         }
       }
       .disposed(by: disposeBag)
+    */
     mapView.rx.didUpdateLocation
       .subscribe { [weak self] _ in self?.currentLocationButton.isHidden = false }
       .disposed(by: disposeBag)
+/*
     mapView.rx.didFailToLocateUser
       .subscribe { [weak self] _ in self?.currentLocationButton.isHidden = true }
       .disposed(by: disposeBag)
-    */
+*/
   }
 
   /// Binds view model
