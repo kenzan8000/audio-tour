@@ -25,8 +25,8 @@ class VGARDependencyContainer {
     mapView.isScrollEnabled = false
     mapView.isRotateEnabled = false
     mapView.isPitchEnabled = false
-    mapView.showsUserLocation = true
     */
+    mapView.location.options.puckType = .puck2D()
     mapView.layer.cornerRadius = mapView.frame.width / 2
     mapView.layer.borderColor = UIColor.darkGray.cgColor
     mapView.layer.borderWidth = 4.0

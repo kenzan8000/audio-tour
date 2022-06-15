@@ -15,10 +15,7 @@ class VGMapDependencyContainer {
     mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     mapView.tintColor = .systemBlue
     mapView.mapboxMap.setCamera(to: .init(center: VGMap.defaultCoordinate, zoom: VGMap.defaultZoomLevel))
-    /*
-    mapView.showsUserLocation = true
-    mapView.compassView.isHidden = true
-    */
+    mapView.location.options.puckType = .puck2D()
     return mapView
   }
   
