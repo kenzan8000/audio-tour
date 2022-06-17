@@ -216,16 +216,14 @@ class VGARViewController: VGTabViewController {
   /// Binds spots settings in view model
   private func bindSpots() {
     viewModel.spotsWereUpdatedEvent
-      .subscribe { [weak self] /* event */ _ in
-        guard let self = self /*, let spots = event.element */ else {
+      .subscribe { [weak self] event in
+        guard let self = self, let spots = event.element else {
           return
         }
-        /*
-        self.mapView.removeAnnotations(self.mapView.annotations ?? [])
-        self.mapView.addAnnotations(
-          spots.map { VGMapAnnotation(id: $0.id, coordinate: $0.coordinate) }
+        self.mapView.removeAll()
+        self.mapView.add(
+          annotations: spots.map { .annotation(spot: $0) }
         )
-        */
         self.sceneLocationView.resetLocationNodes(self.viewModel.spotNodes)
       }
       .disposed(by: disposeBag)

@@ -91,7 +91,7 @@
 		E66B22EE26A3E99900CFF95F /* VGTestingRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B22AE26A3E66C00CFF95F /* VGTestingRootViewController.swift */; };
 		E66B22EF26A3E99A00CFF95F /* VGTestingRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66B22AE26A3E66C00CFF95F /* VGTestingRootViewController.swift */; };
 		E66BB9EA1D7D202C00B8E996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66BB9E31D7D202C00B8E996 /* AppDelegate.swift */; };
-		E66EDCBA1DF637C500F81CCD /* VGMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66EDCB91DF637C500F81CCD /* VGMapAnnotation.swift */; };
+		E66EDCBA1DF637C500F81CCD /* PointAnnotation+VGSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66EDCB91DF637C500F81CCD /* PointAnnotation+VGSpot.swift */; };
 		E66EF5602645743700FC611D /* Logger+VG.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66EF55F2645743600FC611D /* Logger+VG.swift */; };
 		E6730A2724F2A537003D1D50 /* VGCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6730A2624F2A537003D1D50 /* VGCircleButton.swift */; };
 		E67766A2250BA04000563561 /* VGPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67766A1250BA04000563561 /* VGPermissionView.swift */; };
@@ -296,7 +296,7 @@
 		E66B22AE26A3E66C00CFF95F /* VGTestingRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTestingRootViewController.swift; sourceTree = "<group>"; };
 		E66BB9E31D7D202C00B8E996 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E66BB9E91D7D202C00B8E996 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E66EDCB91DF637C500F81CCD /* VGMapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGMapAnnotation.swift; sourceTree = "<group>"; };
+		E66EDCB91DF637C500F81CCD /* PointAnnotation+VGSpot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PointAnnotation+VGSpot.swift"; sourceTree = "<group>"; };
 		E66EF55F2645743600FC611D /* Logger+VG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+VG.swift"; sourceTree = "<group>"; };
 		E6730A2624F2A537003D1D50 /* VGCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGCircleButton.swift; sourceTree = "<group>"; };
 		E67766A1250BA04000563561 /* VGPermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGPermissionView.swift; sourceTree = "<group>"; };
@@ -748,6 +748,14 @@
 			path = CoreLocation;
 			sourceTree = "<group>";
 		};
+		E647C404285D224500F8738A /* Mapbox */ = {
+			isa = PBXGroup;
+			children = (
+				E66EDCB91DF637C500F81CCD /* PointAnnotation+VGSpot.swift */,
+			);
+			path = Mapbox;
+			sourceTree = "<group>";
+		};
 		E65837F61DDBDD35004807DF /* AR */ = {
 			isa = PBXGroup;
 			children = (
@@ -843,7 +851,6 @@
 				E6DF394724DF02D90077FC71 /* VGMapViewController.xib */,
 				E62C5C0B24FE79F300C2C6CC /* VGMapViewModel.swift */,
 				E6899CA31DF7A2B6007D6B97 /* VGMapView.swift */,
-				E66EDCB91DF637C500F81CCD /* VGMapAnnotation.swift */,
 				E658D22A24E4FB2E004E5C7C /* VGMapZoomButton.swift */,
 				E658D22C24E4FEE6004E5C7C /* VGMapZoomButton.xib */,
 				E6BE8D5E24EC02E000B96D15 /* VGMapZoom.swift */,
@@ -871,6 +878,7 @@
 				E64558F6261CA8BB00584C64 /* CoreLocation */,
 				E66A0373260CCDA900EE2679 /* Foundation */,
 				E66EF55E2645741800FC611D /* OS */,
+				E647C404285D224500F8738A /* Mapbox */,
 				E6E93A5B260B666300FC91F6 /* UIKit */,
 			);
 			path = Extension;
@@ -1368,7 +1376,7 @@
 				E67876E9255D62C000793C5E /* VGARMap.swift in Sources */,
 				E620F6641E6FFD41008F0C70 /* VGTutorialViewModel.swift in Sources */,
 				E6579ABE2614B36D009889ED /* VGMainDependencyContainer.swift in Sources */,
-				E66EDCBA1DF637C500F81CCD /* VGMapAnnotation.swift in Sources */,
+				E66EDCBA1DF637C500F81CCD /* PointAnnotation+VGSpot.swift in Sources */,
 				E6576C3F2148D29500CD31F3 /* UIImage+Tint.swift in Sources */,
 				E646601D1DB15DE3006CBDB7 /* VGGuideProgressSlider.swift in Sources */,
 				E664538E26F0D95D00BDEE7B /* VGSearchTableViewCellModel.swift in Sources */,

@@ -7,8 +7,11 @@ class VGMapView: MapView {
   
   // MARK: property
   
-  var spotForAnnotation: VGSpot?
+  // var spotForAnnotation: VGSpot?
   weak var delegate: VGMapViewDelegate?
+  private lazy var pointAnnotationManager: PointAnnotationManager = {
+    annotations.makePointAnnotationManager()
+  }()
   
   // MARK: initializer
   
@@ -41,6 +44,19 @@ class VGMapView: MapView {
       traitCollection.userInterfaceStyle == .dark ? .dark : .light,
       completion: nil
     )
+  }
+  
+  // MARK: public api
+  func add(annotations: [PointAnnotation]) {
+    annotations.forEach { [weak self] annotation in
+      if let self = self, !self.pointAnnotationManager.annotations.contains(where: { $0.id == annotation.id }) {
+        self.pointAnnotationManager.annotations.append(annotation)
+      }
+    }
+  }
+  
+  func removeAll() {
+    pointAnnotationManager.annotations = []
   }
   
   // MARK: private api

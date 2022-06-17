@@ -1,3 +1,4 @@
+import MapboxMaps
 import RxSwift
 import SideMenu
 import UIKit
@@ -177,19 +178,17 @@ class VGMapViewController: VGTabViewController {
 
   /// Binds view model
   private func bindViewModel() {
-    /*
     viewModel.spotsWereUpdatedEvent
       .subscribe { [weak self] event in
         guard let self = self, let spots = event.element else {
           return
         }
-        self.mapView.removeAnnotations(self.mapView.annotations ?? [])
-        self.mapView.addAnnotations(
-          spots.map { VGMapAnnotation(id: $0.id, coordinate: $0.coordinate) }
+        self.mapView.removeAll()
+        self.mapView.add(
+          annotations: spots.map { .annotation(spot: $0) }
         )
       }
       .disposed(by: disposeBag)
-    */
     viewModel.searchResultWasUpdatedEvent
       .bind(to: searchView.rx.items) { _, _, spot in
         VGSearchTableViewCell(viewModel: .init(image: spot.image, title: spot.name))
