@@ -7,7 +7,6 @@ class VGMapView: MapView {
   
   // MARK: property
   
-  // var spotForAnnotation: VGSpot?
   weak var delegate: VGMapViewDelegate?
   private lazy var pointAnnotationManager: PointAnnotationManager = {
     annotations.makePointAnnotationManager()
@@ -64,17 +63,28 @@ class VGMapView: MapView {
     mapboxMap.onNext(.mapLoaded) { [weak self] _ in
       self?.location.addLocationConsumer(newConsumer: VGMapViewLocationConsumer(delegate: self))
     }
+    pointAnnotationManager.delegate = self
   }
 }
 
 // MARK: - VGMapViewDelegate
 protocol VGMapViewDelegate: AnyObject {
+  func mapView(_ mapView: VGMapView, didDetectTappedAnnotation annotation: Annotation)
   func mapView(_ mapView: VGMapView, didUpdate location: Location)
 }
+
+// MARK: - VGMapView + AnnotationInteractionDelegate
+extension VGMapView: AnnotationInteractionDelegate {
+  func annotationManager(_ manager: AnnotationManager, didDetectTappedAnnotations annotations: [Annotation]) {
+    guard let annotation = annotations.first else {
+      return
+    }
+    delegate?.mapView(self, didDetectTappedAnnotation: annotation)
+  }
+}
   
-// MARK: - VGMapView + Delegates
+// MARK: - VGMapView + VGMapViewLocationConsumerDelegate
 extension VGMapView: VGMapViewLocationConsumerDelegate {
-  // MARK: VGMapViewLocationConsumerDelegate
   func locationUpdate(newLocation: Location) {
     delegate?.mapView(self, didUpdate: newLocation)
   }
@@ -108,10 +118,7 @@ class VGMapViewDelegateProxy: DelegateProxy<VGMapView, VGMapViewDelegate>, Deleg
   
   private weak var parentObject: VGMapView?
   let didUpdateLocationObserver = PublishSubject<Location>()
-/*
-  let didSelectAnnotationObserver = PublishSubject<VGMapAnnotation>()
-  let spotIdForAnnotationObserver = PublishSubject<Int>()
-*/
+  let didSelectAnnotationObserver = PublishSubject<Annotation>()
   
   // MARK: initialization
   
@@ -124,10 +131,7 @@ class VGMapViewDelegateProxy: DelegateProxy<VGMapView, VGMapViewDelegate>, Deleg
     
   deinit {
     didUpdateLocationObserver.on(.completed)
-/*
     didSelectAnnotationObserver.on(.completed)
-    spotIdForAnnotationObserver.on(.completed)
-*/
   }
  
   // MARK: public api
@@ -146,43 +150,13 @@ class VGMapViewDelegateProxy: DelegateProxy<VGMapView, VGMapViewDelegate>, Deleg
   
   // MARK: VGMapViewDelegate
   
+  func mapView(_ mapView: VGMapView, didDetectTappedAnnotation annotation: Annotation) {
+    didSelectAnnotationObserver.on(.next(annotation))
+  }
+  
   func mapView(_ mapView: VGMapView, didUpdate location: Location) {
     didUpdateLocationObserver.on(.next(location))
   }
-  
-/*
-  func annotationManager(
-    _ manager: AnnotationManager,
-    didDetectTappedAnnotations annotations: [Annotation]
-  ) {
-    
-  }
-  
-  func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
-    guard let annotation = annotation as? VGMapAnnotation,
-          let mapView = mapView as? VGMapView else {
-      return nil
-    }
-    spotIdForAnnotationObserver.on(.next(annotation.id))
-    guard let image = mapView.spotForAnnotation?.image,
-          let imageName = mapView.spotForAnnotation?.imageId else {
-      return nil
-    }
-    mapView.spotForAnnotation = nil
-    return MGLAnnotationImage(image: image, reuseIdentifier: "\(imageName)")
-  }
-  
-  func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
-    false
-  }
-
-  func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
-    guard let annotation = annotation as? VGMapAnnotation else {
-      return
-    }
-    didSelectAnnotationObserver.on(.next(annotation))
-  }
-*/
 }
 
 // MARK: - Reactive Extension
@@ -196,16 +170,10 @@ extension Reactive where Base: VGMapView {
   var didUpdateLocation: ControlEvent<Location> {
     ControlEvent(events: delegateProxy.didUpdateLocationObserver)
   }
-/*
-  var didSelectAnnotation: ControlEvent<VGMapAnnotation> {
+  
+  var didSelectAnnotation: ControlEvent<Annotation> {
     ControlEvent(events: delegateProxy.didSelectAnnotationObserver)
   }
-*/
-/*
-  var spotIdForAnnotation: ControlEvent<Int> {
-    ControlEvent(events: delegateProxy.spotIdForAnnotationObserver)
-  }
-*/
 }
 
 // MARK: - VGMapViewFactory

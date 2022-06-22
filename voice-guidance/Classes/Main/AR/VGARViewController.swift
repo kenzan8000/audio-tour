@@ -293,21 +293,14 @@ class VGARViewController: VGTabViewController {
   
   /// Binds map view
   private func bindMapView() {
-    /*
-    mapView.rx.spotIdForAnnotation
-      .subscribe { [weak self] event in
-        self?.mapView.spotForAnnotation = self?.viewModel.spots.first { $0.id == event.element }
-      }
-      .disposed(by: disposeBag)
     mapView.rx.didSelectAnnotation
       .subscribe { [weak self] event in
         if let annotation = event.element,
-          let spot = self?.viewModel.spots.first(where: { $0.id == annotation.id }) {
+          let spot = self?.viewModel.spots.first(where: { "\($0.id)" == annotation.id }) {
           self?.presentGuideViewController(spot: spot)
         }
       }
       .disposed(by: disposeBag)
-    */
   }
   
   /// Designs view
