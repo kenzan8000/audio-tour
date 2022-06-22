@@ -1,5 +1,4 @@
-// import Mapbox
-// import MapKit
+@_spi(Experimental) import MapboxMaps
 import RxSwift
 import SideMenu
 import UIKit
@@ -199,18 +198,21 @@ class VGARViewController: VGTabViewController {
     /*
     viewModel.latestHeadingEvent
       .subscribe { [weak self] _ in
-        self?.mapView.userTrackingMode = .followWithHeading
+        self?.mapView.viewport
       }
       .disposed(by: disposeBag)
+    */
     viewModel.latestLocationEvent
       .subscribe { [weak self] event in
         guard let self = self, let location = event.element else {
           return
         }
-        self.mapView.setCenter(location.coordinate, animated: false)
+        self.mapView.mapboxMap.setCamera(to: .init(
+          center: location.coordinate,
+          zoom: self.mapView.cameraState.zoom
+        ))
       }
       .disposed(by: disposeBag)
-    */
   }
   
   /// Binds spots settings in view model
