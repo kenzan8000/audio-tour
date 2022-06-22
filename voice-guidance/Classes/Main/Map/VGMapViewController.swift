@@ -103,16 +103,17 @@ class VGMapViewController: VGTabViewController {
   private func bindView() {
     bindSearchView()
     bindMapView()
-    /*
     currentLocationButton.rx.tap
       .subscribe { [weak self] _ in
-        guard let self = self, let location = self.mapView.userLocation?.location else {
+        guard let self = self, let location = self.mapView.location.latestLocation else {
           return
         }
-        self.mapView.setCenter(location.coordinate, animated: true)
+        self.mapView.mapboxMap.setCamera(to: .init(
+          center: location.coordinate,
+          zoom: self.mapView.cameraState.zoom
+        ))
       }
       .disposed(by: disposeBag)
-    */
   }
   
   /// Binds search view
@@ -135,7 +136,10 @@ class VGMapViewController: VGTabViewController {
         guard let self = self, let indexPath = event.element else {
           return
         }
-        // self.mapView.setCenter(self.viewModel.searchResult[indexPath.row].coordinate, animated: true)
+        self.mapView.mapboxMap.setCamera(to: .init(
+          center: self.viewModel.searchResult[indexPath.row].coordinate,
+          zoom: self.mapView.cameraState.zoom
+        ))
         self.presentGuideViewController(spot: self.viewModel.searchResult[indexPath.row])
       }
       .disposed(by: disposeBag)
