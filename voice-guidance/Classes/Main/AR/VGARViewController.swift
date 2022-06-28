@@ -42,7 +42,6 @@ class VGARViewController: VGTabViewController {
         .subscribe { [weak self] alert in self?.present(alert, animated: true, completion: nil) }
         .disposed(by: disposeBag)
       guideViewController?.presentGuideViewController(on: self, animated: true)
-      // mapView.selectedAnnotations.forEach { [weak self] in self?.mapView.deselectAnnotation($0, animated: false) }
       searchView.endSearch()
     }
   }
@@ -137,12 +136,6 @@ class VGARViewController: VGTabViewController {
     super.viewWillDisappear(animated)
     viewModel.pause()
     sceneLocationView.pause()
-  }
-  
-  override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-    super.traitCollectionDidChange(previousTraitCollection)
-    // zoomInButton.changeTraitCollection()
-    // zoomOutButton.changeTraitCollection()
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

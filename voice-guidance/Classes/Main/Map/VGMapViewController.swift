@@ -32,7 +32,6 @@ class VGMapViewController: VGTabViewController {
         .subscribe { [weak self] alert in self?.present(alert, animated: true, completion: nil) }
         .disposed(by: disposeBag)
       guideViewController?.presentGuideViewController(on: self, animated: true)
-      // mapView.selectedAnnotations.forEach { [weak self] in self?.mapView.deselectAnnotation($0, animated: false) }
       searchView.endSearch()
     }
   }
@@ -160,11 +159,6 @@ class VGMapViewController: VGTabViewController {
     mapView.rx.didUpdateLocation
       .subscribe { [weak self] _ in self?.currentLocationButton.isHidden = false }
       .disposed(by: disposeBag)
-/*
-    mapView.rx.didFailToLocateUser
-      .subscribe { [weak self] _ in self?.currentLocationButton.isHidden = true }
-      .disposed(by: disposeBag)
-*/
   }
 
   /// Binds view model
