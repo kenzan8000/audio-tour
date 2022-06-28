@@ -24,11 +24,8 @@ commands:
     steps:
       - run:
           command: |
-            [ ! -d "Frameworks" ] && mkdir Frameworks
-            [ ! -f "mapbox.zip" ] && curl -o mapbox.zip $IOS_MAPBOX_DOWNLOAD_URL
-            [ ! -d "mapbox" ] && unzip mapbox.zip -d mapbox
-            [ ! -d "Frameworks/Mapbox.framework" ] && cp -r mapbox/dynamic/Mapbox.framework Frameworks/Mapbox.framework
-            [ ! -d "Frameworks/MapboxMobileEvents.framework" ] && cp -r mapbox/dynamic/MapboxMobileEvents.framework Frameworks/MapboxMobileEvents.framework
+            [ ! -d "~/.netrc" ] && touch ~/.netrc && chmod 755 ~/.netrc
+            echo "machine api.mapbox.com\n  login mapbox\n  password $IOS_MAPBOX_DOWNLOAD_ACCESS_TOKEN" >> ~/.netrc
             [ ! -f "voice-guidance/Resources/Plists/Mapbox-Info.plist" ] && plutil -replace MGLMapboxAccessToken -string $IOS_MAPBOX_ACCESS_TOKEN voice-guidance/Resources/Plists/Mapbox-Example-Info.plist
             [ ! -f "voice-guidance/Resources/Plists/Mapbox-Info.plist" ] && cp voice-guidance/Resources/Plists/Mapbox-Example-Info.plist voice-guidance/Resources/Plists/Mapbox-Info.plist
   slack_notify_fail:
