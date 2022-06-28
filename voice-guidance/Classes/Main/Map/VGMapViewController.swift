@@ -108,10 +108,7 @@ class VGMapViewController: VGTabViewController {
         guard let self = self, let location = self.mapView.location.latestLocation else {
           return
         }
-        self.mapView.mapboxMap.setCamera(to: .init(
-          center: location.coordinate,
-          zoom: self.mapView.cameraState.zoom
-        ))
+        self.mapView.mapboxMap.setCamera(to: .init(center: location.coordinate))
       }
       .disposed(by: disposeBag)
   }
@@ -136,10 +133,7 @@ class VGMapViewController: VGTabViewController {
         guard let self = self, let indexPath = event.element else {
           return
         }
-        self.mapView.mapboxMap.setCamera(to: .init(
-          center: self.viewModel.searchResult[indexPath.row].coordinate,
-          zoom: self.mapView.cameraState.zoom
-        ))
+        self.mapView.mapboxMap.setCamera(to: .init(center: self.viewModel.searchResult[indexPath.row].coordinate))
         self.presentGuideViewController(spot: self.viewModel.searchResult[indexPath.row])
       }
       .disposed(by: disposeBag)

@@ -26,11 +26,11 @@ class VGMapHeadingTests: XCTestCase {
     XCTAssertEqual(sut.calculatedHeading, 0, accuracy: 0.001)
   }
   
-  func testVGMapHeading_whenHeadingsAreAppended_calculatedHeadingShouldBeAverage() throws {
+  func testVGMapHeading_whenHeadingsAreAppended_calculatedHeadingShouldBeLatestHeading() throws {
     sut.append(heading: 30)
     sut.append(heading: 60)
     sut.append(heading: 120)
-    XCTAssertEqual(sut.calculatedHeading, 70, accuracy: 0.001)
+    XCTAssertEqual(sut.calculatedHeading, 120, accuracy: 0.001)
   }
   
   func testVGMapHeading_whenHeadingIsReset_calculatedHeadingShouldBeZero() throws {

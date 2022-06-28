@@ -195,22 +195,20 @@ class VGARViewController: VGTabViewController {
   
   /// Binds location settings in view model
   private func bindLocation() {
-    /*
     viewModel.latestHeadingEvent
-      .subscribe { [weak self] _ in
-        self?.mapView.viewport
+      .subscribe { [weak self] event in
+        guard let self = self, let heading = event.element else {
+          return
+        }
+        self.mapView.mapboxMap.setCamera(to: .init(bearing: heading))
       }
       .disposed(by: disposeBag)
-    */
     viewModel.latestLocationEvent
       .subscribe { [weak self] event in
         guard let self = self, let location = event.element else {
           return
         }
-        self.mapView.mapboxMap.setCamera(to: .init(
-          center: location.coordinate,
-          zoom: self.mapView.cameraState.zoom
-        ))
+        self.mapView.mapboxMap.setCamera(to: .init(center: location.coordinate))
       }
       .disposed(by: disposeBag)
   }

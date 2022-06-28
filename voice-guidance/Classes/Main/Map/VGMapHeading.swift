@@ -3,7 +3,7 @@ import CoreLocation
 class VGMapHeading {
   // MARK: property
   
-  private let count = 3
+  private let count = 1
   
   private var latestHeadings: [CLLocationDirection] = []
   
