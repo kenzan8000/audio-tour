@@ -13,9 +13,11 @@ class VGMapDependencyContainer {
   func makeMapView(on view: UIView) -> VGMapView {
     let mapView = VGMapView(frame: view.bounds)
     mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    mapView.tintColor = .systemBlue
     mapView.mapboxMap.setCamera(to: .init(center: VGMap.defaultCoordinate, zoom: VGMap.defaultZoomLevel))
     mapView.location.options.puckType = .puck2D()
+    mapView.ornaments.options.compass.visibility = .hidden
+    mapView.ornaments.options.scaleBar.visibility = .hidden
+    mapView.tintColor = .systemBlue
     return mapView
   }
   
