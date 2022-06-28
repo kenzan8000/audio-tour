@@ -1,4 +1,4 @@
-@_spi(Experimental) import MapboxMaps
+import MapboxMaps
 import RxSwift
 import SideMenu
 import UIKit

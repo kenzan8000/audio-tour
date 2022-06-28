@@ -18,14 +18,15 @@ class VGARDependencyContainer {
       center: mapView.location.latestLocation?.coordinate ?? VGMap.defaultCoordinate,
       zoom: VGARMap.minimumZoomLevel
     ))
-    /*
-    mapView.minimumZoomLevel = VGARMap.minimumZoomLevel
-    mapView.maximumZoomLevel = VGARMap.maximumZoomLevel
-    mapView.isZoomEnabled = false
-    mapView.isScrollEnabled = false
-    mapView.isRotateEnabled = false
-    mapView.isPitchEnabled = false
-    */
+    mapView.gestures.options.doubleTapToZoomInEnabled = false
+    mapView.gestures.options.doubleTouchToZoomOutEnabled = false
+    mapView.gestures.options.panEnabled = false
+    mapView.gestures.options.pinchEnabled = false
+    mapView.gestures.options.pinchRotateEnabled = false
+    mapView.gestures.options.pinchZoomEnabled = false
+    mapView.gestures.options.pitchEnabled = false
+    mapView.gestures.options.pinchPanEnabled = false
+    mapView.gestures.options.quickZoomEnabled = false
     mapView.location.options.puckType = .puck2D()
     mapView.layer.cornerRadius = mapView.frame.width / 2
     mapView.layer.borderColor = UIColor.darkGray.cgColor
