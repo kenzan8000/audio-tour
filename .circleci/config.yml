@@ -24,9 +24,9 @@ commands:
     steps:
       - run:
           command: |
-            [ ! -d "~/.netrc" ] && touch ~/.netrc && chmod 755 ~/.netrc
-            echo "machine api.mapbox.com\n  login mapbox\n  password " >> ~/.netrc
-            echo $IOS_MAPBOX_DOWNLOAD_ACCESS_TOKEN >> ~/.netrc
+            [ ! -f "~/.netrc" ] && touch ~/.netrc
+            [ ! -f "~/.netrc" ] && echo "machine api.mapbox.com\n  login mapbox\n  password $IOS_MAPBOX_DOWNLOAD_ACCESS_TOKEN" >> ~/.netrc
+            [ ! -f "~/.netrc" ] && chmod 755 ~/.netrc
             [ ! -f "voice-guidance/Resources/Plists/Mapbox-Info.plist" ] && plutil -replace MGLMapboxAccessToken -string $IOS_MAPBOX_ACCESS_TOKEN voice-guidance/Resources/Plists/Mapbox-Example-Info.plist
             [ ! -f "voice-guidance/Resources/Plists/Mapbox-Info.plist" ] && cp voice-guidance/Resources/Plists/Mapbox-Example-Info.plist voice-guidance/Resources/Plists/Mapbox-Info.plist
   slack_notify_fail:
