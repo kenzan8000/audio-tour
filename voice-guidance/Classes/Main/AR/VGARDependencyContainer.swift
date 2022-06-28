@@ -28,9 +28,10 @@ class VGARDependencyContainer {
     mapView.gestures.options.pinchPanEnabled = false
     mapView.gestures.options.quickZoomEnabled = false
     mapView.location.options.puckType = .puck2D()
-    mapView.layer.cornerRadius = mapView.frame.width / 2
     mapView.layer.borderColor = UIColor.darkGray.cgColor
     mapView.layer.borderWidth = 4.0
+    mapView.layer.cornerRadius = mapView.frame.width / 2
+    mapView.layer.masksToBounds = true
     mapView.ornaments.options.compass.visibility = .hidden
     mapView.ornaments.options.scaleBar.visibility = .hidden
     return mapView
