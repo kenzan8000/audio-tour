@@ -21,12 +21,6 @@ The live camera view displays the names of spots on top of the image from the ca
 
 ## Installation
 
-### Embedded Frameworks
-
-As of April 2021, [Mapbox](https://github.com/mapbox/mapbox-gl-native-ios) hasn't done the [Swift Package Manager](https://github.com/apple/swift-package-manager) support yet.
-Therefore, [download the SDK manually](https://docs.mapbox.com/ios/maps/guides/install/).
-Then drag the frameworks into `Frameworks/` folder.
-
 ### Plist Settings
 
 Audio Tour depends on [Mapbox](https://github.com/mapbox/mapbox-gl-native-ios/tree/main/platform/ios).
