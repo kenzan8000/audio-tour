@@ -128,17 +128,17 @@ workflows:
           filters:
             branches:
               only: main
-      - ui-tests:
-          context: audio-tour
-          filters:
-            branches:
-              only: main
+#      - ui-tests:
+#          context: audio-tour
+#          filters:
+#            branches:
+#              only: main
       - beta:
           requires:
             - unit-tests
             - snapshot-tests-on-iphone12promax
             - snapshot-tests-on-ipodtouch7thgeneration
-            - ui-tests
+#            - ui-tests
           context: audio-tour
           filters:
             branches:
