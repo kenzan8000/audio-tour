@@ -1882,7 +1882,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.8;
+				MARKETING_VERSION = 2.1.9;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D SAN_FRANCISCO";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.kenzan8000.san-francisco";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1981,7 +1981,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1.8;
+				MARKETING_VERSION = 2.1.9;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG -D SAN_FRANCISCO";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.kenzan8000.san-francisco";
 				PRODUCT_NAME = "$(TARGET_NAME)";
