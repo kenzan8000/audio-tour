@@ -122,6 +122,7 @@ class VGGuideViewController: PullUpController {
       width: parentWidth,
       height: guideControlView.frame.origin.y - guideBodyViewY
     )
+    guideBodyView.enableScrollIfContentHeightIsGreaterThanHeight()
   }
   
   override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -270,6 +271,9 @@ class VGGuideViewController: PullUpController {
         }
       }
       .disposed(by: disposeBag)
+    guideBodyView.onRendered = { [weak self] contentHeight in
+      self?.guideBodyView.enableScrollIfContentHeightIsGreaterThanHeight(contentHeight: contentHeight)
+    }
   }
 }
 

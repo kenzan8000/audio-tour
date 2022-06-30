@@ -141,6 +141,7 @@
 		E6D1823A2609E37E002521C1 /* VGSideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D182392609E37E002521C1 /* VGSideMenuTableViewCell.xib */; };
 		E6D1823E2609FD59002521C1 /* VGSideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1823D2609FD59002521C1 /* VGSideMenuViewModel.swift */; };
 		E6D5E73926F7A13300DAC52C /* VGTutorialViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D5E73826F7A13300DAC52C /* VGTutorialViewControllerTests.swift */; };
+		E6DF0083286E505900100DDE /* MarkdownView+Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF0082286E505900100DDE /* MarkdownView+Scroll.swift */; };
 		E6DF394824DF02D90077FC71 /* VGMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6DF394724DF02D90077FC71 /* VGMapViewController.xib */; };
 		E6DF394A24DF03460077FC71 /* VGARViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6DF394924DF03460077FC71 /* VGARViewController.xib */; };
 		E6DF394C24DF03C30077FC71 /* VGTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6DF394B24DF03C30077FC71 /* VGTutorialViewController.xib */; };
@@ -349,6 +350,7 @@
 		E6D182392609E37E002521C1 /* VGSideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VGSideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		E6D1823D2609FD59002521C1 /* VGSideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSideMenuViewModel.swift; sourceTree = "<group>"; };
 		E6D5E73826F7A13300DAC52C /* VGTutorialViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGTutorialViewControllerTests.swift; sourceTree = "<group>"; };
+		E6DF0082286E505900100DDE /* MarkdownView+Scroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarkdownView+Scroll.swift"; sourceTree = "<group>"; };
 		E6DF394724DF02D90077FC71 /* VGMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VGMapViewController.xib; sourceTree = "<group>"; };
 		E6DF394924DF03460077FC71 /* VGARViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VGARViewController.xib; sourceTree = "<group>"; };
 		E6DF394B24DF03C30077FC71 /* VGTutorialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VGTutorialViewController.xib; sourceTree = "<group>"; };
@@ -879,6 +881,7 @@
 				E66A0373260CCDA900EE2679 /* Foundation */,
 				E66EF55E2645741800FC611D /* OS */,
 				E647C404285D224500F8738A /* Mapbox */,
+				E6DF0081286E503700100DDE /* MarkdownView */,
 				E6E93A5B260B666300FC91F6 /* UIKit */,
 			);
 			path = Extension;
@@ -997,6 +1000,14 @@
 				E6C0D84E26FA2AA00047F405 /* VGTutorialViewControllerPageObject.swift */,
 			);
 			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		E6DF0081286E503700100DDE /* MarkdownView */ = {
+			isa = PBXGroup;
+			children = (
+				E6DF0082286E505900100DDE /* MarkdownView+Scroll.swift */,
+			);
+			path = MarkdownView;
 			sourceTree = "<group>";
 		};
 		E6E00FB62503C50B009C1F5D /* Main */ = {
@@ -1398,6 +1409,7 @@
 				E6778EC926C7DE3C0073E896 /* VGTutorialCoordinator.swift in Sources */,
 				E61924D324F5306400104FC4 /* VGNibTableViewCell.swift in Sources */,
 				E600A08C26C6914C002C5752 /* VGRootCoordinator.swift in Sources */,
+				E6DF0083286E505900100DDE /* MarkdownView+Scroll.swift in Sources */,
 				E6D1823E2609FD59002521C1 /* VGSideMenuViewModel.swift in Sources */,
 				E65503C2255D604600543F9B /* Notification.Name+VG.swift in Sources */,
 				E68E90311D9B99F800ABC487 /* VGStorageProvider.swift in Sources */,
