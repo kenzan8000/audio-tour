@@ -4,14 +4,11 @@ extension VGARViewController {
   // MARK: public api
   
   /// Calls when deiniting tutorial view
-  /// - Parameter userDefaults: VGUserDefaults
-  func cleanUpTutorialView(userDefaults: VGUserDefaults) {
+  func cleanUpTutorialView() {
     tutorialView?.removeFromSuperview()
     tutorialViewWillDisappearDisposable?.dispose()
     tutorialView = nil
     tutorialViewWillDisappearDisposable = nil
-    userDefaults.set(true, forKey: VGUserDefaultsKey.doneARTutorial)
-    _ = userDefaults.synchronize()
   }
   
   /// Presents tutorial view
@@ -22,7 +19,9 @@ extension VGARViewController {
     if !forced && userDefaults.bool(forKey: VGUserDefaultsKey.doneARTutorial) {
       return
     }
-    cleanUpTutorialView(userDefaults: userDefaults)
+    userDefaults.set(true, forKey: VGUserDefaultsKey.doneARTutorial)
+    _ = userDefaults.synchronize()
+    cleanUpTutorialView()
     tutorialView = VGARTutorialView(
       parentViewController: self,
       mapView: mapBackgroundView
@@ -35,7 +34,7 @@ extension VGARViewController {
       .subscribe { [weak self] event in
         let active = event.element ?? true
         if !active {
-          self?.cleanUpTutorialView(userDefaults: userDefaults)
+          self?.cleanUpTutorialView()
         }
       }
   }

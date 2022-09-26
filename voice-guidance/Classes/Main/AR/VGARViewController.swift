@@ -83,7 +83,7 @@ class VGARViewController: VGTabViewController {
   
   deinit {
     cleanUpPermissionView()
-    cleanUpTutorialView(userDefaults: userDefaults)
+    cleanUpTutorialView()
   }
 
   // MARK: life cycle

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -135,6 +135,7 @@
 		E6BEFE60257651DA00F12261 /* VGARTutorialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6BEFE5F257651DA00F12261 /* VGARTutorialView.xib */; };
 		E6C0D84F26FA2AA00047F405 /* VGTutorialViewControllerPageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C0D84E26FA2AA00047F405 /* VGTutorialViewControllerPageObject.swift */; };
 		E6CAF5E124EABC0900BE5E6A /* VGMapHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CAF5E024EABC0900BE5E6A /* VGMapHeading.swift */; };
+		E6D07E1228E23CD1004118A4 /* ARCL in Frameworks */ = {isa = PBXBuildFile; productRef = E6D07E1128E23CD1004118A4 /* ARCL */; };
 		E6D1822F2609D95F002521C1 /* VGSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D1822E2609D95F002521C1 /* VGSideMenuViewController.swift */; };
 		E6D182332609DA5C002521C1 /* VGSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6D182322609DA5C002521C1 /* VGSideMenuViewController.xib */; };
 		E6D182372609E2CD002521C1 /* VGSideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D182362609E2CD002521C1 /* VGSideMenuTableViewCell.swift */; };
@@ -150,7 +151,6 @@
 		E6E00FB82503C849009C1F5D /* VGNiblessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E00FB72503C849009C1F5D /* VGNiblessViewController.swift */; };
 		E6E00FBA2503C8D0009C1F5D /* VGRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E00FB92503C8D0009C1F5D /* VGRootViewController.swift */; };
 		E6E00FBC2503C914009C1F5D /* VGRootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E00FBB2503C914009C1F5D /* VGRootViewModel.swift */; };
-		E6E90F962608925A009AFC97 /* ARCL in Frameworks */ = {isa = PBXBuildFile; productRef = E6E90F952608925A009AFC97 /* ARCL */; };
 		E6EBF516262B03A800EEDE20 /* VGCoreData.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = E63369A6261DF84C0048FD82 /* VGCoreData.sqlite-shm */; };
 		E6EBF517262B03A800EEDE20 /* VGCoreData.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = E63369A5261DF84C0048FD82 /* VGCoreData.sqlite-wal */; };
 		E6EBF518262B03A800EEDE20 /* VGCoreData.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = E63369A4261DF84C0048FD82 /* VGCoreData.sqlite */; };
@@ -395,13 +395,13 @@
 			files = (
 				E6F0C4DE2608901C0064248F /* RxRelay in Frameworks */,
 				E6F0C4D426088F4F0064248F /* VYPlayIndicator in Frameworks */,
+				E6D07E1228E23CD1004118A4 /* ARCL in Frameworks */,
 				E6F0C4E02608901C0064248F /* RxCocoa in Frameworks */,
 				E6F0C4D826088F910064248F /* SideMenu in Frameworks */,
 				E6F0C4C826088EEB0064248F /* Instructions in Frameworks */,
 				E6F0C4D026088F1F0064248F /* PullUpController in Frameworks */,
 				E6F0C4C426088EAE0064248F /* KeychainAccess in Frameworks */,
 				E6F0C4CC26088EFA0064248F /* MarkdownView in Frameworks */,
-				E6E90F962608925A009AFC97 /* ARCL in Frameworks */,
 				E691EE152846ABF100CA8043 /* MapboxMaps in Frameworks */,
 				E6F0C4E22608901C0064248F /* RxSwift in Frameworks */,
 			);
@@ -1130,8 +1130,8 @@
 				E6F0C4DD2608901C0064248F /* RxRelay */,
 				E6F0C4DF2608901C0064248F /* RxCocoa */,
 				E6F0C4E12608901C0064248F /* RxSwift */,
-				E6E90F952608925A009AFC97 /* ARCL */,
 				E691EE142846ABF100CA8043 /* MapboxMaps */,
+				E6D07E1128E23CD1004118A4 /* ARCL */,
 			);
 			productName = "voice-guidance";
 			productReference = E62852B31D7D1FC30071957E /* voice-guidance.app */;
@@ -1215,9 +1215,9 @@
 				E6F0C4D226088F4F0064248F /* XCRemoteSwiftPackageReference "VYPlayIndicator" */,
 				E6F0C4D626088F910064248F /* XCRemoteSwiftPackageReference "SideMenu" */,
 				E6F0C4DC2608901C0064248F /* XCRemoteSwiftPackageReference "RxSwift" */,
-				E6E90F9426089259009AFC97 /* XCRemoteSwiftPackageReference "ARKit-CoreLocation" */,
 				E61AE64A262722E30071D327 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 				E691EE132846ABF100CA8043 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
+				E6D07E1028E23CD1004118A4 /* XCRemoteSwiftPackageReference "ARKit-CoreLocation" */,
 			);
 			productRefGroup = E62852B41D7D1FC30071957E /* Products */;
 			projectDirPath = "";
@@ -1290,6 +1290,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		E6859F60246853C000602436 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 12;
 			files = (
 			);
@@ -2207,7 +2208,7 @@
 				kind = branch;
 			};
 		};
-		E6E90F9426089259009AFC97 /* XCRemoteSwiftPackageReference "ARKit-CoreLocation" */ = {
+		E6D07E1028E23CD1004118A4 /* XCRemoteSwiftPackageReference "ARKit-CoreLocation" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ProjectDent/ARKit-CoreLocation.git";
 			requirement = {
@@ -2284,9 +2285,9 @@
 			package = E691EE132846ABF100CA8043 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
 			productName = MapboxMaps;
 		};
-		E6E90F952608925A009AFC97 /* ARCL */ = {
+		E6D07E1128E23CD1004118A4 /* ARCL */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E6E90F9426089259009AFC97 /* XCRemoteSwiftPackageReference "ARKit-CoreLocation" */;
+			package = E6D07E1028E23CD1004118A4 /* XCRemoteSwiftPackageReference "ARKit-CoreLocation" */;
 			productName = ARCL;
 		};
 		E6F0C4C326088EAE0064248F /* KeychainAccess */ = {
