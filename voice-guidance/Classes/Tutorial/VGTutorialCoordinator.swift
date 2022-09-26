@@ -64,7 +64,7 @@ class VGTutorialCoordinator: VGBaseCoordinator<Void> {
     tutorialViewController.viewModel
       .slideEvent
       .subscribe { [weak self] event in
-        guard let self = self, let slide = event.element else {
+        guard let self, let slide = event.element else {
           return
         }
         self.presentSlide(slide)

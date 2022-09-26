@@ -252,7 +252,7 @@ class VGGuideViewController: PullUpController {
       .disposed(by: disposeBag)
     openButton.rx.tap
       .subscribe { [weak self] _ in
-        guard let self = self else {
+        guard let self else {
           return
         }
         let alertController: UIAlertController = .guideOpenInMap(

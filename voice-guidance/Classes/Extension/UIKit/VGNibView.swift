@@ -58,7 +58,7 @@ extension UIView {
   func anchorAllEdgesToSuperview() {
     self.translatesAutoresizingMaskIntoConstraints = false
     if #available(iOS 9.0, *) {
-      if let superview = superview {
+      if let superview {
         addSuperviewConstraint(constraint: topAnchor.constraint(equalTo: (superview.topAnchor)))
         addSuperviewConstraint(constraint: leftAnchor.constraint(equalTo: (superview.leftAnchor)))
         addSuperviewConstraint(constraint: bottomAnchor.constraint(equalTo: (superview.bottomAnchor)))

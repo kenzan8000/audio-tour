@@ -157,7 +157,7 @@ class VGARViewModel: NSObject, CLLocationManagerDelegate {
     var shouldUpdate = false
     let previousLocation = latestLocation
     latestLocation = location
-    if let previousLocation = previousLocation, let latestLocation = latestLocation {
+    if let previousLocation, let latestLocation = latestLocation {
       shouldUpdate = latestLocation.distance(from: previousLocation) > VGARMap.updateSpotAnnotationDistance
     } else {
       shouldUpdate = true
@@ -177,7 +177,7 @@ class VGARViewModel: NSObject, CLLocationManagerDelegate {
     let sw = location.coordinate.coordinateWithBearing(bearing: 225.0, distanceMeters: VGARMap.spotDistance)
     let ne = location.coordinate.coordinateWithBearing(bearing: 45.0, distanceMeters: VGARMap.spotDistance)
     var spots = storageProvider.fetch(language: .current, sw: sw, ne: ne)
-    if let latestLocation = latestLocation {
+    if let latestLocation {
       spots.sort { a, b in
         latestLocation.distance(from: a.location) > latestLocation.distance(from: b.location)
       }

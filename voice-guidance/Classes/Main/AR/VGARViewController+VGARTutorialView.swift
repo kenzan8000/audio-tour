@@ -27,7 +27,7 @@ extension VGARViewController {
       parentViewController: self,
       mapView: mapBackgroundView
     )
-    guard let tutorialView = tutorialView else {
+    guard let tutorialView else {
       return
     }
     view.addSubview(tutorialView)

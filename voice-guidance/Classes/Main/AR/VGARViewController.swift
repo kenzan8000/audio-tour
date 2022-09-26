@@ -170,14 +170,14 @@ class VGARViewController: VGTabViewController {
   private func bindZoom() {
     viewModel.zoomLevelEvent
       .subscribe { [weak self] event in
-        if let self = self, let zoomLevel = event.element {
+        if let self, let zoomLevel = event.element {
           self.mapView.mapboxMap.setCamera(to: .init(zoom: zoomLevel))
         }
       }
       .disposed(by: disposeBag)
     viewModel.zoomStateEvent
       .subscribe { [weak self] event in
-        guard let self = self, let zoomState = event.element else {
+        guard let self, let zoomState = event.element else {
           return
         }
         self.zoomInButton.alpha = zoomState == .max ? 0.5 : 1.0
@@ -190,7 +190,7 @@ class VGARViewController: VGTabViewController {
   private func bindLocation() {
     viewModel.latestHeadingEvent
       .subscribe { [weak self] event in
-        guard let self = self, let heading = event.element else {
+        guard let self, let heading = event.element else {
           return
         }
         self.mapView.mapboxMap.setCamera(to: .init(bearing: heading))
@@ -198,7 +198,7 @@ class VGARViewController: VGTabViewController {
       .disposed(by: disposeBag)
     viewModel.latestLocationEvent
       .subscribe { [weak self] event in
-        guard let self = self, let location = event.element else {
+        guard let self, let location = event.element else {
           return
         }
         self.mapView.mapboxMap.setCamera(to: .init(center: location.coordinate))
@@ -210,7 +210,7 @@ class VGARViewController: VGTabViewController {
   private func bindSpots() {
     viewModel.spotsWereUpdatedEvent
       .subscribe { [weak self] event in
-        guard let self = self, let spots = event.element else {
+        guard let self, let spots = event.element else {
           return
         }
         self.mapView.removeAll()
@@ -249,7 +249,7 @@ class VGARViewController: VGTabViewController {
         vc.rx.itemSelected
           .subscribe { [weak self] event in
             menu.dismiss(animated: true, completion: nil)
-            guard let self = self,
+            guard let self,
                   let index = event.element?.row,
                   let tap = VGARViewControllerLeftMenu(rawValue: index) else {
               return
@@ -266,7 +266,7 @@ class VGARViewController: VGTabViewController {
       .disposed(by: disposeBag)
     searchView.rx.tapItem
       .subscribe { [weak self] event in
-        guard let self = self, let indexPath = event.element else {
+        guard let self, let indexPath = event.element else {
           return
         }
         self.presentGuideViewController(spot: self.viewModel.searchResult[indexPath.row])
@@ -274,7 +274,7 @@ class VGARViewController: VGTabViewController {
       .disposed(by: disposeBag)
     searchView.rx.text
       .subscribe { [weak self] event in
-        guard let self = self, let text = event.element else {
+        guard let self, let text = event.element else {
           return
         }
         self.viewModel.search(text: text)

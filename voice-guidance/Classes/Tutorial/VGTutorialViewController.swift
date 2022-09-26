@@ -11,7 +11,7 @@ class VGTutorialViewController: UIViewController {
   private var slideView: VGTutorialSlideView? {
     didSet {
       oldValue?.removeFromSuperview()
-      if let slideView = slideView {
+      if let slideView {
         slideBackgroundView.addSubview(slideView)
         slideView.frame = slideBackgroundView.bounds
       }
@@ -50,7 +50,7 @@ class VGTutorialViewController: UIViewController {
     
     viewModel.slideEvent
       .subscribe { [weak self] event in
-        guard let self = self, let slide = event.element else {
+        guard let self, let slide = event.element else {
           return
         }
         self.pageControl.currentPage = slide.currentPage

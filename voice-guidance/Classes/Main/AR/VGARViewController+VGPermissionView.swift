@@ -20,7 +20,7 @@ extension VGARViewController {
         captureDevice: VGAVCaptureDevice()
       )
     )
-    if let permissionView = permissionView {
+    if let permissionView {
       permissionView.frame = view.frame
       view.addSubview(permissionView)
       permissionViewWillDisappearDisposable = permissionView.rx.willDisappear

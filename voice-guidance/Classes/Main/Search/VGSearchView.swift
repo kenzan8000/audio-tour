@@ -82,7 +82,7 @@ class VGSearchView: VGNibView {
       .disposed(by: disposeBag)
     menuButton.rx.tap
       .subscribe { [weak self] _ in
-        if let self = self {
+        if let self {
           self.tapMenuObserver.on(.next(self.menuButton))
         }
       }
@@ -94,7 +94,7 @@ class VGSearchView: VGNibView {
       .disposed(by: disposeBag)
     clearButton.rx.tap
       .subscribe { [weak self] _ in
-        guard let self = self else {
+        guard let self else {
           return
         }
         self.resetSearch()
@@ -102,7 +102,7 @@ class VGSearchView: VGNibView {
       .disposed(by: disposeBag)
     textField.rx.text.changed.asObservable()
       .subscribe { [weak self] event in
-        guard let self = self, let text = event.element else {
+        guard let self, let text = event.element else {
           return
         }
         if text?.isEmpty ?? true {
@@ -116,7 +116,7 @@ class VGSearchView: VGNibView {
       .disposed(by: disposeBag)
     searchTableView.rx.itemSelected
       .subscribe { [weak self] event in
-        if let self = self, let indexPath = event.element {
+        if let self, let indexPath = event.element {
           self.tapItemObserver.on(.next(indexPath))
         }
       }

@@ -58,7 +58,7 @@ class VGPermissionView: VGNibView {
   private func bindPermissionTypeEvent() {
     viewModel.permissionTypeEvent
       .subscribe { [weak self] event in
-        guard let self = self, let permissionType = event.element else {
+        guard let self, let permissionType = event.element else {
           return
         }
         switch permissionType {
@@ -77,7 +77,7 @@ class VGPermissionView: VGNibView {
   private func bindCameraAuthorizationStatusEvent() {
     viewModel.cameraAuthorizationStatusEvent
       .subscribe { [weak self] event in
-        guard let self = self, let authorizationStatus = event.element else {
+        guard let self, let authorizationStatus = event.element else {
           return
         }
         switch authorizationStatus {
@@ -100,7 +100,7 @@ class VGPermissionView: VGNibView {
   private func bindLocationAuthorizationStatusEvent() {
     viewModel.locationAuthorizationStatusEvent
       .subscribe { [weak self] event in
-        guard let self = self, let authorizationStatus = event.element else {
+        guard let self, let authorizationStatus = event.element else {
           return
         }
         switch authorizationStatus {

@@ -31,7 +31,7 @@ extension UIViewController {
   /// Removes child view controller from this view controller
   /// - Parameter child: child view controller you remove
   public func remove(childViewController child: UIViewController?) {
-    guard let child = child else {
+    guard let child else {
       return
     }
 

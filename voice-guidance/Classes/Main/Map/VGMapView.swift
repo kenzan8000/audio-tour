@@ -48,7 +48,7 @@ class VGMapView: MapView {
   // MARK: public api
   func add(annotations: [PointAnnotation]) {
     annotations.forEach { [weak self] annotation in
-      if let self = self, !self.pointAnnotationManager.annotations.contains(where: { $0.id == annotation.id }) {
+      if let self, !self.pointAnnotationManager.annotations.contains(where: { $0.id == annotation.id }) {
         self.pointAnnotationManager.annotations.append(annotation)
       }
     }

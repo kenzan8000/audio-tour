@@ -170,7 +170,7 @@ class VGGuideViewModel: NSObject {
         readOutRange = NSRange(location: start, length: end - start)
       }
     }
-    if let readOutRange = readOutRange {
+    if let readOutRange {
       ttsReadOutRange = readOutRange
     } else {
       ttsReadOutRange = NSRange(location: index, length: 0)

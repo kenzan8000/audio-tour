@@ -104,7 +104,7 @@ class VGMapViewController: VGTabViewController {
     bindMapView()
     currentLocationButton.rx.tap
       .subscribe { [weak self] _ in
-        guard let self = self, let location = self.mapView.location.latestLocation else {
+        guard let self, let location = self.mapView.location.latestLocation else {
           return
         }
         self.mapView.mapboxMap.setCamera(to: .init(center: location.coordinate))
@@ -129,7 +129,7 @@ class VGMapViewController: VGTabViewController {
       .disposed(by: disposeBag)
     searchView.rx.tapItem
       .subscribe { [weak self] event in
-        guard let self = self, let indexPath = event.element else {
+        guard let self, let indexPath = event.element else {
           return
         }
         self.mapView.mapboxMap.setCamera(to: .init(center: self.viewModel.searchResult[indexPath.row].coordinate))
@@ -138,7 +138,7 @@ class VGMapViewController: VGTabViewController {
       .disposed(by: disposeBag)
     searchView.rx.text
       .subscribe { [weak self] event in
-        guard let self = self, let text = event.element else {
+        guard let self, let text = event.element else {
           return
         }
         self.viewModel.search(text: text)
@@ -165,7 +165,7 @@ class VGMapViewController: VGTabViewController {
   private func bindViewModel() {
     viewModel.spotsWereUpdatedEvent
       .subscribe { [weak self] event in
-        guard let self = self, let spots = event.element else {
+        guard let self, let spots = event.element else {
           return
         }
         self.mapView.removeAll()

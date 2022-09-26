@@ -49,7 +49,7 @@ class VGRootCoordinator: VGBaseCoordinator<Void> {
     window.rootViewController = VGRootViewController(viewModel: viewModel)
     viewModel.viewSubject
       .subscribe { [weak self] event in
-        guard let self = self, let view = event.element else {
+        guard let self, let view = event.element else {
           return
         }
         switch view {

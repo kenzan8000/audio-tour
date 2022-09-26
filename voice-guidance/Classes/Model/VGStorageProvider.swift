@@ -26,7 +26,7 @@ class VGStorageProvider {
       persistentContainer.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
     }
     persistentContainer.loadPersistentStores { _, error in
-      if let error = error {
+      if let error {
         fatalError("Core Data store failed to load with error: \(error)")
       }
     }
@@ -53,7 +53,7 @@ class VGStorageProvider {
     }
     persistentContainer.persistentStoreDescriptions.first?.url = url.appendingPathComponent("\(name).sqlite")
     persistentContainer.loadPersistentStores { _, error in
-      if let error = error {
+      if let error {
         fatalError("Core Data store failed to load with error: \(error)")
       }
     }
