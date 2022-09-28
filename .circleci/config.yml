@@ -6,7 +6,7 @@ orbs:
 executors:
   macos-executor:
     macos:
-      xcode: 13.0.0
+      xcode: 14.0.0
 
 commands:
   setup:
