@@ -359,6 +359,7 @@
 		E6E00FB72503C849009C1F5D /* VGNiblessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGNiblessViewController.swift; sourceTree = "<group>"; };
 		E6E00FB92503C8D0009C1F5D /* VGRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGRootViewController.swift; sourceTree = "<group>"; };
 		E6E00FBB2503C914009C1F5D /* VGRootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGRootViewModel.swift; sourceTree = "<group>"; };
+		E6E0776D28E8D73400946B8F /* voice-guidance.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "voice-guidance.entitlements"; sourceTree = "<group>"; };
 		E6F592F424E1692900BEF6CC /* VGNibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGNibView.swift; sourceTree = "<group>"; };
 		E6F6D4831E768CE200738FBE /* VGSearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGSearchTableViewCell.swift; sourceTree = "<group>"; };
 		E6F6D4841E768CE200738FBE /* VGSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VGSearchTableViewCell.xib; sourceTree = "<group>"; };
@@ -527,6 +528,7 @@
 			children = (
 				E66BB9E21D7D202C00B8E996 /* Classes */,
 				E66BB9E61D7D202C00B8E996 /* Resources */,
+				E6E0776D28E8D73400946B8F /* voice-guidance.entitlements */,
 			);
 			path = "voice-guidance";
 			sourceTree = "<group>";
@@ -1865,6 +1867,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "voice-guidance/voice-guidance.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Distribution: Kenzan Hase (6RYZ4RB738)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.0.0;
@@ -1965,6 +1968,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "voice-guidance/voice-guidance.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = 6RYZ4RB738;

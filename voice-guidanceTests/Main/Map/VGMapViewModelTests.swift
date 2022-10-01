@@ -11,7 +11,7 @@ class VGMapViewModelTests: XCTestCase {
   // MARK: life cycle
 
   override func setUpWithError() throws {
-    let storageProvider = VGStorageProvider(source: Bundle(for: type(of: VGMapViewModelTests())), name: "VGCoreData", group: "org.kenzan8000.voice-guidanceTests")
+    let storageProvider = VGStorageProvider(source: Bundle(for: type(of: VGMapViewModelTests())), name: "VGCoreData", group: "group.org.kenzan8000.voice-guidanceTests")
     sut = VGMapViewModel(storageProvider: storageProvider)
     super.setUp()
   }

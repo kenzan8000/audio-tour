@@ -32,8 +32,8 @@ extension Snapshotting where Value == UIView, Format == UIImage {
 
 // MARK: - ViewImageConfig + Model
 extension ViewImageConfig {
-  public static let iPhone12ProMax = ViewImageConfig.iPhone12ProMax(.portrait)
-  public static func iPhone12ProMax(_ orientation: Orientation) -> ViewImageConfig {
+  public static let iPhone14ProMax = ViewImageConfig.iPhone14ProMax(.portrait)
+  public static func iPhone14ProMax(_ orientation: Orientation) -> ViewImageConfig {
     let safeArea: UIEdgeInsets
     let size: CGSize
     switch orientation {
@@ -44,13 +44,13 @@ extension ViewImageConfig {
       safeArea = .init(top: 47, left: 0, bottom: 34, right: 0)
       size = .init(width: 428, height: 926)
     }
-    return .init(safeArea: safeArea, size: size, traits: .iPhone12ProMax(orientation))
+    return .init(safeArea: safeArea, size: size, traits: .iPhone14ProMax(orientation))
   }
 }
 
 // MARK: - UITraitCollection + Model
 extension UITraitCollection {
-  public static func iPhone12ProMax(_ orientation: ViewImageConfig.Orientation)
+  public static func iPhone14ProMax(_ orientation: ViewImageConfig.Orientation)
    -> UITraitCollection {
      let base: [UITraitCollection] = [
        //    .init(displayGamut: .P3),
@@ -82,15 +82,15 @@ extension UITraitCollection {
 // MARK: - Model
 enum Model {
   case iPhoneSe
-  case iPhone12ProMax
+  case iPhone14ProMax
   case unknown
   
   func config(_ orientation: ViewImageConfig.Orientation = .portrait) -> ViewImageConfig {
     switch self {
     case .iPhoneSe:
       return .iPhoneSe
-    case .iPhone12ProMax:
-      return .iPhone12ProMax
+    case .iPhone14ProMax:
+      return .iPhone14ProMax
     case .unknown:
       return .init()
     }
@@ -100,8 +100,8 @@ enum Model {
     switch self {
     case .iPhoneSe:
       return .iPhoneSe(orientation)
-    case .iPhone12ProMax:
-      return .iPhone12ProMax(orientation)
+    case .iPhone14ProMax:
+      return .iPhone14ProMax(orientation)
     case .unknown:
       return .init()
     }
@@ -114,9 +114,9 @@ enum Model {
   var width: CGFloat {
     switch self {
     case .iPhoneSe:
-      return 320
-    case .iPhone12ProMax:
-      return 428
+      return 375
+    case .iPhone14ProMax:
+      return 430
     case .unknown:
       return 0
     }
@@ -125,9 +125,9 @@ enum Model {
   var height: CGFloat {
     switch self {
     case .iPhoneSe:
-      return 568
-    case .iPhone12ProMax:
-      return 926
+      return 667
+    case .iPhone14ProMax:
+      return 932
     case .unknown:
       return 0
     }
@@ -148,10 +148,10 @@ var model: Model = {
   }
   func mapToDevice(identifier: String) -> String {
     switch identifier {
-    case "iPod9,1":
-      return "iPod touch (7th generation)"
-    case "iPhone13,4":
-      return "iPhone 12 Pro Max"
+    case "iPhone14,6":
+      return "iPhone SE (3rd generation)"
+    case "iPhone15,3":
+      return "iPhone 14 Pro Max"
     case "arm64", "i386", "x86_64":
       return "Simulator \(mapToDevice(identifier: ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] ?? "iOS"))"
     default:
@@ -159,10 +159,10 @@ var model: Model = {
     }
   }
   let modelName = mapToDevice(identifier: identifier)
-  if modelName.hasSuffix("iPod touch (7th generation)") {
+  if modelName.hasSuffix("iPhone SE (3rd generation)") {
     return .iPhoneSe
-  } else if modelName.hasSuffix("iPhone 12 Pro Max") {
-    return .iPhone12ProMax
+  } else if modelName.hasSuffix("iPhone 14 Pro Max") {
+    return .iPhone14ProMax
   } else {
     return .unknown
   }

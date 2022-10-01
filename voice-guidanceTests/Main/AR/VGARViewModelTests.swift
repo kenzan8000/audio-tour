@@ -12,7 +12,7 @@ class VGARViewModelTests: XCTestCase {
   // MARK: life cycle
 
   override func setUpWithError() throws {
-    let storageProvider = VGStorageProvider(source: Bundle(for: type(of: VGARViewModelTests())), name: "VGCoreData", group: "org.kenzan8000.voice-guidanceTests")
+    let storageProvider = VGStorageProvider(source: Bundle(for: type(of: VGARViewModelTests())), name: "VGCoreData", group: "group.org.kenzan8000.voice-guidanceTests")
     sut = VGARViewModel(
       storageProvider: storageProvider,
       locationManager: VGLocationManagerDummy(delegate: nil, authorizationStatus: .authorizedWhenInUse)

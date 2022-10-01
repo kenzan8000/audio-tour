@@ -11,7 +11,7 @@ class VGGuideViewControllerTests: XCTestCase {
   // MARK: life cycle
 
   override func setUpWithError() throws {
-    let storageProvider = VGStorageProvider(source: Bundle(for: type(of: VGGuideViewControllerTests())), name: "VGCoreData", group: "org.kenzan8000.voice-guidanceTests")
+    let storageProvider = VGStorageProvider(source: Bundle(for: type(of: VGGuideViewControllerTests())), name: "VGCoreData", group: "group.org.kenzan8000.voice-guidanceTests")
     let spot = try XCTUnwrap(storageProvider.fetch(language: .en, text: "The Golden Gate Bridge").first)
     sut = VGGuideViewController(
       viewModel: VGGuideViewModel(spot: spot, rate: ._10X, userDefaults: VGUserDefaultsStub()),
