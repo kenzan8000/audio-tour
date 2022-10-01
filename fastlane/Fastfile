@@ -17,26 +17,26 @@ platform :ios do
     )
   end
 
-  desc "Snapshot testing on iPhone 12 Pro Max"
-  lane :snapshot_tests_on_iphone12promax do
+  desc "Snapshot testing on iPhone 14 Pro Max"
+  lane :snapshot_tests_on_iphone14promax do
     scan(
       include_simulator_logs: false,
       code_coverage: true,
       clean: true,
       scheme: "voice-guidance",
-      device: "iPhone 12 Pro Max",
+      device: "iPhone 14 Pro Max",
       only_testing: "voice-guidanceSnapshotTests"
     )
   end
 
-  desc "Snapshot testing on iPod touch 7th generation"
-  lane :snapshot_tests_on_ipodtouch7thgeneration do
+  desc "Snapshot testing on iPhone SE 3rd generation"
+  lane :snapshot_tests_on_iphonese3rdgeneration do
     scan(
       include_simulator_logs: false,
       code_coverage: true,
       clean: true,
       scheme: "voice-guidance",
-      device: "iPod touch (7th generation)",
+      device: "iPhone SE (3rd generation)",
       only_testing: "voice-guidanceSnapshotTests"
     )
   end
